@@ -1,15 +1,15 @@
 {
-  "name": "paint",
+  "name": "turner-house",
   "description": "static gatsby website",
   "version": "2.0.1",
   "author": "zeiq.co",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zeiq-co/Paint.git"
+    "url": "https://github.com/zeiq-co/TurnerEducation-House"
   },
   "bugs": {
-    "url": "https://github.com/zeiq-co/Paint/issues"
+    "url": "https://github.com/zeiq-co/TurnerEducation-House/issues"
   },
   "homepage": "https://github.com/zeiq-co/Paint/blob/master/README.md",
   "scripts": {

@@ -1,4 +1,4 @@
-# Paint
+# Turner Education House
 
 Fetch data from Sanity CMS
 

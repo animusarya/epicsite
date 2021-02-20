@@ -1,9 +1,9 @@
 module.exports = {
   DEBUG: process.env.NODE_ENV === 'development',
 
-  siteName: 'Midas Brush Decorating',
+  siteName: 'Turner Education House',
   author: 'zeiq.co',
-  description: 'Top-Rated Painters and Decorators in London',
+  description: 'Education Academy portfolio',
   siteUrl: 'https://www.midasbrush-decorating.co.uk/',
   logo: '/images/logo.jpg',
   metaLogo: 'https://www.midasbrush-decorating.co.uk/images/logo.jpg',
