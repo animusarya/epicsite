@@ -82,7 +82,7 @@ const Header = ({ home }) => {
         <div className="container">
           <div className="navbar-brand">
             <Link className="navbar-item ml-2" to="/">
-              <img src="/images/logo.jpg" alt="site logo" />
+              <img src="/images/logo.png" alt="site logo" />
             </Link>
             <button
               type="button"
