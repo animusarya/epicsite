@@ -93,18 +93,18 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => {
   const home = data.sanitySiteSettings;
-  const homeFeatures = data.sanitySiteSettings;
-  const brands = data.sanitySiteSettings;
-  const homeAboutUs = data.sanitySiteSettings.whyChoose;
-  const review = data.allSanityReview.edges;
+  // const homeFeatures = data.sanitySiteSettings;
+  // const brands = data.sanitySiteSettings;
+  // const homeAboutUs = data.sanitySiteSettings.whyChoose;
+  // const review = data.allSanityReview.edges;
   return (
     <Layout>
       <Seo title={home.title} url={config.siteUrl} image={config.metaLogo} />
       <HeroSlider data={home} />
-      <HomeAboutUs data={homeAboutUs} home={home} />
+      {/* <HomeAboutUs data={homeAboutUs} home={home} />
       <Features data={homeFeatures} />
       <Review review={review} home={home} />
-      <Members data={brands} />
+      <Members data={brands} /> */}
     </Layout>
   );
 };

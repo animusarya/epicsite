@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import HeaderInformation from './HeaderInformation';
+// import HeaderInformation from './HeaderInformation';
 import { theme } from '../utils/theme';
 
 const Section = styled.div`
@@ -77,7 +77,7 @@ const Header = ({ home }) => {
 
   return (
     <Section>
-      <HeaderInformation home={home} />
+      {/* <HeaderInformation home={home} /> */}
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="container">
           <div className="navbar-brand">
