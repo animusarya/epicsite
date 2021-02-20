@@ -6,7 +6,7 @@ import { theme } from '../utils/theme';
 
 const Section = styled.div`
   nav {
-    background: ${theme.darkAccent};
+    background: ${(props) => props.theme.darkAccent};
     padding: 0rem 2rem 0rem 2rem;
   }
   font-family: ${theme.primaryFontFamily};

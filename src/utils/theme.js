@@ -2,7 +2,7 @@ import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset-advanced';
 import { darken, lighten } from 'polished';
 
-const mainBrandColor = '#e9bd16';
+const mainBrandColor = '#7A2540';
 const lightShades = '#F5F5F5';
 const darkAccent = '#000000';
 const darkShades = '#333333';
@@ -29,18 +29,18 @@ export const theme = {
   backgroundColor: '#f0f4f7',
   backgroundInputColor: '#b5b5b5',
   backgroundInputColorDark: darkShades,
-  fontSize: 17, // 'default text-size"'
-  fontSizeSmall: 15,
-  fontSizeMedium: 17, // 'Default font size'
-  fontSizeLarge: 24, // 'Use className="is-size-3"'
-  fontSizeExtraLarge: 40, // 'Use className="is-size-2"'
+  fontSize: 16,
+  fontSizeSmall: 14,
+  fontSizeMedium: 18,
+  fontSizeLarge: 20,
+  fontSizeExtraLarge: 40,
   textColor: darkShades, // '#0A0B11',
   textColorInverse: lightShades,
   textColorLite: '#FFFFFF',
   textColorDark: '#585858',
   menuTintColor: darkAccent,
-  primaryFontFamily: "'Roboto Condensed', sans-serif",
-  secondaryFontFamily: "'Roboto Condensed', sans-serif",
+  primaryFontFamily: "'Playfair Display', serif;",
+  secondaryFontFamily: "'Playfair Display', serif;",
   boxShadow: 'rgba(0,0,0,0.08) 0px 7px 18px',
 };
 

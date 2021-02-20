@@ -26,9 +26,8 @@ export default class HTML extends React.Component {
             src="https://use.fontawesome.com/releases/v5.14.0/js/all.js"
           />
           {/* Font Family */}
-
           <link
-            href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,300;0,400;0,700;1,300;1,400;1,700&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
             rel="stylesheet"
           />
           <script src="/js/scripts.js" />
