@@ -26,16 +26,17 @@ export const theme = {
 
   primaryColor: mainBrandColor,
   borderColor: '#e0e6ef',
-  backgroundColor: '#f0f4f7',
+  backgroundColor: ' #4F4F4F;',
   backgroundInputColor: '#b5b5b5',
   backgroundInputColorDark: darkShades,
-  fontSize: 16,
-  fontSizeSmall: 14,
-  fontSizeMedium: 18,
-  fontSizeLarge: 20,
-  fontSizeExtraLarge: 40,
+  fontSize: '16px',
+  fontSizeSmall: '14px',
+  fontSizeMedium: '18px',
+  fontSizeLarge: '20px',
+  fontSizeExtraLarge: '40px',
   textColor: darkShades, // '#0A0B11',
   textColorInverse: lightShades,
+  backgroundWhite: '#FFFFFF',
   textColorLite: '#FFFFFF',
   textColorDark: '#585858',
   menuTintColor: darkAccent,
@@ -70,10 +71,10 @@ const GlobalStyle = createGlobalStyle`
     line-height: 1.5rem;
   }
   p, .title, .box {
-    color: ${theme.textColor} !important;
+    color: ${theme.textColorLite} !important;
   }
   .subtitle {
-    color: ${lighten(0.06, theme.textColor)} !important;
+    color: ${lighten(0.06, theme.textColorLite)} !important;
     line-height: 1.5;
   }
   .button.is-secondary {

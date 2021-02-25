@@ -19,9 +19,16 @@
     "build": "gatsby build",
     "lint": "eslint --ignore-path .gitignore \"src/**/*.{js,jsx}\""
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint"
+    }
+  },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.16",
     "@mdx-js/react": "^1.6.16",
+    "cross-env": "^7.0.3",
     "dayjs": "^1.9.7",
     "formik": "^2.2.5",
     "gatsby": "^2.24.32",
@@ -37,7 +44,7 @@
     "gatsby-remark-images": "^3.3.25",
     "gatsby-source-sanity": "^6.0.4",
     "graphql-request": "^3.4.0",
-    "hero-slider": "^2.0.3",
+    "husky": "^5.1.1",
     "lodash": "^4.17.20",
     "polished": "^3.6.5",
     "prop-types": "^15.7.2",

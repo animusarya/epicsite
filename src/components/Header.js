@@ -1,27 +1,25 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-// import HeaderInformation from './HeaderInformation';
-import { theme } from '../utils/theme';
+import Button from './elements/Button';
 
 const Section = styled.div`
   nav {
     background: ${(props) => props.theme.darkAccent};
-    padding: 0rem 2rem 0rem 2rem;
-  }
-  font-family: ${theme.primaryFontFamily};
-  .navbar-brand {
-    margin-left: -1.5rem !important;
-    .navbar-item img {
-      margin-top: 3px;
-      margin-bottom: 3px;
-      max-height: 5rem;
-    }
   }
   .navbar-item {
-    :hover {
-      background-color: transparent;
-    }
+    font-size: ${(props) => props.theme.fontSizeMedium};
+  }
+  .navbar-start,
+  .navbar-end,
+  .my-navbar-center {
+    flex: 1;
+  }
+  a.navbar-item:hover {
+    background-color: transparent;
+  }
+  .navbar-item img {
+    max-height: 5.75rem !important;
   }
   .navbar-menu {
     margin-right: -1.5rem !important;
@@ -32,61 +30,33 @@ const Section = styled.div`
     }
   }
   .navbar-burger {
-    background: ${theme.mainBrandColor};
-    color: ${theme.darkAccent};
+    background: ${(props) => props.theme.mainBrandColor};
+    color: ${(props) => props.theme.darkAccent};
     opacity: 0.5;
     border-radius: 4px;
   }
   .navbar-end {
     a {
-      font-family: ${theme.primaryFontFamily};
-      color: ${theme.textColorLite};
-      :focus {
-        background-color: transparent;
-      }
-    }
-  }
-  .animated-line {
-    position: relative;
-    padding: 0;
-    &::before {
-      transition: 300ms ease-out;
-      height: 0.1rem;
-      content: '';
-      position: absolute;
-      background-color: ${theme.textColorLite} !important;
-      width: 0%;
-      bottom: 1.5rem;
-    }
-    &:hover::before {
-      width: 65%;
+      font-family: ${(props) => props.theme.primaryFontFamily};
     }
   }
   @media screen and (max-width: 700px) {
     .navbar-menu {
-      background: ${theme.borderColor} !important;
+      background: ${(props) => props.theme.borderColor} !important;
     }
-  }
-  button.is-secondary.is-normal {
-    background: transparent !important;
   }
 `;
 
-const Header = ({ home }) => {
+const Header = () => {
   const [isActive, setIsActive] = useState(false);
 
   return (
     <Section>
-      {/* <HeaderInformation home={home} /> */}
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="container">
           <div className="navbar-brand">
-            <Link className="navbar-item ml-2" to="/">
-              <img src="/images/logo.png" alt="site logo" />
-            </Link>
             <button
               type="button"
-              // href="#"
               className={
                 isActive
                   ? 'is-active navbar-burger  mt-5'
@@ -102,40 +72,51 @@ const Header = ({ home }) => {
               <span aria-hidden="true" />
             </button>
           </div>
-
-          <div className={isActive ? 'navbar-menu is-active' : 'navbar-menu'}>
-            <div className="navbar-end">
+          <div
+            className={
+              isActive
+                ? 'navbar-menu my-navbar-menu is-active'
+                : 'navbar-menu my-navbar-menu'
+            }
+          >
+            <div className="navbar-start">
               {' '}
               <Link
                 to="/"
-                className="navbar-item has-text-weight-normal is-size-4 p-5 animated-line"
+                className="navbar-item has-text-weight-normal has-text-white px-5"
               >
                 Home
               </Link>
               <Link
-                to="/about-us"
-                className="navbar-item has-text-weight-normal is-size-4  p-5 animated-line"
+                to="/"
+                className="navbar-item has-text-weight-normal  has-text-white px-5"
               >
-                About
+                Why Turner House?
               </Link>
               <Link
-                to="/service"
-                className="navbar-item has-text-weight-normal is-size-4  p-5 animated-line"
+                to="/"
+                className="navbar-item has-text-weight-normal has-text-white px-5"
               >
-                Services
+                How we can help
               </Link>
-              <Link
-                to="/gallery"
-                className="navbar-item has-text-weight-normal is-size-4 p-5 animated-line"
-              >
-                Gallery
+            </div>
+            <div className="my-navbar-center">
+              <Link className="navbar-item is-justify-content-center" to="/">
+                <img src="/images/logo.png" alt="site logo" />
               </Link>
-              <Link
-                to="/contact"
-                className="navbar-item has-text-weight-normal is-size-4  p-5 animated-line"
-              >
-                Contact
-              </Link>
+            </div>
+            <div className="navbar-end">
+              <div className="navbar-item">
+                <Link
+                  to="/"
+                  className="navbar-item has-text-weight-normal has-text-white px-5"
+                >
+                  Stay in the loop
+                </Link>
+                <div className="navbar-item has-text-weight-normal has-text-white px-5">
+                  <Button isTransparent>Contact Us</Button>
+                </div>
+              </div>
             </div>
           </div>
         </div>

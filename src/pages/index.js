@@ -1,16 +1,14 @@
 import React from 'react';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import { graphql } from 'gatsby';
 
 import config from '../utils/config';
-import HeroSlider from '../components/HeroSlider';
+import HomeBanner from '../components/HomeBanner';
 import Seo from '../components/Seo';
 import Layout from '../components/Layout';
-import Features from '../components/Features';
-import HomeAboutUs from '../components/HomeAboutUs';
-import Review from '../components/Review';
-import Members from '../components/Members';
+// import Features from '../components/Features';
+// import HomeAboutUs from '../components/HomeAboutUs';
+// import Review from '../components/Review';
+// import Members from '../components/Members';
 
 export const query = graphql`
   query HomePageQuery {
@@ -91,16 +89,16 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = ({ data }) => {
-  const home = data.sanitySiteSettings;
+const IndexPage = () => {
+  // const home = data.sanitySiteSettings;
   // const homeFeatures = data.sanitySiteSettings;
   // const brands = data.sanitySiteSettings;
   // const homeAboutUs = data.sanitySiteSettings.whyChoose;
   // const review = data.allSanityReview.edges;
   return (
     <Layout>
-      <Seo title={home.title} url={config.siteUrl} image={config.metaLogo} />
-      <HeroSlider data={home} />
+      <Seo title="Home" />
+      <HomeBanner />
       {/* <HomeAboutUs data={homeAboutUs} home={home} />
       <Features data={homeFeatures} />
       <Review review={review} home={home} />
