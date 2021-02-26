@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
-import { Heading, Subtitle } from '../elements';
+import { Heading, Subtitle, Title } from '../elements';
 
 // import OverlayButton from '../components/elements/OverlayButton';
 
@@ -44,6 +44,9 @@ const Container = styled.div`
   .column.is-three-fifths {
     margin-right: 2px;
   }
+  img {
+    border: 2px solid ${(props) => props.theme.backgroundWhite};
+  }
 `;
 
 const data = [
@@ -77,10 +80,10 @@ const Reviews = () => {
             </Heading>
             <Slider {...settings}>
               {data.map((item) => (
-                <div key={item.id} className="pb-3">
+                <div key={item.id} className="pb-3 mt-5">
                   <div className="columns">
                     <div className="column">
-                      <div className="media">
+                      <div className="media is-align-items-center">
                         <div className="media-left">
                           <figure className="image is-128x128">
                             <img
@@ -91,8 +94,12 @@ const Reviews = () => {
                           </figure>
                         </div>
                         <div className="media-content">
-                          <p className="title is-4">John Smith</p>
-                          <p className="subtitle is-6">@johnsmith</p>
+                          <p className="title is-4 is-family-primary ">
+                            Edward Newgate
+                          </p>
+                          <p className="subtitle is-6 is-family-primary  is-uppercase">
+                            student
+                          </p>
                         </div>
                       </div>
                     </div>
