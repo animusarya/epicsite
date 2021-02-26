@@ -3,9 +3,9 @@ import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import ContactForm from '../components/ContactForm';
 import Seo from '../components/Seo';
-import Layout from '../components/Layout';
-import HeroHeader from '../components/elements/HeroHeader';
-import Information from '../components/elements/Information';
+import Layout from '../components/global/Layout';
+// import HeroHeader from '../components/elements/HeroHeader';
+// import Information from '../components/elements/Information';
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.backgroundColor};
@@ -40,12 +40,12 @@ export const query = graphql`
   }
 `;
 
-const Contact = ({ data }) => {
-  const contact = data.sanitySiteSettings;
+const Contact = () => {
+  // const contact = data.sanitySiteSettings;
   return (
     <Layout>
       <Seo title="Contact Us" />
-      <HeroHeader
+      {/* <HeroHeader
         heading="Contact"
         background={
           contact && contact.coverImage && contact.coverImage.contactPage
@@ -63,7 +63,7 @@ const Contact = ({ data }) => {
             ? contact.contact.image.asset.fluid
             : ' '
         }
-      />
+      /> */}
       <Container className="section">
         <div className="container ">
           <div className="columns is-centered">

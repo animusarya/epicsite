@@ -9,7 +9,7 @@ import styled from 'styled-components';
 
 import Img from 'gatsby-image';
 import Seo from '../components/Seo';
-import Layout from '../components/Layout';
+import Layout from '../components/global/Layout';
 import Heading from '../components/elements/Heading';
 import config from '../utils/config';
 

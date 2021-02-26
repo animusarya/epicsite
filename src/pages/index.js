@@ -1,15 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 
-import config from '../utils/config';
 import Seo from '../components/Seo';
-import Layout from '../components/Layout';
+import Layout from '../components/global/Layout';
 
-import HomeBanner from '../components/HomeBanner';
-import Services from '../components/Services';
+import HomeBanner from '../components/home/HomeBanner';
+import Services from '../components/home/Services';
+import About from '../components/home/About';
 // import Features from '../components/Features';
 // import HomeAboutUs from '../components/HomeAboutUs';
-// import Review from '../components/Review';
+import Reviews from '../components/home/Reviews';
 // import Members from '../components/Members';
 
 export const query = graphql`
@@ -102,6 +102,8 @@ const IndexPage = () => {
       <Seo title="Home" />
       <HomeBanner />
       <Services />
+      <About />
+      <Reviews />
       {/* <HomeAboutUs data={homeAboutUs} home={home} />
       <Features data={homeFeatures} />
       <Review review={review} home={home} />

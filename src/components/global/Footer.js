@@ -1,9 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 import { lighten } from 'polished';
 import SocialIcon from './SocialIcon';
-import { theme } from '../utils/theme';
+import { theme } from '../../utils/theme';
 
 const Container = styled.footer`
   padding: 7rem 0;

@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import Img from 'gatsby-image';
 
 import ReactMarkdown from 'react-markdown';
-import Heading from './elements/Heading';
-import OverlayButton from './elements/OverlayButton';
+import Heading from '../elements/Heading';
+// import OverlayButton from './elements/OverlayButton';
 
 const Section = styled.div`
   .info-section {
@@ -67,9 +67,9 @@ const HomeAboutUs = ({ data, home }) => {
                 </div>
               ))}
             </div>
-            <div className="mt-4 ml-3">
+            {/* <div className="mt-4 ml-3">
               <OverlayButton linkTo="/service" buttonText="View More" />
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

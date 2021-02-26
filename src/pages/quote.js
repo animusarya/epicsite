@@ -3,13 +3,13 @@ import styled from 'styled-components';
 import { graphql } from 'gatsby';
 // import { GraphQLClient, gql } from 'graphql-request';
 import Seo from '../components/Seo';
-import Layout from '../components/Layout';
-import HeroHeader from '../components/elements/HeroHeader';
+import Layout from '../components/global/Layout';
+// import HeroHeader from '../components/elements/HeroHeader';
 import QuoteForm from '../components/QuoteForm';
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.backgroundColor};
-  padding: 5rem 1.5rem; !important;
+  padding: 5rem 1.5rem !important;
 `;
 
 // const quoteMutation = gql`
@@ -35,12 +35,12 @@ export const query = graphql`
   }
 `;
 
-const QuoteFormPage = ({ data }) => {
-  const image = data.sanitySiteSettings.coverImage;
+const QuoteFormPage = () => {
+  // const image = data.sanitySiteSettings.coverImage;
   return (
     <Layout>
       <Seo title="Quote" />
-      <HeroHeader
+      {/* <HeroHeader
         heading="Get a Quote"
         title="Quote"
         background={
@@ -48,7 +48,7 @@ const QuoteFormPage = ({ data }) => {
             ? image.quotePage.asset.fluid.src
             : '/images/contact.jpg'
         }
-      />
+      /> */}
       <Container className="section">
         <div className="container ">
           <div className="columns is-centered ">

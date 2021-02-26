@@ -1,8 +1,8 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../components/global/Layout';
 import Seo from '../components/Seo';
-import HeroHeader from '../components/elements/HeroHeader';
+// import HeroHeader from '../components/elements/HeroHeader';
 import GalleryImage from '../components/Gallery';
 
 export const query = graphql`
@@ -38,18 +38,18 @@ export const query = graphql`
 
 const Gallery = ({ data }) => {
   const galleryData = data.allSanityGallery.edges;
-  const cover = data.sanitySiteSettings.coverImage;
+  // const cover = data.sanitySiteSettings.coverImage;
   return (
     <Layout>
       <Seo title="Gallery" />
-      <HeroHeader
+      {/* <HeroHeader
         heading="Gallery"
         background={
           cover.galleryImage && cover.galleryImage.asset
             ? cover.galleryImage.asset.fluid.src
             : ''
         }
-      />
+      /> */}
       <GalleryImage data={galleryData} />
     </Layout>
   );

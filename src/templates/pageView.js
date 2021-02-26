@@ -1,11 +1,10 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
 import ReactMarkdown from 'react-markdown';
 import config from '../utils/config';
 import Seo from '../components/Seo';
-import Layout from '../components/Layout';
-import HeroHeader from '../components/elements/HeroHeader';
+import Layout from '../components/global/Layout';
+// import HeroHeader from '../components/elements/HeroHeader';
 
 export const pageQuery = graphql`
   query PageByPath($slug: String!) {
@@ -37,12 +36,12 @@ const PageView = ({ data }) => {
         description={`Read news & updates about ${page.title}`}
         url={`${config.siteUrl}/page/${page.slug ? page.slug.current : ''}`}
       />
-      <HeroHeader
+      {/* <HeroHeader
         heading={page.title}
         background={
           page.image ? page.image.asset.fluid.src : '/images/contact.jpg'
         }
-      />
+      /> */}
       <section className="section">
         <div className="container">
           <div className="markdown-container">
