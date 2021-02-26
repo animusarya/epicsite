@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Button from './elements/Button';
-import Heading from './elements/Heading';
+import { Button } from './elements';
 
 const Section = styled.div`
   background-image: url(/images/hero-img.png);

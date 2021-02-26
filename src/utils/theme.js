@@ -5,7 +5,7 @@ import { darken, lighten } from 'polished';
 const mainBrandColor = '#7A2540';
 const lightShades = '#F5F5F5';
 const darkAccent = '#000000';
-const darkShades = '#333333';
+const darkShades = '#7D7987';
 
 export const theme = {
   // It can be liberally applied to your layout as its main identity.
@@ -34,7 +34,7 @@ export const theme = {
   fontSizeMedium: '18px',
   fontSizeLarge: '20px',
   fontSizeExtraLarge: '40px',
-  textColor: darkShades, // '#0A0B11',
+  textColor: darkShades,
   textColorInverse: lightShades,
   backgroundWhite: '#FFFFFF',
   textColorLite: '#FFFFFF',
@@ -106,12 +106,10 @@ const GlobalStyle = createGlobalStyle`
   .is-family-primary {
     font-family: ${theme.primaryFontFamily} !important;
   }
-  .line-height{
-    line-height:26px !important;
+  .line-height-medium{
+    line-height:30px !important;
   }
-  .is-size-6 {
-    font-size: 17px !important;
-  }
+
   .markdown-container {
     h1 {
       font-size: 40px;

@@ -2,9 +2,11 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import config from '../utils/config';
-import HomeBanner from '../components/HomeBanner';
 import Seo from '../components/Seo';
 import Layout from '../components/Layout';
+
+import HomeBanner from '../components/HomeBanner';
+import Services from '../components/Services';
 // import Features from '../components/Features';
 // import HomeAboutUs from '../components/HomeAboutUs';
 // import Review from '../components/Review';
@@ -99,6 +101,7 @@ const IndexPage = () => {
     <Layout>
       <Seo title="Home" />
       <HomeBanner />
+      <Services />
       {/* <HomeAboutUs data={homeAboutUs} home={home} />
       <Features data={homeFeatures} />
       <Review review={review} home={home} />

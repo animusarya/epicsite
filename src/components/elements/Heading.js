@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const Text = styled.h1`
   line-height: 1.2em;
-  .darkText {
+  .dark {
     color: ${(props) => props.theme.darkAccent};
   }
   .coloured {
@@ -33,12 +33,11 @@ const Heading = ({
         centered ? 'has-text-centered' : ''
       }`}
     >
-      <span className="dark">{darkText}</span>
+      <span className="dark mr-3">{darkText}</span>
       <span className="coloured">{colouredText}</span>
       {children}
     </Text>
     {!hasUnderlineHidden && <Line />}
   </div>
 );
-
 export default Heading;
