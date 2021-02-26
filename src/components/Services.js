@@ -1,6 +1,50 @@
 import React from 'react';
-import Img from 'gatsby-image';
 import { Subtitle, Heading, Title } from './elements';
+
+const ServiceItem = [
+  {
+    id: 1,
+    title: 'Lorem ipsum',
+    subtitle:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+    image: '/images/Plus.png',
+  },
+  {
+    id: 2,
+    title: 'Lorem ipsum',
+    subtitle:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+    image: '/images/Plus.png',
+  },
+  {
+    id: 3,
+    title: 'Lorem ipsum',
+    subtitle:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+    image: '/images/Plus.png',
+  },
+  {
+    id: 4,
+    title: 'Lorem ipsum',
+    subtitle:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+    image: '/images/Plus.png',
+  },
+  {
+    id: 5,
+    title: 'Lorem ipsum',
+    subtitle:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+    image: '/images/Plus.png',
+  },
+  {
+    id: 6,
+    title: 'Lorem ipsum',
+    subtitle:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
+    image: '/images/Plus.png',
+  },
+];
 
 const Services = () => {
   return (
@@ -17,27 +61,26 @@ const Services = () => {
             </Subtitle>
           </div>
         </div>
-        <div className="columns is-centered has-text-centered">
-          <div className="column is-8">
-            <div className="card">
-              <div className="card-image">
-                <figure className="image is-64x64">
-                  <Img src="/images/Plus.png" alt="Plus image" />
-                </figure>
-              </div>
-              <div className="card-content">
-                <div className="media">
-                  <div className="media-content">
-                    <Title>Lorem ipsum</Title>
-                    <Subtitle>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit,
-                      sed do eiusmod tempor
-                    </Subtitle>
+        <div className="columns is-multiline">
+          {ServiceItem.map((item) => (
+            <div className="column is-4">
+              <div className="card">
+                <div className="card-image has-text-centered">
+                  <figure className="image is-64x64">
+                    <img src={item.image} alt="icon-image" />
+                  </figure>
+                </div>
+                <div className="card-content">
+                  <div className="media">
+                    <div className="media-content">
+                      <Title>{item.title}</Title>
+                      <Subtitle>{item.subtitle}</Subtitle>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
