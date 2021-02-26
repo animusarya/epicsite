@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { Subtitle, Heading, Title } from './elements';
 
 const CardWrapper = styled.div`
-  height: 350px;
   border-radius: 20px;
 `;
 
@@ -67,7 +66,7 @@ const Services = () => {
             </Subtitle>
           </div>
         </div>
-        <div className="columns is-multiline is-centered mt-5">
+        <div className="columns is-multiline is-variable is-6 is-centered mt-5">
           {ServiceItem.map((item) => (
             <div className="column is-4">
               <CardWrapper className="card p-6">
@@ -80,7 +79,7 @@ const Services = () => {
                   <div className="media">
                     <div className="media-content">
                       <Title>{item.title}</Title>
-                      <Subtitle>{item.subtitle}</Subtitle>
+                      <Subtitle Size>{item.subtitle}</Subtitle>
                     </div>
                   </div>
                 </div>
