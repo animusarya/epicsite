@@ -8,7 +8,7 @@ const Text = styled.h1`
 const Title = ({ children, centered }) => (
   <div>
     <Text
-      className={`is-size-4 has-text-weight-medium has-text-black  is-size-5-mobile  ${
+      className={`is-size-4 has-text-weight-medium has-text-black mb-4 is-size-5-mobile  ${
         centered ? 'has-text-centered' : ''
       }`}
     >
