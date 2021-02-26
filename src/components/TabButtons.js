@@ -26,7 +26,7 @@ const TabButton = ({ title, onClick, active }) => {
         type="button"
         className="button is-fullwidth is-medium is-size-6"
         onClick={onClick}
-        active={title == active}
+        active={title === active}
       >
         {title}
       </StyledButton>

@@ -35,6 +35,7 @@ const Heading = ({
       className={`is-size-2 has-text-weight-semibold mb-4 is-size-4-mobile  ${
         centered ? 'has-text-centered' : ''
       } ${hasWhite ? 'has-text-white' : ''}`}
+      // eslint-disable-next-line react/jsx-props-no-spreading
       {...props}
     >
       {darkText && <span className="dark mr-3">{darkText}</span>}

@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import ReactMarkdown from 'react-markdown';
 import { truncate } from 'lodash';
