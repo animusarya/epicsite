@@ -1,10 +1,11 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
-import { Heading, Subtitle, Title } from '../elements';
+import { Heading, Subtitle } from '../elements';
 
 // import OverlayButton from '../components/elements/OverlayButton';
 

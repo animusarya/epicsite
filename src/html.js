@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint react/destructuring-assignment: 0 */
 
 import React from 'react';
