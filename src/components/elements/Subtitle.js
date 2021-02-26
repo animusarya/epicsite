@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Text = styled.p`
-  font-size: ${(props) => props.theme.fontSizeMedium};
+  font-size: ${(props) =>
+    props.small ? props.theme.fontSize : props.theme.fontSizeMedium};
   color: ${(props) => props.theme.darkShades};
 `;
 

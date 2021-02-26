@@ -7,6 +7,7 @@ import Layout from '../components/global/Layout';
 import HomeBanner from '../components/home/HomeBanner';
 import Services from '../components/home/Services';
 import About from '../components/home/About';
+import Blog from '../components/home/Blog';
 // import Features from '../components/Features';
 // import HomeAboutUs from '../components/HomeAboutUs';
 import Reviews from '../components/home/Reviews';
@@ -104,6 +105,7 @@ const IndexPage = () => {
       <Services />
       <About />
       <Reviews />
+      <Blog />
       {/* <HomeAboutUs data={homeAboutUs} home={home} />
       <Features data={homeFeatures} />
       <Review review={review} home={home} />

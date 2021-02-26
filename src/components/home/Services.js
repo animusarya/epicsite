@@ -7,7 +7,7 @@ const ServiceItem = [
     title: 'Lorem ipsum',
     subtitle:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    image: '/images/Plus.png',
+    image: '/images/file-img.png',
   },
   {
     id: 2,
@@ -21,28 +21,28 @@ const ServiceItem = [
     title: 'Lorem ipsum',
     subtitle:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    image: '/images/Plus.png',
+    image: '/images/share.png',
   },
   {
     id: 4,
     title: 'Lorem ipsum',
     subtitle:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    image: '/images/Plus.png',
+    image: '/images/edit.png',
   },
   {
     id: 5,
     title: 'Lorem ipsum',
     subtitle:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    image: '/images/Plus.png',
+    image: '/images/ok.png',
   },
   {
     id: 6,
     title: 'Lorem ipsum',
     subtitle:
       'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    image: '/images/Plus.png',
+    image: '/images/info.png',
   },
 ];
 
@@ -61,20 +61,20 @@ const Services = () => {
             </Subtitle>
           </div>
         </div>
-        <div className="columns is-multiline is-variable is-6 is-centered mt-5">
+        <div className="columns is-variable is-5 is-multiline is-centered mt-5">
           {ServiceItem.map((item) => (
             <div className="column is-4">
-              <div className="card">
-                <div className="card-image has-text-centered">
-                  <figure className="image is-64x64">
+              <div className="card p-6 has-radius-medium">
+                <div className="card-image has-text-centered mb-5 ">
+                  <figure className="image is-96x96">
                     <img src={item.image} alt="icon" />
                   </figure>
                 </div>
-                <div className="card-content">
+                <div className="content">
                   <div className="media">
                     <div className="media-content">
                       <Title>{item.title}</Title>
-                      <Subtitle Size>{item.subtitle}</Subtitle>
+                      <Subtitle small>{item.subtitle}</Subtitle>
                     </div>
                   </div>
                 </div>

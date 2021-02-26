@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import styled from 'styled-components';
 
@@ -14,7 +15,8 @@ const Text = styled.h1`
 const Line = styled.div`
   height: 3px;
   width: 50px;
-  background-color: ${(props) => props.theme.backgroundColor};
+  background-color: ${(props) =>
+    props.hasWhite ? props.theme.backgroundWhite : props.theme.backgroundColor};
   margin: ${(props) => (props.lineAlignLeft ? 0 : '0 auto')};
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
@@ -42,7 +44,10 @@ const Heading = ({
       {colouredText && <span className="coloured">{colouredText}</span>}
       {children}
     </Text>
-    {!hasUnderlineHidden && <Line lineAlignLeft={lineAlignLeft} />}
+
+    {!hasUnderlineHidden && (
+      <Line lineAlignLeft={lineAlignLeft} hasWhite={hasWhite} />
+    )}
   </div>
 );
 export default Heading;

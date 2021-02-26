@@ -90,7 +90,9 @@ const GlobalStyle = createGlobalStyle`
       border-color: transparent !important;
     }
   }
-
+  .has-text-primary{
+    color:${theme.mainBrandColor} !important;
+}
   .button, .input, .card {
     box-shadow: ${theme.boxShadow};
   }
@@ -106,7 +108,9 @@ const GlobalStyle = createGlobalStyle`
   .line-height-medium{
     line-height:30px !important;
   }
-
+.has-radius-medium{
+  border-radius:20px
+}
   .markdown-container {
     h1 {
       font-size: 40px;
