@@ -5,7 +5,11 @@ const ButtonWrapper = styled.div`
   button {
     background: ${(props) =>
       props.isTransparent ? 'transparent' : props.theme.backgroundWhite};
-    border: 1.5px solid ${(props) => props.theme.backgroundWhite};
+    border: 1.5px solid
+      ${(props) =>
+        props.borderDark
+          ? props.theme.darkAccent
+          : props.theme.backgroundWhite};
     color: ${(props) =>
       props.isTransparent
         ? props.theme.backgroundWhite

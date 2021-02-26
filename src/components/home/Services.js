@@ -1,6 +1,6 @@
 import React from 'react';
 import Img from 'gatsby-image';
-import { Subtitle, Heading, Title } from './elements';
+import { Subtitle, Heading, Title } from '../elements';
 
 const Services = () => {
   return (

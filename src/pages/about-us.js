@@ -1,11 +1,9 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../components/global/Layout';
 import Seo from '../components/Seo';
-import HeroHeader from '../components/elements/HeroHeader';
 import News from '../components/News';
 import AboutFeatures from '../components/AboutFeatures';
-import Information from '../components/elements/Information';
 import Heading from '../components/elements/Heading';
 import config from '../utils/config';
 
@@ -71,11 +69,11 @@ export const aboutQuery = graphql`
 const AboutUs = ({ data }) => {
   const { edges: posts } = data.allSanityArticle;
   const aboutUs = data.sanityAbout;
-  const cover = data.sanitySiteSettings.coverImage;
+  // const cover = data.sanitySiteSettings.coverImage;
   return (
     <Layout>
       <Seo title="About" description={`About Us ${config.siteName}`} />
-      <HeroHeader
+      {/* <HeroHeader
         heading="About"
         background={
           cover.aboutPageCover ? cover.aboutPageCover.asset.fluid.src : ''
@@ -85,7 +83,7 @@ const AboutUs = ({ data }) => {
         title={aboutUs.heroTitle}
         description={aboutUs.heroDescription}
         image={aboutUs.image ? aboutUs.image.asset.fluid : ''}
-      />
+      /> */}
       <AboutFeatures data={aboutUs} />
       <div className="section">
         <div className="container">

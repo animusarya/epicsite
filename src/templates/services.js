@@ -8,11 +8,11 @@ import ReactMarkdown from 'react-markdown';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { theme } from '../utils/theme';
-import OverlayButton from '../components/elements/OverlayButton';
+// import OverlayButton from '../components/elements/OverlayButton';
 import config from '../utils/config';
 import Seo from '../components/Seo';
-import Layout from '../components/Layout';
-import HeroHeader from '../components/elements/HeroHeader';
+import Layout from '../components/global/Layout';
+// import HeroHeader from '../components/elements/HeroHeader';
 
 const Section = styled.div`
   .slick-dots li button:before {
@@ -106,7 +106,7 @@ const Services = ({ data }) => {
           service.slug ? service.slug.current : ''
         }`}
       />
-      <HeroHeader
+      {/* <HeroHeader
         heading={service.title}
         background={
           service && service.coverImage
@@ -114,7 +114,7 @@ const Services = ({ data }) => {
             : '/images/contact.jpg'
         }
         title={`Services / ${service.slug ? service.slug.current : ''}`}
-      />
+      /> */}
       <Section className="section">
         <div className="container">
           <div className="columns is-centered">
@@ -132,9 +132,9 @@ const Services = ({ data }) => {
               <div className="markdown-container">
                 <ReactMarkdown source={service.description} />
               </div>
-              <div className="mt-5">
+              {/* <div className="mt-5">
                 <OverlayButton linkTo="/contact" buttonText="GET A QUOTE" />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

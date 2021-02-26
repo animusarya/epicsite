@@ -5,7 +5,7 @@ import styled from 'styled-components';
 import swal from 'sweetalert';
 import Heading from './elements/Heading';
 
-import OverlayButton from './elements/OverlayButton';
+// import OverlayButton from './elements/OverlayButton';
 
 const Section = styled.div`
   .columns {
@@ -94,9 +94,9 @@ const ContactForm = ({
             <p className="help is-danger">{errors.message}</p>
           )}
         </div>
-        <div className="mt-5">
+        {/* <div className="mt-5">
           <OverlayButton buttonText="Send Message" />
-        </div>
+        </div> */}
       </form>
     </Section>
   );

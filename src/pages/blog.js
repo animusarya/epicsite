@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import Layout from '../components/Layout';
+import Layout from '../components/global/Layout';
 import Seo from '../components/Seo';
 import config from '../utils/config';
-import HeroHeader from '../components/elements/HeroHeader';
 import News from '../components/News';
 
 export const blogQuery = graphql`
@@ -52,7 +51,7 @@ const NewsWrapper = styled.section`
 
 const Blog = ({ data }) => {
   const { edges: aboutUs } = data.allSanityArticle;
-  const cover = data.sanitySiteSettings.coverImage;
+  // const cover = data.sanitySiteSettings.coverImage;
   return (
     <Layout>
       <Seo
@@ -60,12 +59,12 @@ const Blog = ({ data }) => {
         description={`Latest news at ${config.siteName}`}
         url={`${config.siteUrl}/account`}
       />
-      <HeroHeader
+      {/* <HeroHeader
         heading="Past Projects"
         background={
           cover && cover.blogPage ? cover.blogPage.asset.fluid.src : ''
         }
-      />
+      /> */}
       <NewsWrapper className="section">
         <div className="container">
           <div className="columns is-multiline">

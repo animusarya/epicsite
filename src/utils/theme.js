@@ -34,14 +34,14 @@ export const theme = {
   fontSizeMedium: '18px',
   fontSizeLarge: '20px',
   fontSizeExtraLarge: '40px',
-  textColor: darkShades,
+  textColor: '#1d1d1d',
   textColorInverse: lightShades,
   backgroundWhite: '#FFFFFF',
   textColorLite: '#FFFFFF',
   textColorDark: '#585858',
   menuTintColor: darkAccent,
-  primaryFontFamily: "'Playfair Display', serif;",
-  secondaryFontFamily: "'Playfair Display', serif;",
+  primaryFontFamily: "'Playfair Display', serif",
+  secondaryFontFamily: "'Raleway', sans-serif",
   boxShadow: 'rgba(0,0,0,0.08) 0px 7px 18px',
 };
 
@@ -58,19 +58,16 @@ const GlobalStyle = createGlobalStyle`
     margin-right: 0 !important;
   }
   }
-  .title {
-    font-family: ${theme.secondaryFontFamily};
-  }
-  .button {
-    font-family: ${theme.secondaryFontFamily};
-  }
-  h1 {
+
+
+  h1, h2, button {
     font-family: ${theme.primaryFontFamily};
   }
   p {
     line-height: 1.5rem;
+    font-family: ${theme.secondaryFontFamily};
   }
-  p, .title, .box {
+   .title, .box {
     color: ${theme.textColorLite} !important;
   }
   .subtitle {

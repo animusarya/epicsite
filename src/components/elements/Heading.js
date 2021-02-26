@@ -15,7 +15,7 @@ const Line = styled.div`
   height: 3px;
   width: 50px;
   background-color: ${(props) => props.theme.backgroundColor};
-  margin: ${(props) => (props.lineAlignLeft ? '' : '0 auto')};
+  margin: ${(props) => (props.lineAlignLeft ? 0 : '0 auto')};
   margin-top: 1.5rem;
   margin-bottom: 1.5rem;
 `;
@@ -25,19 +25,23 @@ const Heading = ({
   darkText,
   colouredText,
   centered,
+  hasWhite,
+  lineAlignLeft,
   hasUnderlineHidden,
+  ...props
 }) => (
   <div>
     <Text
       className={`is-size-2 has-text-weight-semibold mb-4 is-size-4-mobile  ${
         centered ? 'has-text-centered' : ''
-      }`}
+      } ${hasWhite ? 'has-text-white' : ''}`}
+      {...props}
     >
-      <span className="dark mr-3">{darkText}</span>
-      <span className="coloured">{colouredText}</span>
+      {darkText && <span className="dark mr-3">{darkText}</span>}
+      {colouredText && <span className="coloured">{colouredText}</span>}
       {children}
     </Text>
-    {!hasUnderlineHidden && <Line />}
+    {!hasUnderlineHidden && <Line lineAlignLeft={lineAlignLeft} />}
   </div>
 );
 export default Heading;

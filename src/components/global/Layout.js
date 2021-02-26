@@ -3,8 +3,8 @@ import Helmet from 'react-helmet';
 import styled, { ThemeProvider } from 'styled-components';
 import { graphql, StaticQuery } from 'gatsby';
 
-import GlobalStyle, { theme } from '../utils/theme';
-import config from '../utils/config';
+import GlobalStyle, { theme } from '../../utils/theme';
+import config from '../../utils/config';
 import Header from './Header';
 import Footer from './Footer';
 

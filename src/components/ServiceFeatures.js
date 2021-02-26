@@ -4,7 +4,7 @@ import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import ReactMarkdown from 'react-markdown';
 import { truncate } from 'lodash';
-import OverlayButton from './elements/OverlayButton';
+// import OverlayButton from './elements/OverlayButton';
 
 const Wrapper = styled.div`
   flex-direction: ${(props) => (props.isSecondary ? 'row-reverse' : '')};
@@ -31,10 +31,10 @@ const ServiceFeatures = ({ item, number }) => {
                 })}
               />
             </div>
-            <OverlayButton
+            {/* <OverlayButton
               linkTo={item.slug ? item.slug.current : ''}
               buttonText="View Details"
-            />
+            /> */}
           </div>
           <div className="column">
             <Img

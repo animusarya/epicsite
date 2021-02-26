@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import Button from './elements/Button';
+import Button from '../elements/Button';
 
 const Section = styled.div`
   nav {
@@ -35,11 +35,7 @@ const Section = styled.div`
     opacity: 0.5;
     border-radius: 4px;
   }
-  .navbar-end {
-    a {
-      font-family: ${(props) => props.theme.primaryFontFamily};
-    }
-  }
+
   @media screen and (max-width: 700px) {
     .navbar-menu {
       background: ${(props) => props.theme.borderColor} !important;

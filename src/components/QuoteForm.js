@@ -3,7 +3,7 @@ import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
 
-import OverlayButton from './elements/OverlayButton';
+// import OverlayButton from './elements/OverlayButton';
 
 const Section = styled.div`
   .columns {
@@ -123,9 +123,9 @@ const QuoteForm = ({
             <p className="help is-danger">{errors.message}</p>
           )}
         </div>
-        <div className="send-button mt-5">
+        {/* <div className="send-button mt-5">
           <OverlayButton buttonText="Send" onClick={handleSubmit} />
-        </div>
+        </div> */}
       </form>
     </Section>
   );
