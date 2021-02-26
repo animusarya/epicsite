@@ -67,7 +67,7 @@ const Services = () => {
               <div className="card">
                 <div className="card-image has-text-centered">
                   <figure className="image is-64x64">
-                    <img src={item.image} alt="icon-image" />
+                    <img src={item.image} alt="icon" />
                   </figure>
                 </div>
                 <div className="card-content">
