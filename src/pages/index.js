@@ -11,6 +11,7 @@ import Blog from '../components/home/Blog';
 // import Features from '../components/Features';
 // import HomeAboutUs from '../components/HomeAboutUs';
 import Reviews from '../components/home/Reviews';
+import Quote from '../components/home/Quote';
 // import Members from '../components/Members';
 
 export const query = graphql`
@@ -106,6 +107,7 @@ const IndexPage = () => {
       <About />
       <Reviews />
       <Blog />
+      <Quote />
       {/* <HomeAboutUs data={homeAboutUs} home={home} />
       <Features data={homeFeatures} />
       <Review review={review} home={home} />

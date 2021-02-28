@@ -27,14 +27,15 @@ const information = [
   },
   { id: 3, name: ' Lorem ipsum', url: '' },
   { id: 4, name: ' Lorem ipsum', url: '' },
+  { id: 5, name: ' Lorem ipsum', url: '' },
 ];
 const Footer = () => {
   return (
     <>
       <Container className="section">
         <div className="container">
-          <div className="columns">
-            <div className="column has-text-centered ">
+          <div className="columns is-vcentered">
+            <div className="column is-4 ">
               <LogoImg
                 src="/images/logo.png"
                 alt="footer-logo"
@@ -51,7 +52,7 @@ const Footer = () => {
             </div>
             <div className="column has-text-centered">
               <div>
-                <h1 className="has-text-weight-bold has-text-white is-size-5 mb-4">
+                <h1 className="has-text-weight-bold has-text-white is-size-5 mb-5">
                   Lorem ipsum
                 </h1>
                 <ul>
@@ -64,7 +65,7 @@ const Footer = () => {
               </div>
             </div>
             <div className="column has-text-centered">
-              <h1 className="has-text-weight-bold has-text-white is-size-5 mb-4">
+              <h1 className="has-text-weight-bold has-text-white is-size-5 mb-5">
                 Lorem ipsum
               </h1>
               <ul>
@@ -76,7 +77,7 @@ const Footer = () => {
               </ul>
             </div>
             <div className="column has-text-centered">
-              <h1 className="has-text-weight-bold has-text-white is-size-5 mb-4">
+              <h1 className="has-text-weight-bold has-text-white is-size-5 mb-5">
                 Lorem ipsum
               </h1>
               <ul>

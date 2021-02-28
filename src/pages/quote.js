@@ -5,7 +5,7 @@ import { graphql } from 'gatsby';
 import Seo from '../components/Seo';
 import Layout from '../components/global/Layout';
 // import HeroHeader from '../components/elements/HeroHeader';
-import QuoteForm from '../components/QuoteForm';
+// import QuoteForm from '../components/QuoteForm';
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.backgroundColor};
@@ -52,9 +52,7 @@ const QuoteFormPage = () => {
       <Container className="section">
         <div className="container ">
           <div className="columns is-centered ">
-            <div className="column is-6 ">
-              <QuoteForm />
-            </div>
+            <div className="column is-6 ">{/* <QuoteForm /> */}</div>
           </div>
         </div>
       </Container>

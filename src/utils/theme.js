@@ -25,9 +25,9 @@ export const theme = {
   dangerColor: '#f44336',
 
   primaryColor: mainBrandColor,
-  borderColor: '#e0e6ef',
+  borderColor: '#BDBDBD',
   backgroundColor: ' #4F4F4F;',
-  backgroundInputColor: '#b5b5b5',
+  backgroundInputColor: '#F9F9F9',
   backgroundInputColorDark: darkShades,
   fontSize: '16px',
   fontSizeSmall: '14px',
@@ -38,7 +38,7 @@ export const theme = {
   textColorInverse: lightShades,
   backgroundWhite: '#FFFFFF',
   textColorLite: '#FFFFFF',
-  textColorDark: '#585858',
+  textColorDark: '#252B42',
   menuTintColor: darkAccent,
   primaryFontFamily: "'Playfair Display', serif",
   secondaryFontFamily: "'Raleway', sans-serif",
@@ -73,22 +73,6 @@ const GlobalStyle = createGlobalStyle`
   .subtitle {
     color: ${lighten(0.06, theme.textColorLite)} !important;
     line-height: 1.5;
-  }
-  .button.is-secondary {
-    box-shadow: none;
-    border-radius: 0;
-    background-color: ${theme.lightAccent};
-    border-color: transparent;
-    transition: all 0.5s ease-out;
-    :hover {
-      background-color: ${darken(0.06, theme.lightAccent)};
-      border-color:  ${darken(0.06, theme.lightAccent)};
-      border-width: 0.5px;
-    }
-    :focus {
-      box-shadow: none !important;
-      border-color: transparent !important;
-    }
   }
   .has-text-primary{
     color:${theme.mainBrandColor} !important;
