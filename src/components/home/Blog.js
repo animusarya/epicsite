@@ -38,8 +38,8 @@ const BlogItem = [
 
 const Blog = () => {
   return (
-    <BlogWrapper className="hero is-medium ">
-      <div className=" hero-body container">
+    <BlogWrapper className=" hero is-medium ">
+      <div className="hero-body container">
         <Heading centered hasWhite>
           Check out our latest article
         </Heading>
@@ -59,7 +59,10 @@ const Blog = () => {
                       <Subtitle small>{item.subtitle}</Subtitle>
                     </div>
                   </div>
-                  <Link to="/" className="has-text-primary mt-4">
+                  <Link
+                    to="/"
+                    className="has-text-primary mt-4 has-text-weight-semibold"
+                  >
                     Read more
                     <span className="ml-3">
                       <i className="fas fa-long-arrow-alt-right " />

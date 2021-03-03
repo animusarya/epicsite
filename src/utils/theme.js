@@ -12,7 +12,7 @@ export const theme = {
   mainBrandColor,
   // Accent colors can be used to bring attention to design elements
   // by contrasting with the rest of the palette.
-  lightAccent: '#e9bd16',
+  lightAccent: '#7A2540',
   // Use this color as the background for your dark-on-light designs,
   // or the text color of an inverted design.
   lightShades,
@@ -39,6 +39,7 @@ export const theme = {
   backgroundWhite: '#FFFFFF',
   textColorLite: '#FFFFFF',
   textColorDark: '#252B42',
+  placeholderColor: '#737373',
   menuTintColor: darkAccent,
   primaryFontFamily: "'Playfair Display', serif",
   secondaryFontFamily: "'Raleway', sans-serif",
@@ -76,6 +77,9 @@ const GlobalStyle = createGlobalStyle`
   }
   .has-text-primary{
     color:${theme.mainBrandColor} !important;
+}
+a.has-text-primary:focus {
+  color:${theme.mainBrandColor} !important;
 }
   .button, .input, .card {
     box-shadow: ${theme.boxShadow};

@@ -2,6 +2,7 @@ import React from 'react';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
+import { InputGroup, SelectGroup } from '../elements';
 
 const Section = styled.div`
   h1 {
@@ -10,33 +11,6 @@ const Section = styled.div`
   .columns {
     margin-left: -0.75rem !important;
     margin-right: -0.75rem !important;
-  }
-  input,
-  textarea {
-    background: ${(props) => props.theme.backgroundInputColor} !important;
-    margin-top: 0.6rem;
-    border-color: ${(props) => props.theme.borderColor} !important;
-    box-shadow: none;
-    border-radius: 5px;
-  }
-  input:active,
-  .input:focus,
-  .textarea:active,
-  .textarea:focus {
-    border-color: ${(props) => props.theme.borderColor};
-    box-shadow: none;
-  }
-  input ::placeholder,
-  textarea ::placeholder {
-    background: ${(props) => props.theme.backgroundInputColor};
-    font-size: ${(props) => props.theme.fontSizeSmall};
-    font-weight: 400;
-  }
-  .field {
-    margin-bottom: 1.5rem;
-  }
-  .label {
-    font-size: ${(props) => props.theme.fontSizeSmall};
   }
   .button {
     background: ${(props) => props.theme.textColor};
@@ -63,126 +37,53 @@ const QuoteForm = ({
           <h1 className="is-size-2 has-text-weight-bold is-size-4-mobile mb-6 ">
             Get A Free Quote Here
           </h1>
-          <div className="field">
-            <label className="label mb-0  has-text-weight-semibold">
-              Name*
-            </label>
-            <div className="control">
-              <input
-                className="input "
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Full Name"
-                value={values.name}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.name && touched.name && (
-                <p className="help is-danger">{errors.name}</p>
-              )}
-            </div>
-          </div>
-          <div className="field">
-            <label className="label mb-0 has-text-weight-semibold">
-              Email*
-            </label>
-            <div className="control">
-              <input
-                className="input "
-                type="text"
-                name="email"
-                id="email"
-                placeholder="example@gmail.com"
-                value={values.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.email && touched.email && (
-                <p className="help is-danger">{errors.email}</p>
-              )}
-            </div>
-          </div>
-          <div className="field">
-            <label className="label mb-0 has-text-weight-semibold">
-              Department *
-            </label>
-            <div className="control">
-              <input
-                className="input "
-                type="text"
-                name="email"
-                id="email"
-                placeholder="Your email*"
-                value={values.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.email && touched.email && (
-                <p className="help is-danger">{errors.email}</p>
-              )}
-            </div>
-          </div>
-          <div className="field">
-            <label className="label mb-0 has-text-weight-semibold ">
-              Time *
-            </label>
-            <div className="control">
-              <input
-                className="input "
-                type="text"
-                name="subject"
-                id="subject"
-                placeholder="Subject"
-                value={values.subject}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.subject && touched.subject && (
-                <p className="help is-danger">{errors.subject}</p>
-              )}
-            </div>
-          </div>
-          <div className="field">
-            <label className="label mb-0 has-text-weight-semibold">
-              Lorem ipsum
-            </label>
-            <div className="control">
-              <input
-                className="input "
-                type="text"
-                name="subject"
-                id="subject"
-                placeholder="Lorem ipsum"
-                value={values.subject}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.subject && touched.subject && (
-                <p className="help is-danger">{errors.subject}</p>
-              )}
-            </div>
-          </div>
-          <div className="field">
-            <label className="label mb-0 has-text-weight-semibold">
-              Lorem ipsum
-            </label>
-            <div className="control">
-              <input
-                className="input "
-                type="text"
-                name="subject"
-                id="subject"
-                placeholder="Lorem ipsum "
-                value={values.subject}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.subject && touched.subject && (
-                <p className="help is-danger">{errors.subject}</p>
-              )}
-            </div>
-          </div>
+          <InputGroup
+            label="Name*"
+            name="name"
+            placeholder="Full Name"
+            type="text"
+            value={values.name}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errors={errors.name && touched.name ? errors.name : undefined}
+          />
+          <InputGroup
+            label="Email*"
+            name="email"
+            placeholder="example@gmail.com"
+            type="text"
+            value={values.email}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errors={errors.email && touched.email ? errors.email : undefined}
+          />
+          <SelectGroup label="Department*" text="Please Select" />
+          <SelectGroup label="Time *" text="4:00 Available" />
+          <InputGroup
+            label="Lorem ipsum"
+            placeholder="Lorem ipsum"
+            name="subject"
+            type="text"
+            value={values.subject}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errors={
+              errors.subject && touched.subject ? errors.subject : undefined
+            }
+          />
+          <InputGroup
+            label="Lorem ipsum"
+            placeholder="Lorem ipsum"
+            name="subject"
+            type="text"
+            value={values.subject}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errors={
+              errors.subject && touched.subject ? errors.subject : undefined
+            }
+          />
+
           <button
             type="submit"
             className="button is-fullwidth is-medium has-text-white"
@@ -197,28 +98,30 @@ const QuoteForm = ({
 
 export default withFormik({
   mapPropsToValues: () => ({
+    name: '',
     email: '',
-    password: '',
+    subject: '',
   }),
   validationSchema: Yup.object().shape({
     name: Yup.string().required('Name is required!'),
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required!'),
-    phoneNumber: Yup.number()
-      .typeError("That doesn't look like a phone number")
-      .positive("A phone number can't start with a minus")
-      .integer("A phone number can't include a decimal point")
-      .min(8)
-      .required('A phone number is required'),
     subject: Yup.string().required('Your subject is required!'),
-    message: Yup.string().required('Message is required!'),
   }),
-  handleSubmit: (values, { setSubmitting, props }) => {
-    props.onSubmit(values).finally(() => {
-      setSubmitting(false);
-    });
+
+  handleSubmit: (values, { setSubmitting, resetForm, props }) => {
+    // console.log('handle submit', values);
+    props
+      .onSubmit(values)
+      .then(() => {
+        setSubmitting(false);
+        resetForm();
+      })
+      .catch(() => {
+        setSubmitting(false);
+      });
   },
 
-  displayName: 'QuoteForm', // helps with React DevTools
+  displayName: 'QuoteForm',
 })(QuoteForm);
