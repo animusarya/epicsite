@@ -7,14 +7,11 @@ import Slider from 'react-slick';
 
 import { Heading, Subtitle } from '../elements';
 
-// import OverlayButton from '../components/elements/OverlayButton';
-
-// import HeroHeader from '../components/elements/HeroHeader';
-
 const Container = styled.div`
+  padding-bottom: 8rem;
   .container {
     background: ${(props) => props.theme.textColor};
-    border-radius: 10px;
+    border-radius: 24px;
   }
   .slick-dots li button:before {
     color: ${(props) => props.theme.darkAccent} !important;
@@ -36,7 +33,7 @@ const Container = styled.div`
   }
 
   .slick-dots {
-    bottom: 26px;
+    bottom: -86px;
   }
   .slick-dots li.slick-active button:before {
     color: ${(props) => props.theme.lightAccent} !important;
@@ -53,18 +50,44 @@ const Container = styled.div`
 const data = [
   {
     id: 1,
-    image: '',
+    image: '/images/placeholder-img1.png',
     name: 'Edward Newgate',
     type: 'Student',
+    review:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus egestas non semper vitae orci, cursus eleifend nisi. Ut neque accumsan amet eget aenean. Facilisis dictum pharetra.',
+  },
+  {
+    id: 2,
+    image: '/images/placeholder-img1.png',
+    name: 'Newgate',
+    type: 'Student',
+    review:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus egestas non semper vitae orci, cursus eleifend nisi. Ut neque accumsan amet eget aenean. Facilisis dictum pharetra.',
+  },
+  {
+    id: 3,
+    image: '/images/placeholder-img1.png',
+    name: 'Edward ',
+    type: 'Student',
+    review:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus egestas non semper vitae orci, cursus eleifend nisi. Ut neque accumsan amet eget aenean. Facilisis dictum pharetra.',
+  },
+  {
+    id: 4,
+    image: '/images/placeholder-img1.png',
+    name: 'Edward Newgate',
+    type: 'Student',
+    review:
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus egestas non semper vitae orci, cursus eleifend nisi. Ut neque accumsan amet eget aenean. Facilisis dictum pharetra.',
   },
 ];
 
 const Reviews = () => {
   const settings = {
     dots: true,
-    arrows: false,
+    arrows: true,
     infinite: true,
-    autoplay: false,
+    autoplay: true,
     autoplaySpeed: 3000,
     speed: 600,
     slidesToShow: 1,
@@ -76,12 +99,14 @@ const Reviews = () => {
       <div className="container py-6">
         <div className="columns is-centered">
           <div className="column is-10">
-            <Heading hasWhite centered>
-              What our customer are saying
-            </Heading>
+            <div className="mb-6 mt-4">
+              <Heading hasWhite centered>
+                What our customer are saying
+              </Heading>
+            </div>
             <Slider {...settings}>
               {data.map((item) => (
-                <div key={item.id} className="pb-3 mt-5">
+                <div key={item.id} className="pb-3 mt-5 mb-6">
                   <div className="columns">
                     <div className="column">
                       <div className="media is-align-items-center">
@@ -89,28 +114,23 @@ const Reviews = () => {
                           <figure className="image is-128x128">
                             <img
                               className="is-rounded"
-                              src="https://bulma.io/images/placeholders/96x96.png"
+                              src={item.image}
                               alt="Placeholder"
                             />
                           </figure>
                         </div>
                         <div className="media-content">
                           <p className="title is-4 is-family-primary ">
-                            Edward Newgate
+                            {item.name}
                           </p>
                           <p className="subtitle is-6 is-family-primary  is-uppercase">
-                            student
+                            {item.type}
                           </p>
                         </div>
                       </div>
                     </div>
                     <div className="column ">
-                      <Subtitle hasWhite>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Rhoncus egestas non semper vitae orci, cursus eleifend
-                        nisi. Ut neque accumsan amet eget aenean. Facilisis
-                        dictum pharetra.
-                      </Subtitle>
+                      <Subtitle hasWhite>{item.review}</Subtitle>
                     </div>
                   </div>
                 </div>
