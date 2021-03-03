@@ -39,6 +39,7 @@ export const theme = {
   backgroundWhite: '#FFFFFF',
   textColorLite: '#FFFFFF',
   textColorDark: '#252B42',
+  placeholderColor: '#737373',
   menuTintColor: darkAccent,
   primaryFontFamily: "'Playfair Display', serif",
   secondaryFontFamily: "'Raleway', sans-serif",
