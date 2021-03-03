@@ -66,6 +66,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     });
   });
+
   myServices.forEach(({ node }) => {
     createPage({
       path: `service/${node.slug ? node.slug.current : ''}`,

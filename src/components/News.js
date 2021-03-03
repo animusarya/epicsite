@@ -25,18 +25,22 @@ const Image = styled(Img)`
   object-fit: cover;
 `;
 
-const News = ({ node }) => {
+const News = ({ node: data }) => {
+  if (!data) {
+    return null;
+  }
+
   return (
     <CardWrapper
-      key={node._id}
-      to={`/article/${node.slug ? node.slug.current : ''}`}
+      key={data._id}
+      to={`/article/${data.slug ? data.slug.current : ''}`}
       className="card"
     >
       <div className="card-image">
-        {node.image && (
+        {data && data.image && data.image.asset && (
           <Image
-            fluid={node.image ? node.image.asset.fluid : ''}
-            alt={node.title ? node.title : 'Past Projects'}
+            fluid={data.image.asset.fluid}
+            alt={data.title ? data.title : 'Past Projects'}
             className="blog-img"
           />
         )}
@@ -45,10 +49,10 @@ const News = ({ node }) => {
           <div className="media-content">
             <div className="box">
               <h1 className="title is-size-4 has-text-weight-normal is-spaced is-family-primary">
-                {node.title}
+                {data.title}
               </h1>
               <p className="subtitle is-6">
-                {truncate(node.description, {
+                {truncate(data.description, {
                   length: 160,
                 })}
               </p>

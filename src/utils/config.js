@@ -19,6 +19,6 @@ module.exports = {
   googleAnalytics: 'UA-169811954-1',
   backgroundColor: '#e0e0e0',
   themeColor: '#e9bd16',
-  sanityId: 'l0iaejwg',
   mailchimp: '',
+  sanityId: 'l0iaejwg',
 };

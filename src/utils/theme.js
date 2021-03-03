@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset-advanced';
-import { darken, lighten } from 'polished';
+import { lighten } from 'polished';
 
 const mainBrandColor = '#7A2540';
 const lightShades = '#F5F5F5';
@@ -91,6 +91,9 @@ const GlobalStyle = createGlobalStyle`
   }
   .line-height-medium{
     line-height:30px !important;
+  }
+  .line-height-large {
+    line-height: 70px !important;
   }
 .has-radius-medium{
   border-radius:20px

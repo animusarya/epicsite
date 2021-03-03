@@ -18,6 +18,9 @@ const Section = styled.section`
 `;
 
 const AboutFeatures = ({ data }) => {
+  if (!data) {
+    return null;
+  }
   return (
     <Section className="section">
       <div className="container my-6">
