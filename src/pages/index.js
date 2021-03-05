@@ -12,6 +12,7 @@ import Blog from '../components/home/Blog';
 // import HomeAboutUs from '../components/HomeAboutUs';
 import Reviews from '../components/home/Reviews';
 import Quote from '../components/home/Quote';
+import BackgroundBlob from '../components/BackgroundBlob';
 // import Members from '../components/Members';
 
 export const query = graphql`
@@ -104,6 +105,7 @@ const IndexPage = () => {
       <Seo title="Home" />
       <HomeBanner />
       <Services />
+      <BackgroundBlob />
       <About />
       <Reviews />
       <Blog />
