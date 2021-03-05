@@ -1,5 +1,6 @@
 import React from 'react';
 import { Subtitle, Heading, Title } from '../elements';
+import BackgroundBlob from '../BackgroundBlob';
 
 const ServiceItem = [
   {
@@ -48,42 +49,45 @@ const ServiceItem = [
 
 const Services = () => {
   return (
-    <div className="section">
-      <div className="container">
-        <div className="columns is-centered has-text-centered">
-          <div className="column is-8">
-            <Heading centered darkText="Our" colouredText="services" />
-            <Subtitle>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-              enim ad minim veniam, quis nostrud exercitation ullamco laboris
-              nisi ut aliquip ex ea commodo consequat.
-            </Subtitle>
+    <>
+      <BackgroundBlob size="90vh" left="-20%" top="145%" />
+      <div className="section is-medium">
+        <div className="container">
+          <div className="columns is-centered has-text-centered">
+            <div className="column is-8">
+              <Heading centered darkText="Our" colouredText="services" />
+              <Subtitle>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </Subtitle>
+            </div>
           </div>
-        </div>
-        <div className="columns is-variable is-5 is-multiline is-centered mt-5">
-          {ServiceItem.map((item) => (
-            <div className="column is-4">
-              <div className="card p-6 has-radius-medium">
-                <div className="card-image has-text-centered mb-5 ">
-                  <figure className="image is-96x96">
-                    <img src={item.image} alt="icon" />
-                  </figure>
-                </div>
-                <div className="content">
-                  <div className="media">
-                    <div className="media-content">
-                      <Title>{item.title}</Title>
-                      <Subtitle small>{item.subtitle}</Subtitle>
+          <div className="columns is-variable is-5 is-multiline is-centered mt-5">
+            {ServiceItem.map((item) => (
+              <div className="column is-4">
+                <div className="card p-6 has-radius-medium">
+                  <div className="card-image has-text-centered mb-5 ">
+                    <figure className="image is-96x96">
+                      <img src={item.image} alt="icon" />
+                    </figure>
+                  </div>
+                  <div className="content">
+                    <div className="media">
+                      <div className="media-content">
+                        <Title>{item.title}</Title>
+                        <Subtitle small>{item.subtitle}</Subtitle>
+                      </div>
                     </div>
                   </div>
                 </div>
               </div>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 };
 export default Services;

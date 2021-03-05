@@ -8,7 +8,7 @@ import Slider from 'react-slick';
 import { Heading, Subtitle } from '../elements';
 
 const Container = styled.div`
-  padding-bottom: 8rem;
+  /* padding-bottom: 8rem; */
   .container {
     background: ${(props) => props.theme.textColor};
     border-radius: 24px;
@@ -33,7 +33,7 @@ const Container = styled.div`
   }
 
   .slick-dots {
-    bottom: -86px;
+    bottom: -135px;
   }
   .slick-dots li.slick-active button:before {
     color: ${(props) => props.theme.lightAccent} !important;
@@ -85,7 +85,7 @@ const data = [
 const Reviews = () => {
   const settings = {
     dots: true,
-    arrows: true,
+    arrows: false,
     infinite: true,
     autoplay: true,
     autoplaySpeed: 3000,
@@ -95,7 +95,7 @@ const Reviews = () => {
     lazyLoad: true,
   };
   return (
-    <Container className="section">
+    <Container className="section is-medium">
       <div className="container py-6">
         <div className="columns is-centered">
           <div className="column is-10">

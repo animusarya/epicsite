@@ -11,7 +11,7 @@ const Section = styled.div`
 const Quote = () => {
   return (
     <Section>
-      <div className="section">
+      <div className="section is-medium">
         <div className="container">
           <QuoteForm />
         </div>
