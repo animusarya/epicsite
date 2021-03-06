@@ -25,6 +25,15 @@ const Container = styled.div`
     color: ${(props) => props.theme.lightAccent} !important;
     font-size: 10px;
   }
+  button {
+    border: none;
+    background-color: transparent;
+    box-shadow: none;
+    color: ${(props) => props.theme.lightAccent} !important;
+    :focus {
+      box-shadow: none !important;
+    }
+  }
 `;
 
 const data = [
@@ -134,13 +143,13 @@ export default class PreviousNextMethods extends Component {
           </div>
         </div>
         <div className="columns is-centered mt-5">
-          <div className="column is-1 has-text-right">
+          <div className="column is-1 has-text-left">
             <button type="button" className="button" onClick={this.previous}>
               <i className="fas fa-long-arrow-alt-left" />
             </button>
           </div>
           <div className="column is-1" />
-          <div className="column is-1">
+          <div className="column is-1 has-text-right">
             <button type="button" className="button" onClick={this.next}>
               <i className="fas fa-long-arrow-alt-right" />
             </button>

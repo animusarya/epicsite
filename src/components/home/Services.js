@@ -50,8 +50,8 @@ const ServiceItem = [
 const Services = () => {
   return (
     <>
-      <BackgroundBlob size="90vh" left="-20%" top="145%" />
       <div className="section is-medium">
+        <BackgroundBlob size="90vh" left="-20%" />
         <div className="container">
           <div className="columns is-centered has-text-centered">
             <div className="column is-8">

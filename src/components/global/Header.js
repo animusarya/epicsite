@@ -9,6 +9,9 @@ const Section = styled.div`
   }
   .navbar-item {
     font-size: ${(props) => props.theme.fontSizeMedium};
+    :focus {
+      background-color: transparent !important;
+    }
   }
   .navbar-start,
   .navbar-end,

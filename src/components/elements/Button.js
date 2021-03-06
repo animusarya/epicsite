@@ -18,11 +18,18 @@ const ButtonWrapper = styled.div`
     padding-right: ${(props) => (props.isLarge ? '4rem' : '')};
     padding-top: 1.5rem;
     padding-bottom: 1.5rem;
-    :hover {
+    :hover,
+    :focus {
       color: ${(props) =>
         props.isTransparent
           ? props.theme.textColorLite
           : props.theme.textColor} !important;
+      border: 1.5px solid
+        ${(props) =>
+          props.borderDark
+            ? props.theme.darkAccent
+            : props.theme.backgroundWhite};
+      box-shadow: none !important;
     }
   }
 `;
