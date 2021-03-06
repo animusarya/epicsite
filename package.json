@@ -17,7 +17,8 @@
     "develop": "gatsby develop",
     "serve": "gatsby serve",
     "build": "gatsby build",
-    "lint": "eslint --ignore-path .gitignore \"src/**/*.{js,jsx}\""
+    "lint": "eslint --ignore-path .gitignore \"src/**/*.{js,jsx}\"",
+    "deploy": "vercel --prod"
   },
   "husky": {
     "hooks": {
