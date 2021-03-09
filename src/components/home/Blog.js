@@ -1,10 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import { Heading, Title, Subtitle, Button } from '../elements';
+import { Heading, Title, Subtitle, Button, ScrollAnimation } from '../elements';
 
 const BlogWrapper = styled.div`
-  padding-top: 9rem;
+  position: relative;
+  padding-top: 3rem;
   .hero {
     background: ${(props) => props.theme.mainBrandColor} !important;
   }
@@ -44,6 +45,12 @@ const Blog = () => {
   return (
     <BlogWrapper>
       <div className=" hero is-medium ">
+        <ScrollAnimation
+          zIndex="0"
+          top="23.5%"
+          left="14%"
+          animation="animate__fadeInUp"
+        />
         <div className="hero-body container">
           <Heading centered hasWhite>
             Check out our latest article

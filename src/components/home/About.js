@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button, Heading, Subtitle } from '../elements';
+import { Button, Heading, ScrollAnimation, Subtitle } from '../elements';
 import BackgroundBlob from '../BackgroundBlob';
 
 const Container = styled.div`
@@ -35,6 +35,11 @@ const About = () => {
             </div>
             <div className="column is-6 is-offset-2">
               <img src="/images/home-about-bg.png" alt="about" />
+              <ScrollAnimation
+                top="75%"
+                left="50%"
+                animation="animate__fadeInUp"
+              />
             </div>
           </div>
         </div>

@@ -5,9 +5,10 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import Slider from 'react-slick';
 
-import { Heading, Subtitle } from '../elements';
+import { Heading, Subtitle, ScrollAnimation } from '../elements';
 
 const Container = styled.div`
+  position: relative;
   .container {
     background: ${(props) => props.theme.textColor};
     border-radius: 24px;
@@ -23,7 +24,7 @@ const Container = styled.div`
   }
   .slick-dots li.slick-active button:before {
     color: ${(props) => props.theme.lightAccent} !important;
-    font-size: 10px;
+    font-size: 12px;
   }
   button {
     border: none;
@@ -97,6 +98,11 @@ export default class PreviousNextMethods extends Component {
     };
     return (
       <Container className="section is-medium">
+        <ScrollAnimation
+          top="10%"
+          right="12%"
+          animation="animate__fadeInRightBig"
+        />
         <div className="container py-6">
           <div className="columns is-centered">
             <div className="column is-10">
@@ -142,19 +148,25 @@ export default class PreviousNextMethods extends Component {
             </div>
           </div>
         </div>
+
         <div className="columns is-centered mt-5">
           <div className="column is-1 has-text-left">
             <button type="button" className="button" onClick={this.previous}>
-              <i className="fas fa-long-arrow-alt-left" />
+              <i className="fas fa-long-arrow-alt-left is-size-4" />
             </button>
           </div>
           <div className="column is-1" />
           <div className="column is-1 has-text-right">
             <button type="button" className="button" onClick={this.next}>
-              <i className="fas fa-long-arrow-alt-right" />
+              <i className="fas fa-long-arrow-alt-right is-size-4" />
             </button>
           </div>
         </div>
+        <ScrollAnimation
+          bottom="20.7%"
+          left="12%"
+          animation="animate__fadeInLeftBig"
+        />
       </Container>
     );
   }
