@@ -3,6 +3,7 @@ import { Blob } from 'react-blob';
 
 const BackgroundBlob = ({ size, top, bottom, left, right }) => (
   <Blob
+    className="is-hidden-mobile"
     size={size}
     style={{
       position: 'absolute',
