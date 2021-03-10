@@ -13,7 +13,7 @@ const Quote = () => {
     <Section>
       <div className="section is-medium">
         <div className="container">
-          <QuoteForm />
+          <QuoteForm onFormSubmit={(v) => console.log(v, 'data')} />
         </div>
       </div>
     </Section>

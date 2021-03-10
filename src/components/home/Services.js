@@ -67,7 +67,7 @@ const Services = () => {
           <div className="columns is-variable is-5 is-multiline is-centered mt-5">
             {ServiceItem.map((item) => (
               <div className="column is-4">
-                <div className="card p-6 has-radius-medium">
+                <div className="card p-6 has-radius-medium mb-4">
                   <div className="card-image has-text-centered mb-5 ">
                     <figure className="image is-96x96">
                       <img src={item.image} alt="icon" />

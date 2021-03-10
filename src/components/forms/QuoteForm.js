@@ -1,6 +1,8 @@
 import React from 'react';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
+import swal from 'sweetalert';
+
 import styled from 'styled-components';
 import { InputGroup, SelectGroup } from '../elements';
 
@@ -30,7 +32,7 @@ const QuoteForm = ({
     <Section className="columns is-centered">
       <div className="column is-6">
         <form
-          method="post"
+          // method="post"
           onSubmit={handleSubmit}
           className="box p-6 has-radius-medium"
         >
@@ -112,15 +114,15 @@ export default withFormik({
 
   handleSubmit: (values, { setSubmitting, resetForm, props }) => {
     // console.log('handle submit', values);
-    props
-      .onSubmit(values)
-      .then(() => {
-        setSubmitting(false);
-        resetForm();
-      })
-      .catch(() => {
-        setSubmitting(false);
-      });
+    props.onFormSubmit(values);
+    swal({
+      title: 'Thanks!',
+      text: 'You clicked the button!',
+      icon: 'success',
+      button: 'Aww yiss!',
+    });
+    setSubmitting(false);
+    resetForm();
   },
 
   displayName: 'QuoteForm',

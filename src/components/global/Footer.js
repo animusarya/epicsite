@@ -5,7 +5,7 @@ import { ScrollAnimation, Subtitle } from '../elements';
 const Container = styled.footer`
   position: relative;
   background-color: ${(props) => props.theme.textColor};
-  padding: 5rem 1.5rem;
+  padding: 5rem 0rem;
   li {
     margin-bottom: 1rem;
     color: ${(props) => props.theme.textColorLite} !important;
@@ -38,6 +38,7 @@ const Footer = () => {
         zIndex="auto"
         animation="animate__fadeInTopLeft"
         image="images/Footer-dotted.png"
+        bottom={0}
       />
       <div>
         <div className="section">

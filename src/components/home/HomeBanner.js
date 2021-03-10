@@ -15,24 +15,30 @@ const Section = styled.div`
   }
 `;
 
+const TriangleSection = styled.div`
+  clip-path: polygon(0 0, 0 78%, 50% 100%, 100% 78%, 100% 0, 51% 0);
+`;
+
 const HomeBanner = () => {
   return (
-    <Section className="hero is-large">
-      <div className="hero-body has-text-centered">
-        <div className="columns is-centered">
-          <div className="column is-6">
-            <h1 className="title mb-5 has-text-weight-bold line-height-large">
-              Lorem ipsum dolor amet, consectetur{' '}
-            </h1>
-            <p className="subtitle has-text-weight-normal is-size-4 mb-5">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit sit amet,
-              consectetur adipiscing elit
-            </p>
-            <Button isLarge>Consult Today</Button>
+    <TriangleSection>
+      <Section className="hero is-large">
+        <div className="hero-body has-text-centered">
+          <div className="columns is-centered">
+            <div className="column is-6">
+              <h1 className="title mb-5 has-text-weight-bold line-height-large">
+                Lorem ipsum dolor amet, consectetur{' '}
+              </h1>
+              <p className="subtitle has-text-weight-normal is-size-4 mb-5">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit sit
+                amet, consectetur adipiscing elit
+              </p>
+              <Button isLarge>Consult Today</Button>
+            </div>
           </div>
         </div>
-      </div>
-    </Section>
+      </Section>
+    </TriangleSection>
   );
 };
 export default HomeBanner;
