@@ -9,12 +9,6 @@ const BlogWrapper = styled.div`
   .hero {
     background: ${(props) => props.theme.mainBrandColor} !important;
   }
-
-  a {
-    :hover {
-      color: ${(props) => props.theme.mainBrandColor}!important;
-    }
-  }
 `;
 
 const BlogItem = [
@@ -86,7 +80,9 @@ const Blog = () => {
             ))}
           </div>
           <div className="has-text-centered mt-6 pt-5">
-            <Button isLarge>View all</Button>
+            <Button hasBackgroundWhite isLarge to="/">
+              View all
+            </Button>
           </div>
         </div>
       </div>

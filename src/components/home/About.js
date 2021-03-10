@@ -9,6 +9,9 @@ const Container = styled.div`
     font-size: 15px;
     line-height: 20px;
   }
+  .buttonWrapper {
+    margin-left: -1rem;
+  }
 `;
 
 const About = () => {
@@ -29,9 +32,9 @@ const About = () => {
                 egestas non semper vitae orci, cursus eleifend nisi. Ut neque
                 accumsan amet eget aenean. Facilisis dictum pharetra.
               </Subtitle>
-              <Button borderDark className="mt-5">
-                Learn more
-              </Button>
+              <div className="mt-4 buttonWrapper">
+                <Button isLarge>Learn more</Button>
+              </div>
             </div>
             <div className="column is-6 is-offset-2">
               <img src="/images/home-about-bg.png" alt="about" />

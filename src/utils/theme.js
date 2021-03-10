@@ -81,11 +81,9 @@ const GlobalStyle = createGlobalStyle`
   .has-text-primary{
     color:${theme.mainBrandColor} !important;
   }
-
-  a.has-text-primary:focus {
-  color:${theme.mainBrandColor} !important;
+  a.has-text-primary:hover,:focus {
+      color: ${theme.mainBrandColor}!important;
   }
-
   .button, .input, .card {
     box-shadow: ${theme.boxShadow};
   }
@@ -100,6 +98,7 @@ const GlobalStyle = createGlobalStyle`
 
   .is-family-primary {
     font-family: ${theme.primaryFontFamily} !important;
+
   }
 
   .line-height-medium{
@@ -157,7 +156,7 @@ const GlobalStyle = createGlobalStyle`
     color: #ffffff;
     font-size: 20px;
     font-weight: 500;
-    border: 1.5px solid #ffffff;
+    ${'' /* border: 1.5px solid #ffffff; */}
     font-family: ${(props) => props.theme.primaryFontFamily};
     border-radius: 5px;
     padding: 0 1rem;

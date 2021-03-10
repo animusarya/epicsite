@@ -16,7 +16,7 @@ const Section = styled.div`
 `;
 
 const TriangleSection = styled.div`
-  clip-path: polygon(0 0, 0 78%, 50% 100%, 100% 78%, 100% 0, 51% 0);
+  clip-path: polygon(0 0, 0 92%, 50% 100%, 100% 92%, 100% 0, 51% 0);
 `;
 
 const HomeBanner = () => {
@@ -33,7 +33,9 @@ const HomeBanner = () => {
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit sit
                 amet, consectetur adipiscing elit
               </p>
-              <Button isLarge>Consult Today</Button>
+              <Button hasBackgroundWhite isLarge to="/">
+                Consult Today
+              </Button>
             </div>
           </div>
         </div>

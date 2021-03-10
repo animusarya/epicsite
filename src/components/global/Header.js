@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
-import Button from '../elements/Button';
 
 const Section = styled.div`
   nav {
@@ -36,7 +35,9 @@ const Section = styled.div`
     background: ${(props) => props.theme.mainBrandColor};
     border-radius: 4px;
   }
-
+  .animated-link {
+    border: 1.5px solid #ffffff;
+  }
   @media screen and (max-width: 700px) {
     .navbar-menu {
       background: ${(props) => props.theme.borderColor} !important;
