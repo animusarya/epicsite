@@ -117,7 +117,15 @@ const Header = () => {
               </Link>
 
               <div className="navbar-item has-text-weight-normal has-text-white px-5">
-                <Button isTransparent>Contact Us</Button>
+                <Link to="/service/service" className="animated-link">
+                  Contact Us
+                  <span />
+                  <span />
+                  <span />
+                  <span />
+                </Link>
+
+                {/* <Button isTransparent>Contact Us</Button> */}
               </div>
             </div>
           </div>
