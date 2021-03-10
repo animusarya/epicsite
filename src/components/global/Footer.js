@@ -5,6 +5,7 @@ import { ScrollAnimation, Subtitle } from '../elements';
 const Container = styled.footer`
   position: relative;
   background-color: ${(props) => props.theme.textColor};
+  padding: 5rem 1.5rem;
   li {
     margin-bottom: 1rem;
     color: ${(props) => props.theme.textColorLite} !important;
@@ -35,7 +36,7 @@ const Footer = () => {
     <Container>
       <ScrollAnimation
         zIndex="auto"
-        animation="animate__fadeInUpBig"
+        animation="animate__fadeInTopLeft"
         image="images/Footer-dotted.png"
       />
       <div>

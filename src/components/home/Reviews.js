@@ -149,7 +149,7 @@ export default class PreviousNextMethods extends Component {
           </div>
         </div>
 
-        <div className="columns is-centered mt-5">
+        <div className="columns is-centered mt-5 is-flex">
           <div className="column is-1 has-text-left">
             <button type="button" className="button" onClick={this.previous}>
               <i className="fas fa-long-arrow-alt-left is-size-4" />

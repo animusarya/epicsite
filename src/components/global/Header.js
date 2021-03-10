@@ -34,8 +34,6 @@ const Section = styled.div`
   }
   .navbar-burger {
     background: ${(props) => props.theme.mainBrandColor};
-    color: ${(props) => props.theme.darkAccent};
-    opacity: 0.5;
     border-radius: 4px;
   }
 
@@ -54,12 +52,18 @@ const Header = () => {
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="container">
           <div className="navbar-brand">
+            <Link
+              className="navbar-item is-justify-content-center is-hidden-desktop"
+              to="/"
+            >
+              <img src="/images/logo.png" alt="site logo" />
+            </Link>
             <button
               type="button"
               className={
                 isActive
-                  ? 'is-active navbar-burger  mt-5'
-                  : 'navbar-burger  mt-5'
+                  ? 'is-active navbar-burger  mt-5 mr-3 has-text-white'
+                  : 'navbar-burger mt-5 mr-3 has-text-white'
               }
               aria-label="menu"
               aria-expanded="false"
@@ -99,22 +103,21 @@ const Header = () => {
                 How we can help
               </Link>
             </div>
-            <div className="my-navbar-center">
+            <div className="my-navbar-center is-hidden-mobile">
               <Link className="navbar-item is-justify-content-center" to="/">
                 <img src="/images/logo.png" alt="site logo" />
               </Link>
             </div>
             <div className="navbar-end">
-              <div className="navbar-item">
-                <Link
-                  to="/"
-                  className="navbar-item has-text-weight-normal has-text-white px-5"
-                >
-                  Stay in the loop
-                </Link>
-                <div className="navbar-item has-text-weight-normal has-text-white px-5">
-                  <Button isTransparent>Contact Us</Button>
-                </div>
+              <Link
+                to="/"
+                className="navbar-item has-text-weight-normal has-text-white px-5"
+              >
+                Stay in the loop
+              </Link>
+
+              <div className="navbar-item has-text-weight-normal has-text-white px-5">
+                <Button isTransparent>Contact Us</Button>
               </div>
             </div>
           </div>
