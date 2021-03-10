@@ -62,7 +62,7 @@
     "slick-carousel": "^1.8.1",
     "styled-components": "^5.1.1",
     "styled-reset-advanced": "^1.0.3",
-    "sweetalert": "^2.1.2",
+    "sweetalert2": "^10.15.5",
     "yup": "^0.32.1"
   },
   "devDependencies": {

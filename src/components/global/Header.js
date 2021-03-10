@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { Link } from 'gatsby';
+import { Button } from '../elements';
 
 const Section = styled.div`
   nav {
@@ -31,16 +32,18 @@ const Section = styled.div`
       transition: 0.6s;
     }
   }
+
   .navbar-burger {
     background: ${(props) => props.theme.mainBrandColor};
     border-radius: 4px;
+    color: #fff !important;
   }
   .animated-link {
     border: 1.5px solid #ffffff;
   }
   @media screen and (max-width: 700px) {
     .navbar-menu {
-      background: ${(props) => props.theme.borderColor} !important;
+      background: ${(props) => props.theme.mainBrandColor} !important;
     }
   }
 `;
@@ -118,15 +121,7 @@ const Header = () => {
               </Link>
 
               <div className="navbar-item has-text-weight-normal has-text-white px-5">
-                <Link to="/service/service" className="animated-link">
-                  Contact Us
-                  <span />
-                  <span />
-                  <span />
-                  <span />
-                </Link>
-
-                {/* <Button isTransparent>Contact Us</Button> */}
+                <Button to="/">Contact Us</Button>
               </div>
             </div>
           </div>

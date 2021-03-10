@@ -14,6 +14,11 @@ const Container = styled.footer`
   a:hover {
     color: ${(props) => props.theme.textColorLite} !important;
   }
+  .column {
+    @media screen and (max-width: 768px) {
+      text-align: left !important;
+    }
+  }
 `;
 
 const LogoImg = styled.img`

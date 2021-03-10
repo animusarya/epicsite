@@ -10,7 +10,7 @@ const Text = styled.p`
 const Subtitle = ({ children, centered, hasWhite, ...props }) => (
   <div>
     <Text
-      className={`line-height-medium is-size-5-mobile has-text-weight-normal  ${
+      className={`line-height-medium is-size-5-mobile has-text-weight-semibold  ${
         centered ? 'has-text-centered' : 'has-text-left'
       } ${hasWhite ? 'has-text-white' : ''}`}
       // eslint-disable-next-line react/jsx-props-no-spreading

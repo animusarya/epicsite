@@ -107,6 +107,9 @@ const GlobalStyle = createGlobalStyle`
 
   .line-height-large {
     line-height: 70px !important;
+    @media screen and (max-width: 768px) {
+      line-height:40px !important;
+    }
   }
 
   .has-radius-medium{
@@ -185,6 +188,7 @@ const GlobalStyle = createGlobalStyle`
 
   .animated-link:hover {
     color: black;
+    background: transparent;
   }
 
   .animated-link:hover span {

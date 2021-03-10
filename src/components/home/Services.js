@@ -56,7 +56,7 @@ const Services = () => {
           <div className="columns is-centered has-text-centered">
             <div className="column is-8">
               <Heading centered darkText="Our" colouredText="services" />
-              <Subtitle>
+              <Subtitle centered>
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
                 enim ad minim veniam, quis nostrud exercitation ullamco laboris

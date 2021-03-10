@@ -1,7 +1,7 @@
 import React from 'react';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
-import swal from 'sweetalert';
+import swal from 'sweetalert2';
 
 import styled from 'styled-components';
 import { InputGroup, SelectGroup } from '../elements';
@@ -17,6 +17,10 @@ const Section = styled.div`
   .button {
     background: ${(props) => props.theme.textColor};
     border-radius: 8px;
+    margin: auto 0 !important;
+    :hover {
+      color: #000 !important;
+    }
   }
 `;
 
@@ -88,9 +92,13 @@ const QuoteForm = ({
 
           <button
             type="submit"
-            className="button is-fullwidth is-medium has-text-white"
+            className="button is-fullwidth is-medium has-text-white animated-link"
           >
             Subscribe
+            <span />
+            <span />
+            <span />
+            <span />
           </button>
         </form>
       </div>
@@ -115,11 +123,12 @@ export default withFormik({
   handleSubmit: (values, { setSubmitting, resetForm, props }) => {
     // console.log('handle submit', values);
     props.onFormSubmit(values);
-    swal({
-      title: 'Thanks!',
-      text: 'You clicked the button!',
+
+    swal.fire({
       icon: 'success',
-      button: 'Aww yiss!',
+      title: 'Submit successfully',
+      showConfirmButton: false,
+      timer: 1500,
     });
     setSubmitting(false);
     resetForm();
