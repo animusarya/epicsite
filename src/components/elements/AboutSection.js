@@ -20,7 +20,7 @@ const Container = styled.div`
 const AboutSection = ({ subtitle, hasButton, Img }) => {
   return (
     <>
-      <BackgroundBlob size="70vh" right="-10%" />
+      <BackgroundBlob size="70vh" right="-10%" top="20%" />
       <Container className="section is-medium">
         <div className="container">
           <div className="columns">

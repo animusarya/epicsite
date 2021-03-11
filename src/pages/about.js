@@ -1,9 +1,17 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+import styled from 'styled-components';
+
 import Layout from '../components/global/Layout';
 import Seo from '../components/Seo';
 import { HeroHeader, AboutSection } from '../components/elements';
 import Testimonial from '../components/about/Testimonial';
+
+const Container = styled.div`
+  .about-wrapper {
+    position: relative;
+  }
+`;
 
 export const aboutQuery = graphql`
   query myBlog {
@@ -71,15 +79,19 @@ const About = () => {
   return (
     <Layout>
       <Seo title="About" />
-      <HeroHeader
-        title="Who we are"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-      />
-      <AboutSection
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci ut orci, orci, iaculis nunc. In aenean aenean pulvinar nibh in ipsum tempor semper aliquet. Aliquet ultricies interdum vel praesent egestas nisi amet orci massa. Tempor."
-        Img="/images/about2.png"
-      />
-      <Testimonial />
+      <Container>
+        <HeroHeader
+          title="Who we are"
+          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        />
+        <div className="pt-6 about-wrapper">
+          <AboutSection
+            subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci ut orci, orci, iaculis nunc. In aenean aenean pulvinar nibh in ipsum tempor semper aliquet. Aliquet ultricies interdum vel praesent egestas nisi amet orci massa. Tempor."
+            Img="/images/about2.png"
+          />
+        </div>
+        <Testimonial />
+      </Container>
     </Layout>
   );
 };

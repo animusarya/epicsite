@@ -3,9 +3,7 @@ import styled from 'styled-components';
 import Heading from './Heading';
 import Subtitle from './Subtitle';
 
-const Wrapper = styled.div`
-  padding-bottom: 9rem;
-`;
+const Wrapper = styled.div``;
 
 const SectionHero = styled.div`
   background-image: url(/images/herobg.png);
@@ -15,7 +13,7 @@ const SectionHero = styled.div`
 
 const HeroHeader = ({ title, subtitle }) => {
   return (
-    <Wrapper>
+    <Wrapper className="mb-6">
       <SectionHero className="hero is-medium">
         <div className="hero-body has-text-centered">
           <div className="columns is-centered mb-0">

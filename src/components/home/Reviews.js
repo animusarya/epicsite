@@ -8,6 +8,8 @@ import Slider from 'react-slick';
 import { Heading, Subtitle, ScrollAnimation } from '../elements';
 
 const Container = styled.div`
+  background-color: ${(props) => props.bgColor};
+
   position: relative;
   .container {
     background: ${(props) => props.theme.textColor};
@@ -16,21 +18,27 @@ const Container = styled.div`
   .column.is-three-fifths {
     margin-right: 2px;
   }
-  img {
+  .is-rounded {
     border: 2px solid ${(props) => props.theme.backgroundWhite};
   }
   .slick-dots {
     bottom: -115px;
   }
   .slick-dots li.slick-active button:before {
-    color: ${(props) => props.theme.lightAccent} !important;
+    color: ${(props) =>
+      props.bgColor ? 'white' : props.theme.lightAccent} !important;
     font-size: 12px;
+  }
+  .slick-dots li button:before {
+    color: ${(props) =>
+      props.bgColor ? 'white' : props.theme.lightAccent} !important;
   }
   button {
     border: none;
     background-color: transparent;
     box-shadow: none;
-    color: ${(props) => props.theme.lightAccent} !important;
+    color: ${(props) =>
+      props.bgColor ? 'white' : props.theme.lightAccent} !important;
     :focus {
       box-shadow: none !important;
     }
@@ -96,9 +104,11 @@ export default class PreviousNextMethods extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
+    const { bgColor } = this.props;
     return (
-      <Container className="section is-medium">
+      <Container bgColor={bgColor} className="section is-medium">
         <ScrollAnimation
+          zIndex={1}
           top="10%"
           right="12%"
           animation="animate__fadeInRightBig"
@@ -163,6 +173,7 @@ export default class PreviousNextMethods extends Component {
           </div>
         </div>
         <ScrollAnimation
+          zIndex={1}
           bottom="20.7%"
           left="12%"
           animation="animate__fadeInLeftBig"

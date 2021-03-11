@@ -4,12 +4,13 @@ import { graphql } from 'gatsby';
 import ContactForm from '../components/ContactForm';
 import Seo from '../components/Seo';
 import Layout from '../components/global/Layout';
+import { HeroHeader } from '../components/elements';
 // import HeroHeader from '../components/elements/HeroHeader';
 // import Information from '../components/elements/Information';
+import Reviews from '../components/home/Reviews';
+import { theme } from '../utils/theme';
 
-const Container = styled.div`
-  background-color: ${(props) => props.theme.backgroundColor};
-`;
+const Container = styled.div``;
 
 export const query = graphql`
   query ContactPageQuery {
@@ -45,34 +46,21 @@ const Contact = () => {
   return (
     <Layout>
       <Seo title="Contact Us" />
-      {/* <HeroHeader
-        heading="Contact"
-        background={
-          contact && contact.coverImage && contact.coverImage.contactPage
-            ? contact.coverImage.contactPage.asset.fluid.src
-            : ''
-        }
+      <HeroHeader
+        title="Contact Us"
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       />
-      <Information
-        telephone={contact.telephone}
-        email={contact.email}
-        title={contact.contact.title}
-        description={contact.contact.description}
-        image={
-          contact && contact.contact.image
-            ? contact.contact.image.asset.fluid
-            : ' '
-        }
-      /> */}
       <Container className="section">
-        <div className="container ">
-          <div className="columns is-centered">
-            <div className="column is-6 ">
+        <div className="container mb-6">
+          <div className="columns is-centered is-vcentered">
+            <div className="column is-6">Map </div>
+            <div className="column is-6">
               <ContactForm />
             </div>
           </div>
         </div>
       </Container>
+      <Reviews bgColor={theme.mainBrandColor} />
     </Layout>
   );
 };
