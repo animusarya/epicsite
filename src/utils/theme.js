@@ -24,11 +24,11 @@ export const theme = {
   darkShades,
   dangerColor: '#f44336',
 
-  primaryColor: mainBrandColor,
+  primaryColor: '#18191F',
   borderColor: '#BDBDBD',
   backgroundColor: ' #4F4F4F;',
   backgroundInputColor: '#F9F9F9',
-  backgroundInputColorDark: darkShades,
+  backgroundInputColorDark: '#EDC4D1',
   fontSize: '16px',
   fontSizeSmall: '14px',
   fontSizeMedium: '18px',

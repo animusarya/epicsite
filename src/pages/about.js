@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 import Layout from '../components/global/Layout';
 import Seo from '../components/Seo';
 import { HeroHeader, AboutSection } from '../components/elements';
+import Testimonial from '../components/about/Testimonial';
 
 export const aboutQuery = graphql`
   query myBlog {
@@ -78,6 +79,7 @@ const About = () => {
         subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci ut orci, orci, iaculis nunc. In aenean aenean pulvinar nibh in ipsum tempor semper aliquet. Aliquet ultricies interdum vel praesent egestas nisi amet orci massa. Tempor."
         Img="/images/about2.png"
       />
+      <Testimonial />
     </Layout>
   );
 };
