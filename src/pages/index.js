@@ -6,7 +6,7 @@ import Layout from '../components/global/Layout';
 
 import HomeBanner from '../components/home/HomeBanner';
 import Services from '../components/home/Services';
-import About from '../components/home/About';
+import { AboutSection } from '../components/elements';
 import Blog from '../components/home/Blog';
 // import Features from '../components/Features';
 // import HomeAboutUs from '../components/HomeAboutUs';
@@ -105,7 +105,11 @@ const IndexPage = () => {
       <Seo title="Home" />
       <HomeBanner />
       <Services />
-      <About />
+      <AboutSection
+        hasButton
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus egestas non semper vitae orci, cursus eleifend nisi. Ut neque accumsan amet eget aenean. Facilisis dictum pharetra."
+        Img="/images/home-about-bg.png"
+      />
       <Reviews />
       <Blog />
       <Quote />

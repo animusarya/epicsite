@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button, Heading, ScrollAnimation, Subtitle } from '../elements';
+import Heading from './Heading';
+import Button from './Button';
+import ScrollAnimation from './ScrollAnimation';
+import Subtitle from './Subtitle';
 import BackgroundBlob from '../BackgroundBlob';
 
 const Container = styled.div`
@@ -14,7 +17,7 @@ const Container = styled.div`
   }
 `;
 
-const About = () => {
+const AboutSection = ({ subtitle, hasButton, Img }) => {
   return (
     <>
       <BackgroundBlob size="70vh" right="-10%" />
@@ -27,17 +30,13 @@ const About = () => {
                 darkText="Lorem ipsum dolor"
                 colouredText="sit amet"
               />
-              <Subtitle>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus
-                egestas non semper vitae orci, cursus eleifend nisi. Ut neque
-                accumsan amet eget aenean. Facilisis dictum pharetra.
-              </Subtitle>
+              <Subtitle>{subtitle}</Subtitle>
               <div className="mt-4 buttonWrapper">
-                <Button isLarge>Learn more</Button>
+                {hasButton && <Button isLarge>Learn more</Button>}
               </div>
             </div>
             <div className="column is-6 is-offset-2">
-              <img src="/images/home-about-bg.png" alt="about" />
+              <img src={Img} alt="about" />
               <ScrollAnimation
                 top="75%"
                 left="50%"
@@ -51,4 +50,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default AboutSection;

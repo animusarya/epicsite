@@ -5,6 +5,8 @@ import Subtitle from './Subtitle';
 import InputGroup from './InputGroup';
 import SelectGroup from './SelectGroup';
 import ScrollAnimation from './ScrollAnimation';
+import HeroHeader from './HeroHeader';
+import AboutSection from './AboutSection';
 
 export {
   Button,
@@ -14,4 +16,6 @@ export {
   InputGroup,
   SelectGroup,
   ScrollAnimation,
+  HeroHeader,
+  AboutSection,
 };

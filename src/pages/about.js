@@ -2,10 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/global/Layout';
 import Seo from '../components/Seo';
-import News from '../components/News';
-import AboutFeatures from '../components/AboutFeatures';
-import Heading from '../components/elements/Heading';
-import config from '../utils/config';
+import { HeroHeader, AboutSection } from '../components/elements';
 
 export const aboutQuery = graphql`
   query myBlog {
@@ -66,38 +63,22 @@ export const aboutQuery = graphql`
   }
 `;
 
-const AboutUs = ({ data }) => {
-  const { edges: posts } = data.allSanityArticle;
-  const aboutUs = data.sanityAbout;
+const About = () => {
+  // const { edges: posts } = data.allSanityArticle;
+  // const aboutUs = data.sanityAbout;
   // const cover = data.sanitySiteSettings.coverImage;
   return (
     <Layout>
-      <Seo title="About" description={`About Us ${config.siteName}`} />
-      {/* <HeroHeader
-        heading="About"
-        background={
-          cover.aboutPageCover ? cover.aboutPageCover.asset.fluid.src : ''
-        }
+      <Seo title="About" />
+      <HeroHeader
+        title="Who we are"
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       />
-      <Information
-        title={aboutUs.heroTitle}
-        description={aboutUs.heroDescription}
-        image={aboutUs.image ? aboutUs.image.asset.fluid : ''}
-      /> */}
-      <AboutFeatures data={aboutUs} />
-      <div className="section">
-        <div className="container">
-          <Heading centered>Past Projects</Heading>
-          <div className="columns is-multiline">
-            {posts.map(({ node: post }) => (
-              <div className="column is-4" key={post._id}>
-                <News node={post} />
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
+      <AboutSection
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci ut orci, orci, iaculis nunc. In aenean aenean pulvinar nibh in ipsum tempor semper aliquet. Aliquet ultricies interdum vel praesent egestas nisi amet orci massa. Tempor."
+        Img="/images/about2.png"
+      />
     </Layout>
   );
 };
-export default AboutUs;
+export default About;
