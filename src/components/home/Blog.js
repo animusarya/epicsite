@@ -51,7 +51,7 @@ const Blog = () => {
           </Heading>
           <div className="columns is-variable is-5 is-multiline is-centered mt-6">
             {BlogItem.map((item) => (
-              <div className="column is-4">
+              <div key={item.id} className="column is-4">
                 <div className="card has-radius-medium">
                   <div className="card-image has-text-centered ">
                     <figure className="image is-4by3">
