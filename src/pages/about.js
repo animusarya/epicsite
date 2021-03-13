@@ -4,7 +4,8 @@ import styled from 'styled-components';
 
 import Layout from '../components/global/Layout';
 import Seo from '../components/Seo';
-import { HeroHeader, AboutSection } from '../components/elements';
+import { HeroHeader } from '../components/elements';
+import AboutSection from '../components/global/AboutSection';
 import Testimonial from '../components/about/Testimonial';
 
 const Container = styled.div`

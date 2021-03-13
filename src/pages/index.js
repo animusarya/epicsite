@@ -1,12 +1,13 @@
 import React from 'react';
 import { graphql } from 'gatsby';
+// import styled from 'styled-components';
 
 import Seo from '../components/Seo';
 import Layout from '../components/global/Layout';
 
 import HomeBanner from '../components/home/HomeBanner';
 import Services from '../components/home/Services';
-import { AboutSection } from '../components/elements';
+import AboutSection from '../components/global/AboutSection';
 import Blog from '../components/home/Blog';
 // import Features from '../components/Features';
 // import HomeAboutUs from '../components/HomeAboutUs';
@@ -14,6 +15,12 @@ import Reviews from '../components/home/Reviews';
 import Quote from '../components/home/Quote';
 // import BackgroundBlob from '../components/BackgroundBlob';
 // import Members from '../components/Members';
+
+// const Container = styled.div`
+//   .about-wrapper {
+//     position: relative;
+//   }
+// `;
 
 export const query = graphql`
   query HomePageQuery {

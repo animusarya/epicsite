@@ -9,6 +9,7 @@ const SectionHero = styled.div`
   background-image: url(/images/herobg.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
 `;
 
 const HeroHeader = ({ title, subtitle }) => {

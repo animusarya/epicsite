@@ -1,12 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
-import Heading from './Heading';
-import Button from './Button';
-import ScrollAnimation from './ScrollAnimation';
-import Subtitle from './Subtitle';
+// import Heading from './Heading';
+// import Button from './Button';
+// import ScrollAnimation from './ScrollAnimation';
+// import Subtitle from './Subtitle';
+import { Heading, Button, ScrollAnimation, Subtitle } from '../elements';
 import BackgroundBlob from '../BackgroundBlob';
 
 const Container = styled.div`
+  position: relative;
+  overflow: hidden;
   .slick-dots li button:before {
     color: ${(props) => props.theme.darkAccent} !important;
     font-size: 15px;
@@ -20,8 +23,8 @@ const Container = styled.div`
 const AboutSection = ({ subtitle, hasButton, Img }) => {
   return (
     <>
-      <BackgroundBlob size="70vh" right="-10%" top="20%" />
       <Container className="section is-medium">
+        <BackgroundBlob size="70vh" right="-1%" />
         <div className="container">
           <div className="columns">
             <div className="column is-4">
