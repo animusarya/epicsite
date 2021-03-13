@@ -7,6 +7,7 @@ import Seo from '../components/Seo';
 import { HeroHeader } from '../components/elements';
 import AboutSection from '../components/global/AboutSection';
 import Testimonial from '../components/about/Testimonial';
+import CountSection from '../components/about/CountSection';
 
 const Container = styled.div`
   .about-wrapper {
@@ -92,6 +93,7 @@ const About = () => {
           />
         </div>
         <Testimonial />
+        <CountSection />
       </Container>
     </Layout>
   );
