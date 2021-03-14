@@ -29,6 +29,7 @@ const ReviewItem = [
 
 const Section = styled.div`
   background: -webkit-linear-gradient(top, #7a2540 50%, transparent 50%);
+  margin-bottom: 9rem;
   .card {
     box-shadow: 0px 10px 20px rgba(41, 41, 42, 0.07);
     border-radius: 8px;
@@ -73,7 +74,7 @@ const CountSection = () => {
                   <CountUp
                     className="counting is-size-1 has-text-weight-bold"
                     end={item.count}
-                    duration={2.5}
+                    duration={35}
                     suffix={item.suffix}
                   />
                 </div>
