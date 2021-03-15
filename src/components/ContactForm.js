@@ -1,15 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
-
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import swal from 'sweetalert2';
 
+import config from '../utils/config';
+
 import { Heading, InputGroup } from './elements';
 import BackgroundBlob from './BackgroundBlob';
 import GoogleMap from './map/GoogleMap';
-
-// import OverlayButton from './elements/OverlayButton';
 
 const Section = styled.div`
   .cXSUwC .field-body .field {
@@ -35,7 +34,7 @@ const ContactForm = ({
 }) => {
   return (
     <Section className="section is-medium">
-      <BackgroundBlob size="90vh" left="-30%" />
+      <BackgroundBlob size="80vh" left="-30%" />
       <div className="container">
         <div className="columns is-centered has-text-centered">
           <div className="column is-8">
@@ -48,6 +47,31 @@ const ContactForm = ({
             <GoogleMap />
           </div>
           <div className="column is-6">
+            <div className="columns mb-5">
+              <div className="column">
+                <img src="/images/address.png" alt="address-icon" />
+                <h1 className="is-size-5 has-text-black has-text-weight-semibold mt-3 mb-2">
+                  Address
+                </h1>
+                <p className="has-text-black has-text-weight-normal is-size-6 pr-6">
+                  {config.address}
+                </p>
+              </div>
+              <div className="column">
+                <img src="/images/phone01.png" alt="phone-icon" />
+                <h1 className="is-size-5 has-text-black has-text-weight-semibold mt-3 mb-2">
+                  Phone Number
+                </h1>
+                <p className="has-text-black has-text-weight-normal is-size-6 pr-6">
+                  {' '}
+                  {config.telephoneOne}
+                </p>
+                <p className="has-text-black has-text-weight-normal is-size-6 pr-6">
+                  {' '}
+                  {config.telephoneTwo}
+                </p>
+              </div>
+            </div>
             <form method="post" action="#" onSubmit={handleSubmit}>
               <div className="field is-horizontal">
                 <div className="field-body">
