@@ -4,11 +4,11 @@ import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import swal from 'sweetalert2';
 
-import config from '../utils/config';
+import config from '../../utils/config';
 
-import { Heading, InputGroup, Button } from './elements';
-import BackgroundBlob from './BackgroundBlob';
-import GoogleMap from './map/GoogleMap';
+import { Heading, InputGroup, Button } from '../elements';
+import BackgroundBlob from '../BackgroundBlob';
+import GoogleMap from '../map/GoogleMap';
 
 const Section = styled.div`
   .cXSUwC .field-body .field {
@@ -34,21 +34,20 @@ const ContactForm = ({
 }) => {
   return (
     <Section className="section is-medium">
-      <BackgroundBlob size="80vh" left="-30%" />
+      <BackgroundBlob size="90vh" left="-20%" />
       <div className="container">
         <div className="columns is-centered has-text-centered">
           <div className="column is-8">
             <Heading centered darkText="Get in " colouredText="touch" />
           </div>
         </div>
-
         <div className="columns is-centered is-vcentered is-variable is-6">
           <div className="column is-6">
             <GoogleMap />
           </div>
           <div className="column is-6">
             <div className="columns mb-5">
-              <div className="column">
+              <div className="column pl-0">
                 <img src="/images/address.png" alt="address-icon" />
                 <h1 className="is-size-5 has-text-black has-text-weight-semibold mt-3 mb-2">
                   Address
