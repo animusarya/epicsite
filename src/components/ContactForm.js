@@ -1,10 +1,13 @@
 import React from 'react';
+import styled from 'styled-components';
+
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
-import styled from 'styled-components';
 import swal from 'sweetalert2';
+
 import { Heading, InputGroup } from './elements';
 import BackgroundBlob from './BackgroundBlob';
+import GoogleMap from './map/GoogleMap';
 
 // import OverlayButton from './elements/OverlayButton';
 
@@ -39,8 +42,11 @@ const ContactForm = ({
             <Heading centered darkText="Get in " colouredText="touch" />
           </div>
         </div>
+
         <div className="columns is-centered is-vcentered">
-          <div className="column is-6">Map </div>
+          <div className="column is-6">
+            <GoogleMap />
+          </div>
           <div className="column is-6">
             <form method="post" action="#" onSubmit={handleSubmit}>
               <div className="field is-horizontal">
