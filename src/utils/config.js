@@ -8,9 +8,10 @@ module.exports = {
   logo: '/images/logo.png',
   metaLogo: '/images/logo.png',
 
-  telephone: '07572575313',
+  telephoneOne: '07572575313',
+  telephoneTwo: '01632 960387',
   email: 'turner-house.gmail.com',
-  address: ' London UK',
+  address: ' 492 Hudson Track Apt.708763 Lang Meadows',
   twitter: 'https://twitter.com/',
   facebook: 'https://www.facebook.com/',
   instagram: 'https://www.instagram.com/',

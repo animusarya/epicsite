@@ -5,6 +5,7 @@ import * as Yup from 'yup';
 import swal from 'sweetalert2';
 import { Heading, InputGroup } from './elements';
 import BackgroundBlob from './BackgroundBlob';
+import config from '../utils/config';
 
 const Section = styled.div`
   .cXSUwC .field-body .field {
@@ -40,6 +41,31 @@ const ContactForm = ({
         <div className="columns is-centered is-vcentered">
           <div className="column is-6">Map </div>
           <div className="column is-6">
+            <div className="columns mb-5">
+              <div className="column">
+                <img src="/images/address.png" alt="address-icon" />
+                <h1 className="is-size-5 has-text-black has-text-weight-semibold mt-3 mb-2">
+                  Address
+                </h1>
+                <p className="has-text-black has-text-weight-normal is-size-6 pr-6">
+                  {config.address}
+                </p>
+              </div>
+              <div className="column">
+                <img src="/images/phone01.png" alt="phone-icon" />
+                <h1 className="is-size-5 has-text-black has-text-weight-semibold mt-3 mb-2">
+                  Phone Number
+                </h1>
+                <p className="has-text-black has-text-weight-normal is-size-6 pr-6">
+                  {' '}
+                  {config.telephoneOne}
+                </p>
+                <p className="has-text-black has-text-weight-normal is-size-6 pr-6">
+                  {' '}
+                  {config.telephoneTwo}
+                </p>
+              </div>
+            </div>
             <form method="post" action="#" onSubmit={handleSubmit}>
               <div className="field is-horizontal">
                 <div className="field-body">
