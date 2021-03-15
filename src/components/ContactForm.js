@@ -6,7 +6,7 @@ import swal from 'sweetalert2';
 
 import config from '../utils/config';
 
-import { Heading, InputGroup } from './elements';
+import { Heading, InputGroup, Button } from './elements';
 import BackgroundBlob from './BackgroundBlob';
 import GoogleMap from './map/GoogleMap';
 
@@ -159,6 +159,9 @@ const ContactForm = ({
                 {errors.message && touched.message && (
                   <p className="help is-danger">{errors.message}</p>
                 )}
+              </div>
+              <div className="has-text-right">
+                <Button isLarge>Send</Button>
               </div>
             </form>
           </div>
