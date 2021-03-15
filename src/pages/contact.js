@@ -10,7 +10,9 @@ import { HeroHeader } from '../components/elements';
 import Reviews from '../components/home/Reviews';
 import { theme } from '../utils/theme';
 
-const Container = styled.div``;
+const Container = styled.div`
+  padding-top: 9rem;
+`;
 
 export const query = graphql`
   query ContactPageQuery {
@@ -50,17 +52,10 @@ const Contact = () => {
         title="Contact Us"
         subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       />
-      <Container className="section">
-        <div className="container mb-6">
-          <div className="columns is-centered is-vcentered">
-            <div className="column is-6">Map </div>
-            <div className="column is-6">
-              <ContactForm />
-            </div>
-          </div>
-        </div>
+      <ContactForm />
+      <Container>
+        <Reviews bgColor={theme.mainBrandColor} />
       </Container>
-      <Reviews bgColor={theme.mainBrandColor} />
     </Layout>
   );
 };

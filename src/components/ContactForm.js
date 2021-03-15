@@ -3,37 +3,22 @@ import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import styled from 'styled-components';
 import swal from 'sweetalert2';
+import { Heading, InputGroup } from './elements';
+import BackgroundBlob from './BackgroundBlob';
 
 // import OverlayButton from './elements/OverlayButton';
 
 const Section = styled.div`
-  input,
-  textarea {
-    margin-top: 1rem;
-    border: 1px solid #bdbdbd;
-    box-shadow: none;
-    border-radius: 4px;
-    background-color: ${(props) => props.theme.backgroundInputColor};
-  }
-  input:active,
-  .input:focus,
-  .textarea:active,
-  .textarea:focus {
-    border-color: 1px solid #bdbdbd;
-    box-shadow: none;
-  }
-  input ::placeholder,
-  textarea ::placeholder {
-    font-size: ${(props) => props.theme.fontSizeSmall}px;
-    font-weight: 400;
-  }
-  label {
+  .cXSUwC .field-body .field {
     margin-bottom: 0 !important;
   }
-  @media screen and (min-width: 769px) {
-    .field-body .field {
-      margin-bottom: 1.5rem !important;
-    }
+  textarea {
+    color: ${(props) => props.theme.placeholderColor} !important;
+    background: ${(props) => props.theme.backgroundInputColor} !important;
+    margin-top: 0.6rem;
+    border-color: ${(props) => props.theme.borderColor} !important;
+    box-shadow: none;
+    border-radius: 5px;
   }
 `;
 
@@ -46,106 +31,109 @@ const ContactForm = ({
   handleBlur,
 }) => {
   return (
-    <Section>
-      <form method="post" action="#" onSubmit={handleSubmit}>
-        <div className="field is-horizontal">
-          <div className="field-body">
-            <div className="field">
-              <label className="label has-text-weight-semibold">Name</label>
-              <input
-                className="input is-medium"
-                type="text"
-                name="name"
-                id="name"
-                placeholder="Name"
-                value={values.name}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.name && touched.name && (
-                <p className="help is-danger">{errors.name}</p>
-              )}
-            </div>
-            <div className="field">
-              <label className="label has-text-weight-semibold">Email</label>
-              <input
-                className="input is-medium"
-                type="text"
-                name="email"
-                id="email"
-                placeholder="Email"
-                value={values.email}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.email && touched.email && (
-                <p className="help is-danger">{errors.email}</p>
-              )}
-            </div>
+    <Section className="section is-medium">
+      <BackgroundBlob size="90vh" left="-30%" />
+      <div className="container">
+        <div className="columns is-centered has-text-centered">
+          <div className="column is-8">
+            <Heading centered darkText="Get in " colouredText="touch" />
           </div>
         </div>
-        <div className="field is-horizontal">
-          <div className="field-body">
-            <div className="field">
-              <label className="label has-text-weight-semibold">
-                Lorem ipsum*
-              </label>
-              <input
-                className="input is-medium"
-                type="text"
-                name="loremIpsum"
-                id="loremIpsum"
-                placeholder="Lorem ipsum*"
-                value={values.loremIpsum}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.loremIpsum && touched.loremIpsum && (
-                <p className="help is-danger">{errors.loremIpsum}</p>
-              )}
-            </div>
-            <div className="field">
-              <label className="label has-text-weight-semibold">
-                Lorem ipsum*
-              </label>
-              <input
-                className="input is-medium"
-                type="text"
-                name="loremIpsum"
-                id="loremIpsum"
-                placeholder="Lorem ipsum*"
-                value={values.loremIpsum}
-                onChange={handleChange}
-                onBlur={handleBlur}
-              />
-              {errors.loremIpsum && touched.loremIpsum && (
-                <p className="help is-danger">{errors.loremIpsum}</p>
-              )}
-            </div>
+        <div className="columns is-centered is-vcentered">
+          <div className="column is-6">Map </div>
+          <div className="column is-6">
+            <form method="post" action="#" onSubmit={handleSubmit}>
+              <div className="field is-horizontal">
+                <div className="field-body">
+                  <div className="field">
+                    <InputGroup
+                      label="Name*"
+                      name="name"
+                      placeholder="Full Name"
+                      type="text"
+                      value={values.name}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      errors={
+                        errors.name && touched.name ? errors.name : undefined
+                      }
+                    />
+                  </div>
+                  <div className="field">
+                    <InputGroup
+                      label="Email*"
+                      name="email"
+                      placeholder="example@gmail.com"
+                      type="text"
+                      value={values.email}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      errors={
+                        errors.email && touched.email ? errors.email : undefined
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="field is-horizontal">
+                <div className="field-body">
+                  <div className="field">
+                    <InputGroup
+                      label="Lorem ipsum"
+                      placeholder="Lorem ipsum"
+                      name="subject"
+                      type="text"
+                      value={values.subject}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      errors={
+                        errors.subject && touched.subject
+                          ? errors.subject
+                          : undefined
+                      }
+                    />
+                  </div>
+                  <div className="field">
+                    <InputGroup
+                      label="Lorem ipsum"
+                      placeholder="Lorem ipsum"
+                      name="subject"
+                      type="text"
+                      value={values.subject}
+                      onChange={handleChange}
+                      onBlur={handleBlur}
+                      errors={
+                        errors.subject && touched.subject
+                          ? errors.subject
+                          : undefined
+                      }
+                    />
+                  </div>
+                </div>
+              </div>
+              <div className="field">
+                <label className="label has-text-weight-semibold">
+                  Message*
+                </label>
+                <textarea
+                  className="textarea"
+                  name="message"
+                  id="message"
+                  placeholder="Say it your way"
+                  rows={6}
+                  defaultValue=""
+                  value={values.message}
+                  onChange={handleChange}
+                  onBlur={handleBlur}
+                />
+                {errors.message && touched.message && (
+                  <p className="help is-danger">{errors.message}</p>
+                )}
+              </div>
+            </form>
           </div>
         </div>
-        <div className="field">
-          <label className="label has-text-weight-semibold">Message*</label>
-          <textarea
-            className="textarea"
-            name="message"
-            id="message"
-            placeholder="Message"
-            rows={6}
-            defaultValue=""
-            value={values.message}
-            onChange={handleChange}
-            onBlur={handleBlur}
-          />
-          {errors.message && touched.message && (
-            <p className="help is-danger">{errors.message}</p>
-          )}
-        </div>
-
-        {/* <div className="mt-5">
-          <OverlayButton buttonText="Send Message" />
-        </div> */}
-      </form>
+      </div>
     </Section>
   );
 };
@@ -154,6 +142,7 @@ export default withFormik({
   mapPropsToValues: () => ({
     name: '',
     email: '',
+    subject: '',
     message: '',
   }),
   validationSchema: Yup.object().shape({
@@ -161,6 +150,7 @@ export default withFormik({
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required!'),
+    subject: Yup.string().required('Your subject is required!'),
     message: Yup.string().required('Message is required!'),
   }),
   handleSubmit: () => {
