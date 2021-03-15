@@ -42,7 +42,7 @@ const ContactForm = ({
           </div>
         </div>
 
-        <div className="columns is-centered is-vcentered">
+        <div className="columns is-centered is-vcentered is-variable is-6">
           <div className="column is-6">
             <GoogleMap />
           </div>
