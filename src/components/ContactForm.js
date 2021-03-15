@@ -1,12 +1,10 @@
 import React from 'react';
+import styled from 'styled-components';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
-import styled from 'styled-components';
 import swal from 'sweetalert2';
 import { Heading, InputGroup } from './elements';
 import BackgroundBlob from './BackgroundBlob';
-
-// import OverlayButton from './elements/OverlayButton';
 
 const Section = styled.div`
   .cXSUwC .field-body .field {
@@ -32,7 +30,7 @@ const ContactForm = ({
 }) => {
   return (
     <Section className="section is-medium">
-      <BackgroundBlob size="90vh" left="-30%" />
+      <BackgroundBlob size="80vh" left="-30%" />
       <div className="container">
         <div className="columns is-centered has-text-centered">
           <div className="column is-8">

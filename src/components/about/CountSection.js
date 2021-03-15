@@ -6,21 +6,21 @@ import CountUp from 'react-countup';
 const ReviewItem = [
   {
     id: 1,
-    img: 'https://bulma.io/images/placeholders/1280x960.png',
+    img: 'images/share-icon.png',
     title: 'Used by schools',
     count: 600,
     suffix: '+',
   },
   {
     id: 2,
-    img: 'https://bulma.io/images/placeholders/1280x960.png',
+    img: 'images/checked.png',
     title: 'Reviews',
     count: 3000,
     suffix: '+',
   },
   {
     id: 3,
-    img: 'https://bulma.io/images/placeholders/1280x960.png',
+    img: 'images/bookmark.png',
     title: 'Use our study notes',
     count: 500,
     suffix: 'K+',
@@ -36,8 +36,8 @@ const Section = styled.div`
   }
   figure {
     position: absolute;
-    top: 31%;
-    left: 45.5%;
+    top: 25%;
+    left: 46%;
     bottom: 0;
   }
   .back-round {
