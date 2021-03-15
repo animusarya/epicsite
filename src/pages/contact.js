@@ -5,6 +5,7 @@ import ContactForm from '../components/forms/ContactForm';
 import Seo from '../components/Seo';
 import Layout from '../components/global/Layout';
 import { HeroHeader } from '../components/elements';
+import ContactSection from '../components/contact/ContactSection';
 import Reviews from '../components/home/Reviews';
 import { theme } from '../utils/theme';
 
@@ -50,7 +51,7 @@ const Contact = () => {
         title="Contact Us"
         subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       />
-      <ContactForm />
+      <ContactSection />
       <Container>
         <Reviews bgColor={theme.mainBrandColor} />
       </Container>

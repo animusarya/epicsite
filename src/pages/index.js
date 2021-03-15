@@ -8,7 +8,7 @@ import Layout from '../components/global/Layout';
 import HomeBanner from '../components/home/HomeBanner';
 import Services from '../components/home/Services';
 import AboutSection from '../components/global/AboutSection';
-import Blog from '../components/home/Blog';
+import Blog from '../components/global/Blog';
 // import Features from '../components/Features';
 // import HomeAboutUs from '../components/HomeAboutUs';
 import Reviews from '../components/home/Reviews';
