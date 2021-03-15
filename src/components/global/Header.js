@@ -101,7 +101,7 @@ const Header = () => {
                 Why Turner House?
               </Link>
               <Link
-                to="/"
+                to="/faq"
                 className="navbar-item has-text-weight-normal has-text-white px-5"
               >
                 How we can help

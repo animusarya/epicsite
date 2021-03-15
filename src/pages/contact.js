@@ -1,12 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import ContactForm from '../components/ContactForm';
+import ContactForm from '../components/forms/ContactForm';
 import Seo from '../components/Seo';
 import Layout from '../components/global/Layout';
 import { HeroHeader } from '../components/elements';
-// import HeroHeader from '../components/elements/HeroHeader';
-// import Information from '../components/elements/Information';
 import Reviews from '../components/home/Reviews';
 import { theme } from '../utils/theme';
 
