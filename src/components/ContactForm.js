@@ -3,9 +3,12 @@ import styled from 'styled-components';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
 import swal from 'sweetalert2';
+
+import config from '../utils/config';
+
 import { Heading, InputGroup, Button } from './elements';
 import BackgroundBlob from './BackgroundBlob';
-import config from '../utils/config';
+import GoogleMap from './map/GoogleMap';
 
 const Section = styled.div`
   .cXSUwC .field-body .field {
@@ -38,8 +41,11 @@ const ContactForm = ({
             <Heading centered darkText="Get in " colouredText="touch" />
           </div>
         </div>
+
         <div className="columns is-centered is-vcentered">
-          <div className="column is-6">Map </div>
+          <div className="column is-6">
+            <GoogleMap />
+          </div>
           <div className="column is-6">
             <div className="columns mb-5">
               <div className="column">
