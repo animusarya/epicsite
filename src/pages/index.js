@@ -1,6 +1,5 @@
 import React from 'react';
 import { graphql } from 'gatsby';
-import styled from 'styled-components';
 
 import Seo from '../components/Seo';
 import Layout from '../components/global/Layout';
@@ -13,18 +12,9 @@ import AboutSection from '../components/global/AboutSection';
 // import HomeAboutUs from '../components/HomeAboutUs';
 import Reviews from '../components/home/Reviews';
 import Quote from '../components/home/Quote';
-import News from '../components/News';
-import { ScrollAnimation, Heading, Button } from '../components/elements';
+import BlogSection from '../components/global/BlogSection';
 
 // import Members from '../components/Members';
-
-const BlogWrapper = styled.div`
-  position: relative;
-  padding-top: 3rem;
-  .hero {
-    background: ${(props) => props.theme.mainBrandColor} !important;
-  }
-`;
 
 export const query = graphql`
   query HomePageQuery {
@@ -142,33 +132,7 @@ const IndexPage = ({ data }) => {
         Img="/images/home-about-bg.png"
       />
       <Reviews />
-      <BlogWrapper>
-        <div className="hero is-medium">
-          <ScrollAnimation
-            zIndex="0"
-            top="23.5%"
-            left="14%"
-            animation="animate__fadeInUp"
-          />
-          <div className="hero-body container">
-            <Heading centered hasWhite>
-              Check out our latest article
-            </Heading>
-            <div className="columns is-variable is-5 is-multiline is-centered mt-6">
-              {article.map(({ node }) => (
-                <div className="column is-4" key={node._id}>
-                  <News node={node} />
-                </div>
-              ))}
-            </div>
-            <div className="has-text-centered mt-6 pt-5">
-              <Button hasBackgroundWhite isLarge to="/blog">
-                View all
-              </Button>
-            </div>
-          </div>
-        </div>
-      </BlogWrapper>
+      <BlogSection article={article} />
       <Quote />
       {/* <HomeAboutUs data={homeAboutUs} home={home} />
       <Features data={homeFeatures} />
