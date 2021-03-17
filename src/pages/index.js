@@ -125,7 +125,7 @@ export const query = graphql`
 `;
 
 const IndexPage = ({ data }) => {
-  const { edges: artical } = data.allSanityArticle;
+  const { edges: article } = data.allSanityArticle;
   // const home = data.sanitySiteSettings;
   // const homeFeatures = data.sanitySiteSettings;
   // const brands = data.sanitySiteSettings;
@@ -143,7 +143,7 @@ const IndexPage = ({ data }) => {
       />
       <Reviews />
       <BlogWrapper>
-        <div className=" hero is-medium">
+        <div className="hero is-medium">
           <ScrollAnimation
             zIndex="0"
             top="23.5%"
@@ -155,7 +155,7 @@ const IndexPage = ({ data }) => {
               Check out our latest article
             </Heading>
             <div className="columns is-variable is-5 is-multiline is-centered mt-6">
-              {artical.map(({ node }) => (
+              {article.map(({ node }) => (
                 <div className="column is-4" key={node._id}>
                   <News node={node} />
                 </div>

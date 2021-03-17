@@ -119,7 +119,6 @@ const Header = () => {
               >
                 Stay in the loop
               </Link>
-
               <div className="navbar-item has-text-weight-normal has-text-white px-5">
                 <Button to="/contact">Contact Us</Button>
               </div>
