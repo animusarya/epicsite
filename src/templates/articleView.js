@@ -1,13 +1,13 @@
 import React from 'react';
-
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import { graphql } from 'gatsby';
 import ReactMarkdown from 'react-markdown';
 import Slider from 'react-slick';
 import styled from 'styled-components';
-
 import Img from 'gatsby-image';
+import { HeroHeader } from '../components/elements';
+
 import Seo from '../components/Seo';
 import Layout from '../components/global/Layout';
 import Heading from '../components/elements/Heading';
@@ -65,6 +65,10 @@ const ArticleView = ({ data }) => {
         title={news.title}
         description={`Read blog post about ${news.title}`}
         url={`${config.siteUrl}/article/${news.slug ? news.slug.current : ''}`}
+      />
+      <HeroHeader
+        title="Lorem ipsum dolor"
+        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       />
       <section className="section">
         <div className="container">

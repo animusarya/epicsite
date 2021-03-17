@@ -79,11 +79,6 @@ const Blog = () => {
               </div>
             ))}
           </div>
-          <div className="has-text-centered mt-6 pt-5">
-            <Button hasBackgroundWhite isLarge to="/">
-              View all
-            </Button>
-          </div>
         </div>
       </div>
     </BlogWrapper>

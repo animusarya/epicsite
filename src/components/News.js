@@ -3,22 +3,9 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { truncate } from 'lodash';
+import { Title, Subtitle } from './elements';
 
-const CardWrapper = styled(Link)`
-  border-radius: 0;
-  box-shadow: none !important;
-  .box {
-    position: relative;
-    top: -3rem;
-    border-radius: 0;
-    box-shadow: none !important;
-  }
-  .border-bottom {
-    margin-top: 30px;
-    border-top: 1px solid #e5e5e5;
-    padding-top: 10px;
-  }
-`;
+const TitleLink = styled(Link)``;
 
 const Image = styled(Img)`
   height: 300px;
@@ -31,12 +18,8 @@ const News = ({ node: data }) => {
   }
 
   return (
-    <CardWrapper
-      key={data._id}
-      to={`/article/${data.slug ? data.slug.current : ''}`}
-      className="card"
-    >
-      <div className="card-image">
+    <div className="card has-radius-medium">
+      <div key={data._id}>
         {data && data.image && data.image.asset && (
           <Image
             fluid={data.image.asset.fluid}
@@ -44,24 +27,29 @@ const News = ({ node: data }) => {
             className="blog-img"
           />
         )}
-
         <div className="card-content">
-          <div className="media-content">
-            <div className="box">
-              <h1 className="title is-size-4 has-text-weight-normal is-spaced is-family-primary">
-                {data.title}
-              </h1>
-              <p className="subtitle is-6">
+          <div className="media ">
+            <div className="media-content">
+              <Title> {data.title}</Title>
+              <Subtitle>
                 {truncate(data.description, {
                   length: 160,
                 })}
-              </p>
-              <div className="border-bottom" />
+              </Subtitle>
             </div>
           </div>
+          <TitleLink
+            to={`/article/${data.slug ? data.slug.current : ''}`}
+            className="has-text-primary mt-4 has-text-weight-semibold"
+          >
+            Read more
+            <span className="ml-3">
+              <i className="fas fa-long-arrow-alt-right " />
+            </span>
+          </TitleLink>
         </div>
       </div>
-    </CardWrapper>
+    </div>
   );
 };
 export default News;
