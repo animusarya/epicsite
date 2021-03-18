@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Heading, ScrollAnimation } from '../elements';
+import { Heading, ScrollAnimation, Button } from '../elements';
 import News from '../News';
 
 const BlogWrapper = styled.div`
@@ -31,6 +31,11 @@ const BlogSection = ({ article }) => {
                 <News node={node} />
               </div>
             ))}
+          </div>
+          <div className="has-text-centered mt-6 pt-5">
+            <Button hasBackgroundWhite isLarge to="/blog">
+              View all
+            </Button>
           </div>
         </div>
       </div>

@@ -9,6 +9,7 @@ const Section = styled.div`
   }
   .navbar-item {
     font-size: ${(props) => props.theme.fontSizeMedium};
+    color: ${(props) => props.theme.textColorLite} !important;
     :focus {
       background-color: transparent !important;
     }
@@ -21,6 +22,9 @@ const Section = styled.div`
   a.navbar-item:hover {
     background-color: transparent;
   }
+  a.has-text-white:hover {
+    color: ${(props) => props.theme.textColorLite} !important;
+  }
   .navbar-item img {
     max-height: 5.75rem !important;
   }
@@ -32,11 +36,17 @@ const Section = styled.div`
       transition: 0.6s;
     }
   }
-
+  .navbar-dropdown {
+    background-color: ${(props) => props.theme.darkAccent};
+    border-top: 0;
+  }
+  .navbar-item.has-dropdown:hover .navbar-link {
+    background-color: transparent;
+  }
   .navbar-burger {
     background: ${(props) => props.theme.mainBrandColor};
     border-radius: 4px;
-    color: #fff !important;
+    color: ${(props) => props.theme.textColorLite} !important;
   }
   .animated-link {
     border: 1.5px solid #ffffff;
@@ -113,12 +123,29 @@ const Header = () => {
               </Link>
             </div>
             <div className="navbar-end">
-              <Link
-                to="/"
-                className="navbar-item has-text-weight-normal has-text-white px-5"
-              >
-                Stay in the loop
-              </Link>
+              <div className="navbar-item has-dropdown is-hoverable">
+                <Link
+                  to="/"
+                  className="navbar-item has-text-weight-normal has-text-white px-5"
+                >
+                  Stay in the loop
+                </Link>
+
+                <div className="navbar-dropdown">
+                  <Link
+                    to="/blog"
+                    className="navbar-item has-text-weight-normal has-text-white px-5"
+                  >
+                    Blog
+                  </Link>
+                  <Link
+                    to="/faq"
+                    className="navbar-item has-text-weight-normal has-text-white px-5"
+                  >
+                    FAQ
+                  </Link>
+                </div>
+              </div>
               <div className="navbar-item has-text-weight-normal has-text-white px-5">
                 <Button to="/contact">Contact Us</Button>
               </div>
