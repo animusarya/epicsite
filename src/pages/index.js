@@ -26,7 +26,6 @@ export const query = graphql`
       information
 
       homeHero {
-        _key
         title
         subtitle
         linkTo
@@ -116,7 +115,7 @@ export const query = graphql`
 
 const IndexPage = ({ data }) => {
   const { edges: article } = data.allSanityArticle;
-  // const home = data.sanitySiteSettings;
+  const home = data.sanitySiteSettings;
   // const homeFeatures = data.sanitySiteSettings;
   // const brands = data.sanitySiteSettings;
   // const homeAboutUs = data.sanitySiteSettings.whyChoose;
@@ -124,7 +123,7 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
       <Seo title="Home" />
-      <HomeBanner />
+      <HomeBanner home={home} />
       <Services />
       <AboutSection
         hasButton
