@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Button } from '../elements';
 
 const Section = styled.div`
-  background-image: url(/images/hero-img.png);
+  background-image: url(${(props) => props.bgImage});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom;
@@ -19,25 +19,27 @@ const TriangleSection = styled.div`
   clip-path: polygon(0 0, 0 92%, 50% 100%, 100% 92%, 100% 0, 51% 0);
 `;
 
-const HomeBanner = () => {
+const HomeBanner = ({ home }) => {
   return (
     <TriangleSection>
-      <Section className="hero is-large">
+      <Section
+        className="hero is-large"
+        bgImage={home.homeHero.image.asset.fluid.src}
+      >
         <div className="hero-body has-text-centered">
           <div className="columns is-centered">
             <div className="column is-7">
               <h1 className="title  has-text-weight-bold line-height-large is-size-2-mobile">
-                Lorem ipsum dolor amet, consectetur{' '}
+                {home.homeHero.title}
               </h1>
             </div>
           </div>
           <div className="columns is-centered">
             <div className="column is-5">
               <p className="subtitle has-text-weight-normal is-size-4 mb-5">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit sit
-                amet, consectetur adipiscing elit
+                {home.homeHero.subtitle}
               </p>
-              <Button hasBackgroundWhite isLarge to="/">
+              <Button hasBackgroundWhite isLarge to={home.homeHero.linkTo}>
                 Consult Today
               </Button>
             </div>
