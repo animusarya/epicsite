@@ -1,12 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-import { withFormik } from 'formik';
-import * as Yup from 'yup';
-import swal from 'sweetalert2';
 
 import config from '../../utils/config';
 
-import { Heading, InputGroup, Button } from '../elements';
+import { Heading } from '../elements';
 import BackgroundBlob from '../BackgroundBlob';
 import GoogleMap from '../map/GoogleMap';
 import ContactForm from '../forms/ContactForm';
