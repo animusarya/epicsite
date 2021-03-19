@@ -1,53 +1,11 @@
 import React from 'react';
+import Img from 'gatsby-image';
+
 import { Subtitle, Heading, Title } from '../elements';
 import BackgroundBlob from '../BackgroundBlob';
 
-const ServiceItem = [
-  {
-    id: 1,
-    title: 'Lorem ipsum',
-    subtitle:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    image: '/images/file-img.png',
-  },
-  {
-    id: 2,
-    title: 'Lorem ipsum',
-    subtitle:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    image: '/images/Plus.png',
-  },
-  {
-    id: 3,
-    title: 'Lorem ipsum',
-    subtitle:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    image: '/images/share.png',
-  },
-  {
-    id: 4,
-    title: 'Lorem ipsum',
-    subtitle:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    image: '/images/edit.png',
-  },
-  {
-    id: 5,
-    title: 'Lorem ipsum',
-    subtitle:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    image: '/images/ok.png',
-  },
-  {
-    id: 6,
-    title: 'Lorem ipsum',
-    subtitle:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor',
-    image: '/images/info.png',
-  },
-];
-
-const Services = () => {
+const Services = ({ service }) => {
+  console.log(service, 'service');
   return (
     <>
       <div className="section is-medium">
@@ -65,19 +23,19 @@ const Services = () => {
             </div>
           </div>
           <div className="columns is-variable is-5 is-multiline is-centered mt-5">
-            {ServiceItem.map((item) => (
-              <div key={item.id} className="column is-4">
+            {service.map(({ node }) => (
+              <div key={node.id} className="column is-4">
                 <div className="card p-6 has-radius-medium mb-4">
                   <div className="card-image has-text-centered mb-5 ">
                     <figure className="image is-96x96">
-                      <img src={item.image} alt="icon" />
+                      <Img fluid={node.image.asset.fluid} alt="icon" />
                     </figure>
                   </div>
                   <div className="content">
                     <div className="media">
                       <div className="media-content">
-                        <Title>{item.title}</Title>
-                        <Subtitle small>{item.subtitle}</Subtitle>
+                        <Title>{node.title}</Title>
+                        <Subtitle small>{node.description}</Subtitle>
                       </div>
                     </div>
                   </div>

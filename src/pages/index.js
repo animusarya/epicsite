@@ -91,6 +91,7 @@ export const query = graphql`
         }
       }
     }
+
     allSanityArticle(sort: { fields: _createdAt, order: DESC }) {
       edges {
         node {
@@ -110,6 +111,26 @@ export const query = graphql`
         }
       }
     }
+    allSanityServices {
+      edges {
+        node {
+          _id
+          order
+          title
+          description
+          slug {
+            current
+          }
+          image {
+            asset {
+              fluid(maxWidth: 1200) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+        }
+      }
+    }
   }
 `;
 
@@ -119,12 +140,12 @@ const IndexPage = ({ data }) => {
   // const homeFeatures = data.sanitySiteSettings;
   // const brands = data.sanitySiteSettings;
   // const homeAboutUs = data.sanitySiteSettings.whyChoose;
-  // const review = data.allSanityReview.edges;
+  const service = data.allSanityServices.edges;
   return (
     <Layout>
       <Seo title="Home" />
       <HomeBanner home={home} />
-      <Services />
+      <Services service={service} />
       <AboutSection
         hasButton
         subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus egestas non semper vitae orci, cursus eleifend nisi. Ut neque accumsan amet eget aenean. Facilisis dictum pharetra."

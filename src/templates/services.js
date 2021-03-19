@@ -66,15 +66,7 @@ export const serviceQuery = graphql`
         current
       }
       description
-      coverImage {
-        asset {
-          fluid(maxWidth: 1200) {
-            ...GatsbySanityImageFluid
-          }
-        }
-      }
-      images {
-        _key
+      image {
         asset {
           fluid(maxWidth: 1200) {
             ...GatsbySanityImageFluid
