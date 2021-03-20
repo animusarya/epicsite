@@ -66,21 +66,21 @@ export const serviceQuery = graphql`
         current
       }
       description
-      coverImage {
-        asset {
-          fluid(maxWidth: 1200) {
-            ...GatsbySanityImageFluid
-          }
-        }
-      }
-      images {
-        _key
-        asset {
-          fluid(maxWidth: 1200) {
-            ...GatsbySanityImageFluid
-          }
-        }
-      }
+      # coverImage {
+      #   asset {
+      #     fluid(maxWidth: 1200) {
+      #       ...GatsbySanityImageFluid
+      #     }
+      #   }
+      # }
+      # images {
+      #   _key
+      #   asset {
+      #     fluid(maxWidth: 1200) {
+      #       ...GatsbySanityImageFluid
+      #     }
+      #   }
+      # }
     }
   }
 `;

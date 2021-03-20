@@ -111,7 +111,7 @@ const Header = () => {
                 Why Turner House?
               </Link>
               <Link
-                to="/faq"
+                to="/service"
                 className="navbar-item has-text-weight-normal has-text-white px-5"
               >
                 How we can help
@@ -124,10 +124,7 @@ const Header = () => {
             </div>
             <div className="navbar-end">
               <div className="navbar-item has-dropdown is-hoverable">
-                <Link
-                  to="/"
-                  className="navbar-item has-text-weight-normal has-text-white px-5"
-                >
+                <Link className="navbar-item has-text-weight-normal has-text-white px-5">
                   Stay in the loop
                 </Link>
 
