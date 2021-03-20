@@ -66,21 +66,13 @@ export const serviceQuery = graphql`
         current
       }
       description
-      # coverImage {
-      #   asset {
-      #     fluid(maxWidth: 1200) {
-      #       ...GatsbySanityImageFluid
-      #     }
-      #   }
-      # }
-      # images {
-      #   _key
-      #   asset {
-      #     fluid(maxWidth: 1200) {
-      #       ...GatsbySanityImageFluid
-      #     }
-      #   }
-      # }
+      image {
+        asset {
+          fluid(maxWidth: 1200) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
     }
   }
 `;
@@ -125,7 +117,7 @@ const Services = ({ data }) => {
                   <Img
                     className="mb-5"
                     fluid={item.asset ? item.asset.fluid : ''}
-                    key={item._key}
+                    key={item._id}
                     alt="services"
                   />
                 ))}
