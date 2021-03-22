@@ -7,6 +7,7 @@ module.exports = {
   siteUrl: 'https://www.turner-house.co.uk/',
   logo: '/images/logo.png',
   metaLogo: '/images/logo.png',
+  projectKey: '123123abc',
 
   telephoneOne: '07572575313',
   telephoneTwo: '01632 960387',

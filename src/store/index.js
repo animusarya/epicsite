@@ -5,7 +5,7 @@ import schema from './schema';
 import config from '../utils/config';
 
 const store = createStore(schema, {
-  name: 'ReviewsSystem',
+  name: 'MyAwesomeStore',
   devTools: true,
   reducerEnhancer: (reducer) =>
     persistReducer(
@@ -18,5 +18,6 @@ const store = createStore(schema, {
 });
 
 const persistor = persistStore(store);
+// persistor.purge(); // to clear store
 
 export { store, persistor };
