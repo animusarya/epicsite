@@ -33,6 +33,7 @@ const ServiceFeatures = ({ item, number, reverseColumn }) => {
               top="-7%"
               left={reverseColumn ? '48%' : '42%'}
               animation="animate__fadeInUp"
+              image="/images/pink-dot.png"
             />
           </div>
         </Wrapper>

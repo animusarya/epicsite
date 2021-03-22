@@ -42,12 +42,19 @@ const Footer = () => {
       <ScrollAnimation
         zIndex="auto"
         animation="animate__fadeInTopLeft"
-        image="images/Footer-dotted.png"
+        image="/images/Footer-dotted.png"
         bottom={0}
       />
       <div>
         <div className="section">
           <div className="container">
+            <ScrollAnimation
+              zIndex="auto"
+              animation="animate__fadeInTopLeft"
+              image="/images/Footer-dotted.png"
+              top="-73%"
+              left=" 110%"
+            />
             <div className="columns is-vcentered">
               <div className="column is-4 ">
                 <LogoImg

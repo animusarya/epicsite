@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { graphql } from 'gatsby';
 import ReactMarkdown from 'react-markdown';
-import styled from 'styled-components';
 import Img from 'gatsby-image';
 // import { useStoreState, useStoreActions } from 'easy-peasy';
-import { HeroHeader } from '../components/elements';
+import { HeroHeader, ScrollAnimation } from '../components/elements';
 import Seo from '../components/Seo';
 import Layout from '../components/global/Layout';
 import config from '../utils/config';
@@ -39,10 +38,12 @@ export const pageQuery = graphql`
   }
 `;
 
-const Image = styled(Img)`
-  object-fit: cover;
-  height: 90vh;
-`;
+// const Image = styled(Img)`
+//   .img {
+//     max-height: 75% !important;
+//     max-width: auto;
+//   }
+// `;
 
 const ArticleView = ({ data }) => {
   const news = data.sanityArticle;
@@ -65,7 +66,6 @@ const ArticleView = ({ data }) => {
         description={`Read blog post about ${news.title}`}
         url={`${config.siteUrl}/article/${news.slug ? news.slug.current : ''}`}
       />
-
       <HeroHeader
         title="Lorem ipsum dolor"
         subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
@@ -88,8 +88,14 @@ const ArticleView = ({ data }) => {
         <section className="section">
           <div className="container">
             <div className="columns is-centered">
-              <div className="column is-9">
+              <div className="column ">
                 <div className="mb-5 mt-5">
+                  <ScrollAnimation
+                    top="0"
+                    left="-3%"
+                    animation="animate__fadeInUp"
+                    image="/images/pink-dot.png"
+                  />
                   <Img
                     fluid={
                       news.image && news.image.asset
@@ -98,18 +104,10 @@ const ArticleView = ({ data }) => {
                     }
                   />
                 </div>
-                <div className="markdown-container">
-                  <ReactMarkdown source={news.description} />
-                </div>
-                {news.otherImages.map((item) => (
-                  <Image
-                    className="mb-5 mt-5"
-                    fluid={item && item.asset ? item.asset.fluid : ''}
-                    key={item._key}
-                    alt={item.title}
-                  />
-                ))}
               </div>
+            </div>
+            <div className="markdown-container">
+              <ReactMarkdown source={news.description} />
             </div>
           </div>
         </section>
