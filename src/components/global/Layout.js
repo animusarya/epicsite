@@ -14,10 +14,8 @@ const Container = styled.div`
 const query = graphql`
   query LayoutQuery {
     sanitySiteSettings {
-      facebook
-      twitter
-      instagram
-      telephone
+      telephoneOne
+      telephoneTwo
       address
       email
       footerDescription

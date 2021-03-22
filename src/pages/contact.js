@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { graphql } from 'gatsby';
-import ContactForm from '../components/forms/ContactForm';
 import Seo from '../components/Seo';
 import Layout from '../components/global/Layout';
 import { HeroHeader } from '../components/elements';
@@ -17,27 +16,6 @@ export const query = graphql`
   query ContactPageQuery {
     sanitySiteSettings {
       email
-      telephone
-      contact {
-        title
-        description
-        image {
-          asset {
-            fluid(maxWidth: 1200) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-      }
-      coverImage {
-        contactPage {
-          asset {
-            fluid(maxWidth: 1000) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-      }
     }
   }
 `;

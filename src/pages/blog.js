@@ -27,17 +27,6 @@ export const blogQuery = graphql`
         }
       }
     }
-    sanitySiteSettings {
-      coverImage {
-        blogPage {
-          asset {
-            fluid(maxWidth: 1200) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-      }
-    }
   }
 `;
 
