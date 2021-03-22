@@ -1,9 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-// import Heading from './Heading';
-// import Button from './Button';
-// import ScrollAnimation from './ScrollAnimation';
-// import Subtitle from './Subtitle';
+import Img from 'gatsby-image';
 import { Heading, Button, ScrollAnimation, Subtitle } from '../elements';
 import BackgroundBlob from '../BackgroundBlob';
 
@@ -20,7 +17,7 @@ const Container = styled.div`
   }
 `;
 
-const AboutSection = ({ subtitle, hasButton, Img }) => {
+const AboutSection = ({ subtitle, hasButton, img }) => {
   return (
     <>
       <Container className="section is-medium">
@@ -39,7 +36,7 @@ const AboutSection = ({ subtitle, hasButton, Img }) => {
               </div>
             </div>
             <div className="column is-6 is-offset-2">
-              <img src={Img} alt="about" />
+              <Img fluid={img} alt="about" />
               <ScrollAnimation
                 top="75%"
                 left="50%"
