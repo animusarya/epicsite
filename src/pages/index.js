@@ -7,14 +7,9 @@ import Layout from '../components/global/Layout';
 import HomeBanner from '../components/home/HomeBanner';
 import Services from '../components/home/Services';
 import AboutSection from '../components/global/AboutSection';
-// import Blog from '../components/global/Blog';
-// import Features from '../components/Features';
-// import HomeAboutUs from '../components/HomeAboutUs';
 import Reviews from '../components/home/Reviews';
 import Quote from '../components/home/Quote';
 import BlogSection from '../components/global/BlogSection';
-
-// import Members from '../components/Members';
 
 export const query = graphql`
   query HomePageQuery {
@@ -22,9 +17,6 @@ export const query = graphql`
       title
       description
       keywords
-      informationTitle
-      information
-
       homeHero {
         title
         subtitle
@@ -37,57 +29,11 @@ export const query = graphql`
           }
         }
       }
-      homeFeatures {
-        _key
-        title
-        subtitle
-        image {
-          asset {
-            fluid(maxWidth: 600) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-      }
-
-      brands {
-        _key
-        title
-        image {
-          asset {
-            fluid(maxWidth: 800) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-      }
-      whyChoose {
-        _key
-        title
-        description
-        image {
-          asset {
-            fluid(maxWidth: 1000) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-        featuresList
-      }
       reviewBackground {
         asset {
           fluid(maxWidth: 1200) {
             ...GatsbySanityImageFluid
           }
-        }
-      }
-    }
-    allSanityReview {
-      edges {
-        node {
-          _id
-          personName
-          comment
         }
       }
     }
@@ -137,10 +83,8 @@ export const query = graphql`
 const IndexPage = ({ data }) => {
   const { edges: article } = data.allSanityArticle;
   const home = data.sanitySiteSettings;
-  // const homeFeatures = data.sanitySiteSettings;
-  // const brands = data.sanitySiteSettings;
-  // const homeAboutUs = data.sanitySiteSettings.whyChoose;
   const service = data.allSanityServices.edges;
+
   return (
     <Layout>
       <Seo title="Home" />
@@ -154,10 +98,6 @@ const IndexPage = ({ data }) => {
       <Reviews />
       <BlogSection article={article} />
       <Quote />
-      {/* <HomeAboutUs data={homeAboutUs} home={home} />
-      <Features data={homeFeatures} />
-      <Review review={review} home={home} />
-      <Members data={brands} /> */}
     </Layout>
   );
 };

@@ -99,15 +99,7 @@ const Services = ({ data }) => {
           service.slug ? service.slug.current : ''
         }`}
       />
-      {/* <HeroHeader
-        heading={service.title}
-        background={
-          service && service.coverImage
-            ? service.coverImage.asset.fluid.src
-            : '/images/contact.jpg'
-        }
-        title={`Services / ${service.slug ? service.slug.current : ''}`}
-      /> */}
+
       <Section className="section">
         <div className="container">
           <div className="columns is-centered">

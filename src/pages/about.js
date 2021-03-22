@@ -60,24 +60,12 @@ export const aboutQuery = graphql`
         description
       }
     }
-    sanitySiteSettings {
-      coverImage {
-        aboutPageCover {
-          asset {
-            fluid(maxWidth: 1200) {
-              ...GatsbySanityImageFluid
-            }
-          }
-        }
-      }
-    }
   }
 `;
 
 const About = () => {
   // const { edges: posts } = data.allSanityArticle;
   // const aboutUs = data.sanityAbout;
-  // const cover = data.sanitySiteSettings.coverImage;
   return (
     <Layout>
       <Seo title="About" />
