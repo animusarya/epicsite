@@ -8,7 +8,11 @@ import BackgroundBlob from '../BackgroundBlob';
 import GoogleMap from '../map/GoogleMap';
 import ContactForm from '../forms/ContactForm';
 
-const Section = styled.div``;
+const Section = styled.div`
+  li {
+    line-height: 1.5;
+  }
+`;
 
 const ContactSection = () => {
   return (
@@ -31,23 +35,35 @@ const ContactSection = () => {
                 <h1 className="is-size-5 has-text-black has-text-weight-semibold mt-3 mb-2">
                   Address
                 </h1>
-                <p className="has-text-black has-text-weight-normal is-size-6 pr-6">
-                  {config.address}
-                </p>
+                <ul>
+                  <li className="has-text-black has-text-weight-normal is-size-6 pr-6">
+                    {config.address}
+                  </li>
+                </ul>
               </div>
-              <div className="column">
+              <div className="column pl-0">
                 <img src="/images/phone01.png" alt="phone-icon" />
                 <h1 className="is-size-5 has-text-black has-text-weight-semibold mt-3 mb-2">
                   Phone Number
                 </h1>
-                <p className="has-text-black has-text-weight-normal is-size-6 pr-6">
-                  {' '}
-                  {config.telephoneOne}
-                </p>
-                <p className="has-text-black has-text-weight-normal is-size-6 pr-6">
-                  {' '}
-                  {config.telephoneTwo}
-                </p>
+                <ul>
+                  <li>
+                    <a
+                      className="has-text-black has-text-weight-normal is-size-6 "
+                      href={`tel:${config.telephoneOne}`}
+                    >
+                      {config.telephoneTwo}
+                    </a>{' '}
+                  </li>
+                  <li>
+                    <a
+                      className="has-text-black has-text-weight-normal is-size-6"
+                      href={`tel:${config.telephoneTwo}`}
+                    >
+                      {config.telephoneTwo}
+                    </a>{' '}
+                  </li>
+                </ul>
               </div>
             </div>
             <ContactForm />
