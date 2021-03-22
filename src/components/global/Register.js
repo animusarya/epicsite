@@ -28,7 +28,7 @@ const Register = ({ handleChangeForm, onSubmit }) => {
                 free!
               </p>
               <div className="mt-5">
-                <LoginSignUpForm onSubmit={onSubmit} />
+                <LoginSignUpForm isNameInput onSubmit={onSubmit} />
                 <p className="has-text-weight-normal has-text-centered mt-4">
                   Already Have An Account?
                   <span className="ml-1" onClick={handleChangeForm}>

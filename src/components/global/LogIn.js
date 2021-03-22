@@ -4,10 +4,6 @@ import styled from 'styled-components';
 import LoginSignUpForm from '../forms/LoginSignUpForm';
 
 const LoginCard = styled.div`
-  /* .box {
-    padding: 4rem;
-    background-color: #edc4d1;
-  } */
   p {
     color: ${(props) => props.theme.darkShades};
   }

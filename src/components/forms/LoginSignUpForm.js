@@ -16,6 +16,7 @@ const FormCard = styled.div`
 `;
 
 const LoginSignUpForm = ({
+  isNameInput,
   values,
   touched,
   errors,
@@ -26,6 +27,17 @@ const LoginSignUpForm = ({
   return (
     <FormCard>
       <form onSubmit={handleSubmit}>
+        {isNameInput && (
+          <InputGroup
+            name="name"
+            placeholder="Name"
+            type="text"
+            value={values.name}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            errors={errors.name && touched.name ? errors.name : undefined}
+          />
+        )}
         <InputGroup
           name="email"
           placeholder="Email Address"
@@ -67,8 +79,10 @@ export default withFormik({
   mapPropsToValues: () => ({
     email: '',
     password: '',
+    name: '',
   }),
   validationSchema: Yup.object().shape({
+    name: Yup.string().required('Name is required!'),
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required!'),

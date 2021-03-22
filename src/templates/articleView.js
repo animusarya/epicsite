@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
-import 'slick-carousel/slick/slick.css';
-import 'slick-carousel/slick/slick-theme.css';
 import { graphql } from 'gatsby';
 import ReactMarkdown from 'react-markdown';
-import Slider from 'react-slick';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
 // import { useStoreState, useStoreActions } from 'easy-peasy';
@@ -49,17 +46,6 @@ const Image = styled(Img)`
 
 const ArticleView = ({ data }) => {
   const news = data.sanityArticle;
-  const settings = {
-    dots: true,
-    arrows: false,
-    infinite: true,
-    autoplay: false,
-    autoplaySpeed: 3000,
-    speed: 600,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    lazyLoad: true,
-  };
   // const isLoggedIn = useStoreState((state) => state.isLoggedIn.value);
   // const toggleLoggedIn = useStoreActions(
   //   (actions) => actions.isLoggedIn.toggle,
@@ -115,16 +101,14 @@ const ArticleView = ({ data }) => {
                 <div className="markdown-container">
                   <ReactMarkdown source={news.description} />
                 </div>
-                <Slider {...settings}>
-                  {news.otherImages.map((item) => (
-                    <Image
-                      className="mb-5 mt-5"
-                      fluid={item && item.asset ? item.asset.fluid : ''}
-                      key={item._key}
-                      alt={item.title}
-                    />
-                  ))}
-                </Slider>
+                {news.otherImages.map((item) => (
+                  <Image
+                    className="mb-5 mt-5"
+                    fluid={item && item.asset ? item.asset.fluid : ''}
+                    key={item._key}
+                    alt={item.title}
+                  />
+                ))}
               </div>
             </div>
           </div>
