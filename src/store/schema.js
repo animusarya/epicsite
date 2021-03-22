@@ -1,3 +1,4 @@
+/* eslint-disable no-param-reassign */
 import { action } from 'easy-peasy';
 
 const schema = {
@@ -13,6 +14,10 @@ const schema = {
       state.data = payload;
     }),
   },
+
+  setCommunity: action((state, payload) => {
+    state.community = payload;
+  }),
 };
 
 export default schema;
