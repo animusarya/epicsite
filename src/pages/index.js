@@ -55,15 +55,31 @@ export const query = graphql`
           }
         }
       }
-      # reviewBackground {
-      #   asset {
-      #     fluid(maxWidth: 1200) {
-      #       ...GatsbySanityImageFluid
-      #     }
-      #   }
-      # }
+      quoteBackground {
+        asset {
+          fluid(maxWidth: 1200) {
+            ...GatsbySanityImageFluid
+          }
+        }
+      }
     }
-
+    allSanityReview {
+      edges {
+        node {
+          _id
+          personName
+          Type
+          comment
+          image {
+            asset {
+              fluid(maxWidth: 1200) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+        }
+      }
+    }
     allSanityArticle(sort: { fields: _createdAt, order: DESC }) {
       edges {
         node {
@@ -83,33 +99,13 @@ export const query = graphql`
         }
       }
     }
-    # allSanityServices {
-    #   edges {
-    #     node {
-    #       _id
-    #       order
-    #       title
-    #       description
-    #       slug {
-    #         current
-    #       }
-    #       image {
-    #         asset {
-    #           fluid(maxWidth: 1200) {
-    #             ...GatsbySanityImageFluid
-    #           }
-    #         }
-    #       }
-    #     }
-    #   }
-    # }
   }
 `;
 
 const IndexPage = ({ data }) => {
   const { edges: article } = data.allSanityArticle;
   const home = data.sanitySiteSettings;
-  console.log(home, 'hgfj');
+  const { edges: review } = data.allSanityReview;
   return (
     <Layout>
       <Seo title="Home" />
@@ -119,10 +115,11 @@ const IndexPage = ({ data }) => {
         hasButton
         subtitle={home.homeAbout.subtitle}
         img={home.homeAbout.image.asset.fluid}
+        alt={home.homeAbout.title}
       />
-      <Reviews />
+      <Reviews review={review} />
       <BlogSection article={article} />
-      <Quote />
+      <Quote home={home} />
     </Layout>
   );
 };

@@ -60,7 +60,6 @@ const Section = styled.div`
 
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
-
   return (
     <Section>
       <nav className="navbar" role="navigation" aria-label="main navigation">

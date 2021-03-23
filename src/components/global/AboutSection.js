@@ -17,7 +17,7 @@ const Container = styled.div`
   }
 `;
 
-const AboutSection = ({ subtitle, hasButton, img }) => {
+const AboutSection = ({ subtitle, hasButton, img, alt }) => {
   return (
     <>
       <Container className="section is-medium">
@@ -36,7 +36,7 @@ const AboutSection = ({ subtitle, hasButton, img }) => {
               </div>
             </div>
             <div className="column is-6 is-offset-2">
-              <Img fluid={img} alt="about" />
+              <Img fluid={img} alt={alt} />
               <ScrollAnimation
                 top="75%"
                 left="50%"

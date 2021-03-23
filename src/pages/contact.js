@@ -6,7 +6,6 @@ import Layout from '../components/global/Layout';
 import { HeroHeader } from '../components/elements';
 import ContactSection from '../components/contact/ContactSection';
 import Reviews from '../components/home/Reviews';
-import { theme } from '../utils/theme';
 
 const Container = styled.div`
   padding-top: 9rem;
@@ -15,23 +14,57 @@ const Container = styled.div`
 export const query = graphql`
   query ContactPageQuery {
     sanitySiteSettings {
+      telephoneOne
+      telephoneTwo
+      address
       email
+      footerDescription
+      contactBanner {
+        title
+        description
+        image {
+          asset {
+            fluid(maxWidth: 1200) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+    }
+    allSanityReview {
+      edges {
+        node {
+          _id
+          personName
+          Type
+          comment
+          image {
+            asset {
+              fluid(maxWidth: 1200) {
+                ...GatsbySanityImageFluid
+              }
+            }
+          }
+        }
+      }
     }
   }
 `;
 
-const Contact = () => {
-  // const contact = data.sanitySiteSettings;
+const Contact = ({ data }) => {
+  const contact = data.sanitySiteSettings;
+  const { edges: review } = data.allSanityReview;
   return (
     <Layout>
       <Seo title="Contact Us" />
       <HeroHeader
-        title="Contact Us"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        title={contact.contactBanner.title}
+        subtitle={contact.contactBanner.description}
+        bgImage={contact.contactBanner.image.asset.fluid.src}
       />
-      <ContactSection />
+      <ContactSection contact={contact} />
       <Container>
-        <Reviews bgColor={theme.mainBrandColor} />
+        <Reviews review={review} />
       </Container>
     </Layout>
   );

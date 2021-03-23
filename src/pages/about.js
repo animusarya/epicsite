@@ -36,30 +36,30 @@ export const aboutQuery = graphql`
         }
       }
     }
-    sanityAbout {
-      _id
-      heroTitle
-      heroDescription
-      featuredImage {
-        asset {
-          fluid(maxWidth: 1200) {
-            ...GatsbySanityImageFluid
-          }
-        }
-      }
-      image {
-        asset {
-          fluid(maxWidth: 1200) {
-            ...GatsbySanityImageFluid
-          }
-        }
-      }
-      services {
-        _key
-        title
-        description
-      }
-    }
+    # sanityAbout {
+    #   _id
+    #   heroTitle
+    #   heroDescription
+    #   featuredImage {
+    #     asset {
+    #       fluid(maxWidth: 1200) {
+    #         ...GatsbySanityImageFluid
+    #       }
+    #     }
+    #   }
+    #   image {
+    #     asset {
+    #       fluid(maxWidth: 1200) {
+    #         ...GatsbySanityImageFluid
+    #       }
+    #     }
+    #   }
+    #   services {
+    #     _key
+    #     title
+    #     description
+    #   }
+    # }
   }
 `;
 

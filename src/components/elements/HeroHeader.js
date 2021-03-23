@@ -4,15 +4,15 @@ import Heading from './Heading';
 import Subtitle from './Subtitle';
 
 const SectionHero = styled.div`
-  background-image: url(/images/herobg.png);
+  background-image: url(${(props) => props.bgImage});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 `;
 
-const HeroHeader = ({ title, subtitle }) => {
+const HeroHeader = ({ title, subtitle, bgImage }) => {
   return (
-    <SectionHero className="hero is-medium">
+    <SectionHero className="hero is-medium" bgImage={bgImage}>
       <div className="hero-body has-text-centered">
         <div className="columns is-centered mb-0">
           <div className="column is-6">

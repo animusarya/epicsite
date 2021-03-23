@@ -14,10 +14,6 @@ const Container = styled.div`
 const query = graphql`
   query LayoutQuery {
     sanitySiteSettings {
-      telephoneOne
-      telephoneTwo
-      address
-      email
       footerDescription
     }
   }
@@ -39,7 +35,7 @@ const IndexLayout = ({ children }) => (
           const home = data.sanitySiteSettings;
           return (
             <>
-              <Header home={home} />
+              <Header />
               <Container>{children}</Container>
               <Footer home={home} />
             </>

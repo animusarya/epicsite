@@ -58,13 +58,10 @@ const Section = styled.div`
 `;
 
 export const serviceQuery = graphql`
-  query servicePageQuery($slug: String!) {
-    sanityServices(slug: { current: { eq: $slug } }) {
+  query servicePageQuery {
+    sanityServices {
       _id
       title
-      slug {
-        current
-      }
       description
       image {
         asset {

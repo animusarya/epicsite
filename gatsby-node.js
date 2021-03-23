@@ -27,17 +27,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
           }
         }
       }
-      allSanityServices {
-        edges {
-          node {
-            _id
-            title
-            slug {
-              current
-            }
-          }
-        }
-      }
     }
   `);
   if (result.errors) {
@@ -46,7 +35,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   const pages = result.data.allSanityPage.edges || [];
   const article = result.data.allSanityArticle.edges || [];
-  const myServices = result.data.allSanityServices.edges || [];
 
   pages.forEach(({ node }) => {
     createPage({
@@ -61,16 +49,6 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     createPage({
       path: `article/${node.slug ? node.slug.current : ''}`,
       component: path.resolve(`src/templates/articleView.js`),
-      context: {
-        slug: node.slug ? node.slug.current : '',
-      },
-    });
-  });
-
-  myServices.forEach(({ node }) => {
-    createPage({
-      path: `service/${node.slug ? node.slug.current : ''}`,
-      component: path.resolve(`src/templates/services.js`),
       context: {
         slug: node.slug ? node.slug.current : '',
       },

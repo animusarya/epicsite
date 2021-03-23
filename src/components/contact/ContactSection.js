@@ -1,8 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import config from '../../utils/config';
-
 import { Heading } from '../elements';
 import BackgroundBlob from '../BackgroundBlob';
 import GoogleMap from '../map/GoogleMap';
@@ -14,14 +12,14 @@ const Section = styled.div`
   }
 `;
 
-const ContactSection = () => {
+const ContactSection = ({ contact }) => {
   return (
     <Section className="section is-medium">
       <BackgroundBlob size="90vh" left="-20%" />
       <div className="container">
         <div className="columns is-centered has-text-centered">
           <div className="column is-8">
-            <Heading centered darkText="Get in " colouredText="touch" />
+            <Heading centered darkText="Get in" colouredText="Touch" />
           </div>
         </div>
         <div className="columns is-centered is-vcentered is-variable is-6">
@@ -36,9 +34,23 @@ const ContactSection = () => {
                   Address
                 </h1>
                 <ul>
-                  <li className="has-text-black has-text-weight-normal is-size-6 pr-6">
-                    {config.address}
-                  </li>
+                  {contact.address && (
+                    <li className="has-text-black has-text-weight-normal is-size-6 pr-6">
+                      {contact.address}
+                    </li>
+                  )}
+                  {contact.email && (
+                    <li>
+                      {contact.email && (
+                        <a
+                          href={`mailto:${contact.email}`}
+                          className="has-text-black has-text-weight-normal is-size-6 pr-6"
+                        >
+                          {contact.email}
+                        </a>
+                      )}
+                    </li>
+                  )}
                 </ul>
               </div>
               <div className="column pl-0">
@@ -48,20 +60,24 @@ const ContactSection = () => {
                 </h1>
                 <ul>
                   <li>
-                    <a
-                      className="has-text-black has-text-weight-normal is-size-6 "
-                      href={`tel:${config.telephoneOne}`}
-                    >
-                      {config.telephoneTwo}
-                    </a>{' '}
+                    {contact.telephoneOne && (
+                      <a
+                        className="has-text-black has-text-weight-normal is-size-6 "
+                        href={`tel:${contact.telephoneOne}`}
+                      >
+                        {contact.telephoneOne}
+                      </a>
+                    )}
                   </li>
                   <li>
-                    <a
-                      className="has-text-black has-text-weight-normal is-size-6"
-                      href={`tel:${config.telephoneTwo}`}
-                    >
-                      {config.telephoneTwo}
-                    </a>{' '}
+                    {contact.telephoneTwo && (
+                      <a
+                        className="has-text-black has-text-weight-normal is-size-6"
+                        href={`tel:${contact.telephoneTwo}`}
+                      >
+                        {contact.telephoneTwo}
+                      </a>
+                    )}{' '}
                   </li>
                 </ul>
               </div>

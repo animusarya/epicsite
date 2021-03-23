@@ -13,9 +13,9 @@ export const query = graphql`
         node {
           _id
           order
-          slug {
-            current
-          }
+          # slug {
+          #   current
+          # }
           title
           description
           image {

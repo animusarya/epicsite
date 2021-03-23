@@ -36,7 +36,7 @@ const information = [
   { id: 4, name: ' Lorem ipsum', url: '' },
   { id: 5, name: ' Lorem ipsum', url: '' },
 ];
-const Footer = () => {
+const Footer = ({ home }) => {
   return (
     <Container>
       <ScrollAnimation
@@ -63,11 +63,9 @@ const Footer = () => {
                   className="mb-5"
                 />
                 <Subtitle small hasWhite>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Arcu
-                  amet lorem in gravida porta odio. Nunc malesuada metus pretium
-                  faucibus.
+                  {home.footerDescription}
                 </Subtitle>
-                <Subtitle small hasWhite>
+                <Subtitle small hasWhite className="mt-5">
                   ©Turner House Education 2021. All rights reserved
                 </Subtitle>
               </div>

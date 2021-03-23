@@ -1,5 +1,6 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React, { Component } from 'react';
+import Img from 'gatsby-image';
 import styled from 'styled-components';
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
@@ -44,42 +45,6 @@ const Container = styled.div`
     }
   }
 `;
-
-const data = [
-  {
-    id: 1,
-    image: '/images/placeholder-img1.png',
-    name: 'Edward Newgate',
-    type: 'Student',
-    review:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus egestas non semper vitae orci, cursus eleifend nisi. Ut neque accumsan amet eget aenean. Facilisis dictum pharetra.',
-  },
-  {
-    id: 2,
-    image: '/images/placeholder-img1.png',
-    name: 'Newgate',
-    type: 'Student',
-    review:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus egestas non semper vitae orci, cursus eleifend nisi. Ut neque accumsan amet eget aenean. Facilisis dictum pharetra.',
-  },
-  {
-    id: 3,
-    image: '/images/placeholder-img1.png',
-    name: 'Edward ',
-    type: 'Student',
-    review:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus egestas non semper vitae orci, cursus eleifend nisi. Ut neque accumsan amet eget aenean. Facilisis dictum pharetra.',
-  },
-  {
-    id: 4,
-    image: '/images/placeholder-img1.png',
-    name: 'Edward Newgate',
-    type: 'Student',
-    review:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Rhoncus egestas non semper vitae orci, cursus eleifend nisi. Ut neque accumsan amet eget aenean. Facilisis dictum pharetra.',
-  },
-];
-
 export default class PreviousNextMethods extends Component {
   constructor(props) {
     super(props);
@@ -104,7 +69,10 @@ export default class PreviousNextMethods extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
-    const { bgColor } = this.props;
+    const { bgColor, review } = this.props;
+    if (!review) {
+      return null;
+    }
     return (
       <Container bgColor={bgColor} className="section is-medium">
         <ScrollAnimation
@@ -123,32 +91,31 @@ export default class PreviousNextMethods extends Component {
               </div>
               <div>
                 <Slider ref={(c) => (this.slider = c)} {...settings}>
-                  {data.map((item) => (
-                    <div key={item.id} className="pb-3 mt-5 mb-6">
+                  {review.map(({ node }) => (
+                    <div key={node._id} className="pb-3 mt-5 mb-6">
                       <div className="columns">
                         <div className="column">
                           <div className="media is-align-items-center">
                             <div className="media-left">
                               <figure className="image is-128x128">
-                                <img
-                                  className="is-rounded"
-                                  src={item.image}
-                                  alt="Placeholder"
+                                <Img
+                                  fluid={node.image.asset.fluid}
+                                  alt={node.Type}
                                 />
                               </figure>
                             </div>
                             <div className="media-content">
                               <p className="title is-4 is-family-primary ">
-                                {item.name}
+                                {node.personName}
                               </p>
                               <p className="subtitle is-6 is-family-primary  is-uppercase">
-                                {item.type}
+                                {node.Type}
                               </p>
                             </div>
                           </div>
                         </div>
                         <div className="column ">
-                          <Subtitle hasWhite>{item.review}</Subtitle>
+                          <Subtitle hasWhite>{node.comment}</Subtitle>
                         </div>
                       </div>
                     </div>
