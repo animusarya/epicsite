@@ -8,7 +8,7 @@ const ContactSection = () => {
       <div className="container">
         <div className="columns is-centered has-text-centered mb-5">
           <div className="column is-8">
-            <Heading centered darkText="Get in " colouredText="touch" />
+            <Heading centered darkText="Get in " colouredText="Touch" />
             <Subtitle centered>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pulvinar
               amet, id at volutpat eu elit malesuada at enim. Eros, morbi

@@ -2,10 +2,8 @@ import React, { useState } from 'react';
 import ReactPlayer from 'react-player/youtube';
 import VideoCard from './VideoCard';
 
-const VideoSection = () => {
-  const [state, setState] = useState(
-    'https://www.youtube.com/embed/NpEaa2P7qZI',
-  );
+const VideoSection = ({ video }) => {
+  const [state, setState] = useState(video[0].node.url);
   return (
     <div className="section is-medium">
       <div className="container">
@@ -21,7 +19,7 @@ const VideoSection = () => {
             />
           </div>
         </div>
-        <VideoCard setVideoUrl={(val) => setState(val)} />
+        <VideoCard video={video} setVideoUrl={(val) => setState(val)} />
       </div>
     </div>
   );

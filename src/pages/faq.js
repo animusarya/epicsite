@@ -9,6 +9,17 @@ import Seo from '../components/Seo';
 
 export const query = graphql`
   query FaqPageQuery {
+    allSanityVideo(sort: { fields: order, order: ASC }) {
+      edges {
+        node {
+          _id
+          order
+          title
+          description
+          url
+        }
+      }
+    }
     allSanityArticle(sort: { fields: _createdAt, order: DESC }) {
       edges {
         node {
@@ -33,14 +44,16 @@ export const query = graphql`
 
 const FAQ = ({ data }) => {
   const { edges: article } = data.allSanityArticle;
+  const { edges: video } = data.allSanityVideo;
   return (
     <Layout>
       <Seo title="Faq" />
       <HeroHeader
+        bgImage="/images/herobg.png"
         title="Lorem ipsum dolor"
         subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
       />
-      <VideoSection />
+      <VideoSection video={video} />
       <BlogSection article={article} />
       <ContactSection />
     </Layout>
