@@ -116,11 +116,14 @@ const IndexPage = ({ data }) => {
       <HomeBanner home={home} />
       <Services home={home} />
       <AboutSection
-        hasButton
         subtitle={home.homeAbout.subtitle}
         img={home.homeAbout.image.asset.fluid}
         alt={home.homeAbout.title}
-        to={home.homeAbout.linkTo.current}
+        to={
+          home.homeAbout && home.homeAbout.linkTo
+            ? home.homeAbout.linkTo.current
+            : ''
+        }
       />
       <Reviews review={review} />
       <BlogSection article={article} />

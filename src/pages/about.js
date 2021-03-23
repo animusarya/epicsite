@@ -17,70 +17,72 @@ const Container = styled.div`
 
 export const aboutQuery = graphql`
   query myBlog {
-    allSanityArticle(sort: { fields: _createdAt, order: DESC }) {
-      edges {
-        node {
-          _id
-          title
-          slug {
-            current
+    sanityAbout {
+      aboutUs {
+        title
+        description
+        image {
+          asset {
+            fluid(maxWidth: 1200) {
+              ...GatsbySanityImageFluid
+            }
           }
-          description
-          image {
-            asset {
-              fluid(maxWidth: 1200) {
-                ...GatsbySanityImageFluid
-              }
+        }
+      }
+      information {
+        title
+        subtitle
+        linkTo {
+          current
+        }
+        image {
+          asset {
+            fluid(maxWidth: 1200) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+      testimonial {
+        position
+        name
+        description
+        image {
+          asset {
+            fluid(maxWidth: 1200) {
+              ...GatsbySanityImageFluid
             }
           }
         }
       }
     }
-    # sanityAbout {
-    #   _id
-    #   heroTitle
-    #   heroDescription
-    #   featuredImage {
-    #     asset {
-    #       fluid(maxWidth: 1200) {
-    #         ...GatsbySanityImageFluid
-    #       }
-    #     }
-    #   }
-    #   image {
-    #     asset {
-    #       fluid(maxWidth: 1200) {
-    #         ...GatsbySanityImageFluid
-    #       }
-    #     }
-    #   }
-    #   services {
-    #     _key
-    #     title
-    #     description
-    #   }
-    # }
   }
 `;
 
-const About = () => {
-  // const { edges: posts } = data.allSanityArticle;
-  // const aboutUs = data.sanityAbout;
+const About = ({ data }) => {
+  const aboutUs = data.sanityAbout;
   return (
     <Layout>
       <Seo title="About" />
       <Container>
         <HeroHeader
-          title="Who we are"
-          subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+          bgImage={aboutUs.aboutUs.image.asset.fluid.src}
+          title={aboutUs.aboutUs.title}
+          subtitle={aboutUs.aboutUs.description}
         />
         <div className="pt-6 about-wrapper">
           <AboutSection
-            subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Orci ut orci, orci, iaculis nunc. In aenean aenean pulvinar nibh in ipsum tempor semper aliquet. Aliquet ultricies interdum vel praesent egestas nisi amet orci massa. Tempor."
-            Img="/images/about2.png"
+            to={
+              aboutUs.information && aboutUs.information.linkTo
+                ? aboutUs.information.linkTo.current
+                : ''
+            }
+            subtitle={aboutUs.information.subtitle}
+            img={aboutUs.information.image.asset.fluid}
+            alt={aboutUs.information.title}
           />
         </div>
-        <Testimonial />
+        <Testimonial aboutUs={aboutUs} />
         <CountSection />
       </Container>
     </Layout>
