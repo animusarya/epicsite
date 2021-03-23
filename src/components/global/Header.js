@@ -140,12 +140,6 @@ const Header = () => {
                   >
                     FAQ
                   </Link>
-                  <Link
-                    to="/service"
-                    className="navbar-item has-text-weight-normal has-text-white px-5"
-                  >
-                    Service
-                  </Link>
                 </div>
               </div>
               <div className="navbar-item has-text-weight-normal has-text-white px-5">
