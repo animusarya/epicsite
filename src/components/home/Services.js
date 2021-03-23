@@ -22,7 +22,14 @@ const Services = ({ home }) => {
                 <div className="card p-6 has-radius-medium mb-4">
                   <div className="card-image has-text-centered mb-5 ">
                     <figure className="image is-96x96">
-                      <Img fluid={item.image.asset.fluid} alt={item.title} />
+                      <Img
+                        fluid={
+                          item && item.image && item.image.asset
+                            ? item.image.asset.fluid
+                            : ''
+                        }
+                        alt={item.title}
+                      />
                     </figure>
                   </div>
                   <div className="content">

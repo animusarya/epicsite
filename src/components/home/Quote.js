@@ -10,7 +10,11 @@ const Section = styled.div`
 
 const Quote = ({ home }) => {
   return (
-    <Section bgImage={home.quoteBackground.asset.fluid.src}>
+    <Section
+      bgImage={
+        home.quoteBackground.asset ? home.quoteBackground.asset.fluid.src : ''
+      }
+    >
       <div className="section is-medium">
         <div className="container">
           <QuoteForm onFormSubmit={(v) => console.log(v, 'data')} />

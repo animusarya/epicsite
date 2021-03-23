@@ -108,7 +108,11 @@ const IndexPage = ({ data }) => {
   const { edges: review } = data.allSanityReview;
   return (
     <Layout>
-      <Seo title="Home" />
+      <Seo
+        title={home.title}
+        description={home.description}
+        keywords={home.keywords}
+      />
       <HomeBanner home={home} />
       <Services home={home} />
       <AboutSection
@@ -116,6 +120,7 @@ const IndexPage = ({ data }) => {
         subtitle={home.homeAbout.subtitle}
         img={home.homeAbout.image.asset.fluid}
         alt={home.homeAbout.title}
+        to={home.homeAbout.linkTo.current}
       />
       <Reviews review={review} />
       <BlogSection article={article} />

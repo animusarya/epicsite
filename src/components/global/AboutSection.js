@@ -17,7 +17,7 @@ const Container = styled.div`
   }
 `;
 
-const AboutSection = ({ subtitle, hasButton, img, alt }) => {
+const AboutSection = ({ subtitle, hasButton, img, alt, to }) => {
   return (
     <>
       <Container className="section is-medium">
@@ -32,7 +32,11 @@ const AboutSection = ({ subtitle, hasButton, img, alt }) => {
               />
               <Subtitle>{subtitle}</Subtitle>
               <div className="mt-4 buttonWrapper">
-                {hasButton && <Button isLarge>Learn more</Button>}
+                {hasButton && (
+                  <Button isLarge to={to}>
+                    Learn more
+                  </Button>
+                )}
               </div>
             </div>
             <div className="column is-6 is-offset-2">

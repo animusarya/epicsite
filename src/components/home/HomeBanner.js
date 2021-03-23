@@ -24,7 +24,7 @@ const HomeBanner = ({ home }) => {
     <TriangleSection>
       <Section
         className="hero is-large"
-        bgImage={home.homeHero.image.asset.fluid.src}
+        bgImage={home.homeHero.image ? home.homeHero.image.asset.fluid.src : ''}
       >
         <div className="hero-body has-text-centered">
           <div className="columns is-centered">
