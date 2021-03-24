@@ -26,6 +26,17 @@ export const pageQuery = graphql`
           }
         }
       }
+      articleViewBanner {
+        title
+        description
+        image {
+          asset {
+            fluid(maxWidth: 1200) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
     }
   }
 `;
@@ -40,6 +51,7 @@ const ArticleView = ({ data }) => {
   const handleSubmit = () => {
     toggleLogin(true);
   };
+
   return (
     <Layout>
       <Seo
@@ -47,38 +59,41 @@ const ArticleView = ({ data }) => {
         description={`Read blog post about ${news.title}`}
         url={`${config.siteUrl}/article/${news.slug ? news.slug.current : ''}`}
       />
-      <HeroHeader
-        bgImage="/images/herobg.png"
-        title="Lorem ipsum dolor"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-      />
+
       {isLoggedIn ? (
-        <section className="section">
-          <div className="container">
-            <div className="columns is-centered">
-              <div className="column ">
-                <div className="mb-5 mt-5">
-                  <ScrollAnimation
-                    top="0"
-                    left="-3%"
-                    animation="animate__fadeInUp"
-                    image="/images/pink-dot.png"
-                  />
-                  <Img
-                    fluid={
-                      news.image && news.image.asset
-                        ? news.image.asset.fluid
-                        : ''
-                    }
-                  />
+        <>
+          <HeroHeader
+            title={news.articleViewBanner.title}
+            subtitle={news.articleViewBanner.description}
+            bgImage={news.articleViewBanner.image.asset.fluid.src}
+          />
+          <section className="section">
+            <div className="container">
+              <div className="columns is-centered">
+                <div className="column ">
+                  <div className="mb-5 mt-5">
+                    <ScrollAnimation
+                      top="0"
+                      left="-3%"
+                      animation="animate__fadeInUp"
+                      image="/images/pink-dot.png"
+                    />
+                    <Img
+                      fluid={
+                        news.image && news.image.asset
+                          ? news.image.asset.fluid
+                          : ''
+                      }
+                    />
+                  </div>
                 </div>
               </div>
+              <div className="markdown-container">
+                <ReactMarkdown source={news.description} />
+              </div>
             </div>
-            <div className="markdown-container">
-              <ReactMarkdown source={news.description} />
-            </div>
-          </div>
-        </section>
+          </section>
+        </>
       ) : (
         <>
           {showLogInForm ? (

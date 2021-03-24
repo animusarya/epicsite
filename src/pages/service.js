@@ -8,14 +8,24 @@ import ServiceFeatures from '../components/ServiceFeatures';
 
 export const query = graphql`
   query ServicePageQuery {
+    sanitySiteSettings {
+      servicesBanner {
+        title
+        description
+        image {
+          asset {
+            fluid(maxWidth: 1200) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+    }
     allSanityServices {
       edges {
         node {
           _id
           order
-          # slug {
-          #   current
-          # }
           title
           description
           image {
@@ -33,13 +43,14 @@ export const query = graphql`
 
 const Service = ({ data }) => {
   const service = data.allSanityServices.edges;
+  const heroService = data.sanitySiteSettings;
   return (
     <Layout>
       <Seo title="Services" />
       <HeroHeader
-        bgImage="/images/herobg.png"
-        title="Services"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        bgImage={heroService.servicesBanner.image.asset.fluid.src}
+        title={heroService.servicesBanner.title}
+        subtitle={heroService.servicesBanner.description}
       />
       {service.map(({ node }, index) => (
         <ServiceFeatures

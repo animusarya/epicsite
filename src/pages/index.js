@@ -83,7 +83,7 @@ export const query = graphql`
         }
       }
     }
-    allSanityArticle(sort: { fields: _createdAt, order: DESC }) {
+    allSanityArticle(limit: 3, sort: { fields: _createdAt, order: DESC }) {
       edges {
         node {
           _id
@@ -128,8 +128,8 @@ const IndexPage = ({ data }) => {
             : ''
         }
       />
-      <Reviews review={review} home={home} />
-      <BlogSection article={article} home={home} />
+      <Reviews review={review} reviewHeading={home.homeReviewHeading} />
+      <BlogSection article={article} heading={home.homeBlogHeading} />
       <Quote home={home} />
     </Layout>
   );

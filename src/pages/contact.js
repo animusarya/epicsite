@@ -19,6 +19,7 @@ export const query = graphql`
       address
       email
       footerDescription
+      homeReviewHeading
       contactBanner {
         title
         description
@@ -60,11 +61,15 @@ const Contact = ({ data }) => {
       <HeroHeader
         title={contact.contactBanner.title}
         subtitle={contact.contactBanner.description}
-        bgImage={contact.contactBanner.image.asset.fluid.src}
+        bgImage={
+          contact && contact.contactBanner && contact.contactBanner.image
+            ? contact.contactBanner.image.asset.fluid.src
+            : ''
+        }
       />
       <ContactSection contact={contact} />
       <Container>
-        <Reviews review={review} />
+        <Reviews review={review} reviewHeading={contact.homeReviewHeading} />
       </Container>
     </Layout>
   );

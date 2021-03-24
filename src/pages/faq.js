@@ -20,7 +20,22 @@ export const query = graphql`
         }
       }
     }
-    allSanityArticle(sort: { fields: _createdAt, order: DESC }) {
+    sanityFaq {
+      banner {
+        title
+        description
+        image {
+          asset {
+            fluid(maxWidth: 1200) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+      blogHeading
+      getInTouchDescription
+    }
+    allSanityArticle(limit: 6, sort: { fields: _createdAt, order: DESC }) {
       edges {
         node {
           _id
@@ -45,17 +60,18 @@ export const query = graphql`
 const FAQ = ({ data }) => {
   const { edges: article } = data.allSanityArticle;
   const { edges: video } = data.allSanityVideo;
+  const faq = data.sanityFaq;
   return (
     <Layout>
       <Seo title="Faq" />
       <HeroHeader
-        bgImage="/images/herobg.png"
-        title="Lorem ipsum dolor"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        bgImage={faq.banner.image.asset.fluid.src}
+        title={faq.banner.title}
+        subtitle={faq.banner.description}
       />
       <VideoSection video={video} />
-      <BlogSection article={article} />
-      <ContactSection />
+      <BlogSection article={article} heading={faq.blogHeading} />
+      <ContactSection faq={faq} />
     </Layout>
   );
 };

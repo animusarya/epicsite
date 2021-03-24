@@ -4,13 +4,20 @@ import Heading from './Heading';
 import Subtitle from './Subtitle';
 
 const SectionHero = styled.div`
-  background-image: url(${(props) => props.bgImage});
+  background-image: linear-gradient(
+      rgba(12, 12, 12, 0.3),
+      rgba(12, 12, 12, 0.3)
+    ),
+    url(${(props) => props.bgImage});
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
 `;
 
 const HeroHeader = ({ title, subtitle, bgImage }) => {
+  if (!bgImage) {
+    return null;
+  }
   return (
     <SectionHero className="hero is-medium" bgImage={bgImage}>
       <div className="hero-body has-text-centered">

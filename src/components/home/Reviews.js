@@ -69,10 +69,8 @@ export default class PreviousNextMethods extends Component {
       slidesToShow: 1,
       slidesToScroll: 1,
     };
-    const { bgColor, review, home } = this.props;
-    if (!review) {
-      return null;
-    }
+    const { bgColor, review, reviewHeading } = this.props;
+
     return (
       <Container bgColor={bgColor} className="section is-medium">
         <ScrollAnimation
@@ -86,7 +84,7 @@ export default class PreviousNextMethods extends Component {
             <div className="column is-10">
               <div className="mb-6 mt-4">
                 <Heading hasWhite centered>
-                  {home.homeReviewHeading}
+                  {reviewHeading}
                 </Heading>
               </div>
               <div>

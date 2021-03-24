@@ -8,6 +8,19 @@ import News from '../components/News';
 
 export const blogQuery = graphql`
   query blog {
+    sanitySiteSettings {
+      blogBanner {
+        title
+        description
+        image {
+          asset {
+            fluid(maxWidth: 1200) {
+              ...GatsbySanityImageFluid
+            }
+          }
+        }
+      }
+    }
     allSanityArticle(sort: { fields: _createdAt, order: DESC }) {
       edges {
         node {
@@ -32,6 +45,7 @@ export const blogQuery = graphql`
 
 const Blog = ({ data }) => {
   const { edges: aboutUs } = data.allSanityArticle;
+  const blogHero = data.sanitySiteSettings;
   return (
     <Layout>
       <Seo
@@ -40,9 +54,9 @@ const Blog = ({ data }) => {
         url={`${config.siteUrl}/account`}
       />
       <HeroHeader
-        bgImage="/images/herobg.png"
-        title="Lorem ipsum dolor"
-        subtitle="Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+        bgImage={blogHero.blogBanner.image.asset.fluid.src}
+        title={blogHero.blogBanner.title}
+        subtitle={blogHero.blogBanner.description}
       />
       <div className="section">
         <div className="container">

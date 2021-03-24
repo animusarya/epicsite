@@ -11,7 +11,7 @@ const BlogWrapper = styled.div`
   }
 `;
 
-const BlogSection = ({ article, home }) => {
+const BlogSection = ({ article, heading }) => {
   return (
     <BlogWrapper>
       <div className="hero is-medium">
@@ -22,9 +22,12 @@ const BlogSection = ({ article, home }) => {
           animation="animate__fadeInUp"
         />
         <div className="hero-body container">
-          <Heading centered hasWhite>
-            {home.homeBlogHeading}
-          </Heading>
+          {heading && (
+            <Heading centered hasWhite>
+              {heading}
+            </Heading>
+          )}
+
           <div className="columns is-variable is-5 is-multiline is-centered mt-6">
             {article.map(({ node }) => (
               <div className="column is-4" key={node._id}>
