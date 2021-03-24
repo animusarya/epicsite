@@ -63,7 +63,7 @@ const LoginSignUpForm = ({
             type="submit"
             className="button  is-medium has-text-white animated-link"
           >
-            Create Account
+            Send
             <span />
             <span />
             <span />

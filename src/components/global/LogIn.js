@@ -1,35 +1,81 @@
 import React from 'react';
-
 import styled from 'styled-components';
-import LoginSignUpForm from '../forms/LoginSignUpForm';
+import { withFormik } from 'formik';
+import * as Yup from 'yup';
+import { Heading, InputGroup, Subtitle } from '../elements';
 
 const LoginCard = styled.div`
-  p {
-    color: ${(props) => props.theme.darkShades};
+  .button {
+    background: ${(props) => props.theme.textColor};
+    border-radius: 8px;
+    margin: auto 0 !important;
+    :hover {
+      color: #000 !important;
+    }
   }
 `;
 
-const LogIn = ({ handleChangeForm, onSubmit }) => {
+const LogIn = ({
+  handleChangeForm,
+  values,
+  touched,
+  errors,
+  handleChange,
+  handleSubmit,
+  handleBlur,
+}) => {
   return (
     <LoginCard>
       <div className="section is-medium">
         <div className="container">
+          <Heading centered title="Log In" />
+          <Subtitle centered>Login into your account</Subtitle>
           <div className="columns is-centered">
             <div className="column is-6">
-              <h1 className="is-size-2 has-text-weight-bold has-text-black has-text-centered mb-4">
-                Log In
-              </h1>
-              <p className="has-text-centered is-size-6">
-                Create an account to enjoy all the services without any ads for
-                free!
-              </p>
               <div className="mt-5">
-                <LoginSignUpForm onSubmit={onSubmit} />
+                <form onSubmit={handleSubmit}>
+                  <InputGroup
+                    name="email"
+                    placeholder="Email Address"
+                    type="text"
+                    value={values.email}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    errors={
+                      errors.email && touched.email ? errors.email : undefined
+                    }
+                  />
+                  <InputGroup
+                    name="password"
+                    placeholder="Password"
+                    type="password"
+                    value={values.password}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    errors={
+                      errors.password && touched.password
+                        ? errors.password
+                        : undefined
+                    }
+                  />
+                  <div className="has-text-centered">
+                    <button
+                      type="submit"
+                      className="button  is-medium has-text-white animated-link"
+                    >
+                      Sign In
+                      <span />
+                      <span />
+                      <span />
+                      <span />
+                    </button>
+                  </div>
+                </form>
                 <p className="has-text-weight-normal has-text-centered mt-4">
                   Dont have an Account?
-                  <span className="ml-1" onClick={handleChangeForm}>
+                  <a className="ml-1" onClick={handleChangeForm}>
                     Sign Up
-                  </span>
+                  </a>
                 </p>
               </div>
             </div>
@@ -39,4 +85,22 @@ const LogIn = ({ handleChangeForm, onSubmit }) => {
     </LoginCard>
   );
 };
-export default LogIn;
+export default withFormik({
+  mapPropsToValues: () => ({
+    email: '',
+    password: '',
+  }),
+  validationSchema: Yup.object().shape({
+    email: Yup.string()
+      .email('Invalid email address')
+      .required('Email is required!'),
+    password: Yup.string().required('Password is required!'),
+  }),
+
+  handleSubmit: (values, { setSubmitting, props }) => {
+    props.onSubmit(values).finally(() => {
+      setSubmitting(false);
+    });
+  },
+  displayName: 'LoginSignUpForm', // helps with React DevTools
+})(LogIn);
