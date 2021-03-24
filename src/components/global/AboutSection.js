@@ -17,7 +17,7 @@ const Container = styled.div`
   }
 `;
 
-const AboutSection = ({ subtitle, img, alt, to }) => {
+const AboutSection = ({ subtitle, img, alt, to, title }) => {
   return (
     <>
       <Container className="section is-medium">
@@ -25,11 +25,7 @@ const AboutSection = ({ subtitle, img, alt, to }) => {
         <div className="container">
           <div className="columns">
             <div className="column is-4">
-              <Heading
-                lineAlignLeft
-                darkText="Lorem ipsum dolor"
-                colouredText="sit amet"
-              />
+              <Heading lineAlignLeft title={title} />
               <Subtitle>{subtitle}</Subtitle>
               <div className="mt-4 buttonWrapper">
                 {to && (

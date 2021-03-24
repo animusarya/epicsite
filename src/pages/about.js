@@ -77,6 +77,7 @@ const About = ({ data }) => {
                 ? aboutUs.information.linkTo.current
                 : ''
             }
+            title={aboutUs.information.title}
             subtitle={aboutUs.information.subtitle}
             img={aboutUs.information.image.asset.fluid}
             alt={aboutUs.information.title}

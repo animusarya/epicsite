@@ -8,7 +8,7 @@ const ContactSection = ({ faq }) => {
       <div className="container">
         <div className="columns is-centered has-text-centered mb-5">
           <div className="column is-8">
-            <Heading centered darkText="Get in" colouredText="Touch" />
+            <Heading centered title="Get in Touch" />
             <Subtitle centered>{faq.getInTouchDescription}</Subtitle>
           </div>
         </div>

@@ -17,11 +17,7 @@ const ServiceFeatures = ({ item, number, reverseColumn }) => {
           isSecondary={isSecondary}
         >
           <div className="column content">
-            <Heading
-              lineAlignLeft
-              darkText={item.title}
-              colouredText="sit amet"
-            />
+            <Heading lineAlignLeft title={item.title} />
             <Subtitle>{item.description}</Subtitle>
           </div>
           <div className="column ">

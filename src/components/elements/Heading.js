@@ -30,24 +30,33 @@ const Heading = ({
   hasWhite,
   lineAlignLeft,
   hasUnderlineHidden,
+  title,
   ...props
-}) => (
-  <div>
-    <Text
-      className={`is-size-2 has-text-weight-semibold mb-4 is-size-4-mobile  ${
-        centered ? 'has-text-centered' : ''
-      } ${hasWhite ? 'has-text-white' : ''}`}
-      // eslint-disable-next-line react/jsx-props-no-spreading
-      {...props}
-    >
-      {darkText && <span className="dark mr-3">{darkText}</span>}
-      {colouredText && <span className="coloured">{colouredText}</span>}
-      {children}
-    </Text>
+}) => {
+  // eslint-disable-next-line no-var
+  var String = title || '';
+  const secondString = String.split(' ').splice(-1).join().replace(',', ' ');
+  // String = String.replace(`${secondString}`, '');
+  return (
+    <div>
+      <Text
+        className={`is-size-2 has-text-weight-semibold mb-4 is-size-4-mobile  ${
+          centered ? 'has-text-centered' : ''
+        } ${hasWhite ? 'has-text-white' : ''}`}
+        // eslint-disable-next-line react/jsx-props-no-spreading
+        {...props}
+      >
+        {true && (
+          <span className="dark">{String.replace(`${secondString}`, '')}</span>
+        )}
+        {true && <span className="coloured">{secondString}</span>}
+        {children}
+      </Text>
 
-    {!hasUnderlineHidden && (
-      <Line lineAlignLeft={lineAlignLeft} hasWhite={hasWhite} />
-    )}
-  </div>
-);
+      {!hasUnderlineHidden && (
+        <Line lineAlignLeft={lineAlignLeft} hasWhite={hasWhite} />
+      )}
+    </div>
+  );
+};
 export default Heading;

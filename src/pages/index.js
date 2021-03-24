@@ -119,6 +119,7 @@ const IndexPage = ({ data }) => {
       <HomeBanner home={home} />
       <Services home={home} />
       <AboutSection
+        title={home.homeAbout.title}
         subtitle={home.homeAbout.subtitle}
         img={home.homeAbout.image.asset.fluid}
         alt={home.homeAbout.title}

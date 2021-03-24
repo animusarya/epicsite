@@ -12,7 +12,7 @@ const Services = ({ home }) => {
         <div className="container">
           <div className="columns is-centered has-text-centered">
             <div className="column is-8">
-              <Heading centered darkText="Our" colouredText="services" />
+              <Heading centered title="Our Services" />
               <Subtitle centered>{home.servicesInformation}</Subtitle>
             </div>
           </div>

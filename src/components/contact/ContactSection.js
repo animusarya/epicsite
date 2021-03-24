@@ -19,7 +19,7 @@ const ContactSection = ({ contact }) => {
       <div className="container">
         <div className="columns is-centered has-text-centered">
           <div className="column is-8">
-            <Heading centered darkText="Get in" colouredText="Touch" />
+            <Heading centered title="Get in Touch" />
           </div>
         </div>
         <div className="columns is-centered is-vcentered is-variable is-6">
