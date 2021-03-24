@@ -29,6 +29,9 @@ export const query = graphql`
           }
         }
       }
+      homeReviewHeading
+      homeBlogHeading
+      homeQuoteHeading
       servicesInformation
       homeServices {
         title
@@ -125,8 +128,8 @@ const IndexPage = ({ data }) => {
             : ''
         }
       />
-      <Reviews review={review} />
-      <BlogSection article={article} />
+      <Reviews review={review} home={home} />
+      <BlogSection article={article} home={home} />
       <Quote home={home} />
     </Layout>
   );

@@ -17,7 +17,7 @@ const Quote = ({ home }) => {
     >
       <div className="section is-medium">
         <div className="container">
-          <QuoteForm onFormSubmit={(v) => console.log(v, 'data')} />
+          <QuoteForm home={home} onFormSubmit={(v) => console.log(v, 'data')} />
         </div>
       </div>
     </Section>

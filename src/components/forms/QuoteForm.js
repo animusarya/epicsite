@@ -31,76 +31,78 @@ const QuoteForm = ({
   handleSubmit,
   handleChange,
   handleBlur,
+  home,
 }) => {
   return (
     <Section className="columns is-centered">
       <div className="column is-6">
-        <form
-          // method="post"
-          onSubmit={handleSubmit}
-          className="box p-6 has-radius-medium"
-        >
-          <h1 className="is-size-2 has-text-weight-bold is-size-4-mobile mb-6 ">
-            Get A Free Quote Here
+        <div className="box p-6 has-radius-medium">
+          <h1 className="is-size-2 has-text-weight-bold is-size-4-mobile mb-6">
+            {home.homeQuoteHeading}
           </h1>
-          <InputGroup
-            label="Name*"
-            name="name"
-            placeholder="Full Name"
-            type="text"
-            value={values.name}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            errors={errors.name && touched.name ? errors.name : undefined}
-          />
-          <InputGroup
-            label="Email*"
-            name="email"
-            placeholder="example@gmail.com"
-            type="text"
-            value={values.email}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            errors={errors.email && touched.email ? errors.email : undefined}
-          />
-          <SelectGroup label="Department*" text="Please Select" />
-          <SelectGroup label="Time *" text="4:00 Available" />
-          <InputGroup
-            label="Lorem ipsum"
-            placeholder="Lorem ipsum"
-            name="subject"
-            type="text"
-            value={values.subject}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            errors={
-              errors.subject && touched.subject ? errors.subject : undefined
-            }
-          />
-          <InputGroup
-            label="Lorem ipsum"
-            placeholder="Lorem ipsum"
-            name="subject"
-            type="text"
-            value={values.subject}
-            onChange={handleChange}
-            onBlur={handleBlur}
-            errors={
-              errors.subject && touched.subject ? errors.subject : undefined
-            }
-          />
-
-          <button
-            type="submit"
-            className="button is-fullwidth is-medium has-text-white animated-link"
+          <form
+            // method="post"
+            onSubmit={handleSubmit}
           >
-            Subscribe
-            <span />
-            <span />
-            <span />
-            <span />
-          </button>
-        </form>
+            <InputGroup
+              label="Name*"
+              name="name"
+              placeholder="Full Name"
+              type="text"
+              value={values.name}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              errors={errors.name && touched.name ? errors.name : undefined}
+            />
+            <InputGroup
+              label="Email*"
+              name="email"
+              placeholder="example@gmail.com"
+              type="text"
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              errors={errors.email && touched.email ? errors.email : undefined}
+            />
+            <SelectGroup label="Department*" text="Please Select" />
+            <SelectGroup label="Time *" text="4:00 Available" />
+            <InputGroup
+              label="Lorem ipsum"
+              placeholder="Lorem ipsum"
+              name="subject"
+              type="text"
+              value={values.subject}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              errors={
+                errors.subject && touched.subject ? errors.subject : undefined
+              }
+            />
+            <InputGroup
+              label="Lorem ipsum"
+              placeholder="Lorem ipsum"
+              name="subject"
+              type="text"
+              value={values.subject}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              errors={
+                errors.subject && touched.subject ? errors.subject : undefined
+              }
+            />
+
+            <button
+              type="submit"
+              className="button is-fullwidth is-medium has-text-white animated-link"
+            >
+              Subscribe
+              <span />
+              <span />
+              <span />
+              <span />
+            </button>
+          </form>
+        </div>
       </div>
     </Section>
   );

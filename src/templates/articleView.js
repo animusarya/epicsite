@@ -26,33 +26,15 @@ export const pageQuery = graphql`
           }
         }
       }
-      otherImages {
-        _key
-        asset {
-          fluid(maxWidth: 1200) {
-            ...GatsbySanityImageFluid
-          }
-        }
-      }
     }
   }
 `;
-
-// const Image = styled(Img)`
-//   .img {
-//     max-height: 75% !important;
-//     max-width: auto;
-//   }
-// `;
 
 const ArticleView = ({ data }) => {
   const news = data.sanityArticle;
   const isLoggedIn = useStoreState((state) => state.isLoggedIn.value);
   const toggleLogin = useStoreActions((action) => action.isLoggedIn.toggle);
-  // const toggleLoggedIn = useStoreActions(
-  //   (actions) => actions.isLoggedIn.toggle,
-  // );
-  // console.log('isLoggedIn', isLoggedIn);
+
   const [showLogInForm, setShowLogInForm] = useState(false);
 
   const handleSubmit = () => {

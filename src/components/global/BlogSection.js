@@ -11,7 +11,7 @@ const BlogWrapper = styled.div`
   }
 `;
 
-const BlogSection = ({ article }) => {
+const BlogSection = ({ article, home }) => {
   return (
     <BlogWrapper>
       <div className="hero is-medium">
@@ -23,7 +23,7 @@ const BlogSection = ({ article }) => {
         />
         <div className="hero-body container">
           <Heading centered hasWhite>
-            Check out our latest article
+            {home.homeBlogHeading}
           </Heading>
           <div className="columns is-variable is-5 is-multiline is-centered mt-6">
             {article.map(({ node }) => (
