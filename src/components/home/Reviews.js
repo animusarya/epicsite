@@ -44,6 +44,9 @@ const Container = styled.div`
       box-shadow: none !important;
     }
   }
+  .review-sect {
+    outline: none;
+  }
 `;
 export default class PreviousNextMethods extends Component {
   constructor(props) {
@@ -90,7 +93,7 @@ export default class PreviousNextMethods extends Component {
               <div>
                 <Slider ref={(c) => (this.slider = c)} {...settings}>
                   {review.map(({ node }) => (
-                    <div key={node._id} className="pb-3 mt-5 mb-6">
+                    <div key={node._id} className="review-sect pb-3 mt-5 mb-6">
                       <div className="columns">
                         <div className="column">
                           <div className="media is-align-items-center">

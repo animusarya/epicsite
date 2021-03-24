@@ -10,6 +10,9 @@ const Text = styled.h1`
   .coloured {
     color: ${(props) => props.theme.mainBrandColor};
   }
+  span {
+    user-select: all !important;
+  }
 `;
 
 const Line = styled.div`
@@ -38,9 +41,9 @@ const Heading = ({
   const secondString = String.split(' ').splice(-1).join().replace(',', ' ');
   // String = String.replace(`${secondString}`, '');
   return (
-    <div>
+    <>
       <Text
-        className={`is-size-2 has-text-weight-semibold mb-4 is-size-4-mobile  ${
+        className={`is-size-2 has-text-weight-semibold mb-4 is-size-4-mobile ${
           centered ? 'has-text-centered' : ''
         } ${hasWhite ? 'has-text-white' : ''}`}
         // eslint-disable-next-line react/jsx-props-no-spreading
@@ -56,7 +59,7 @@ const Heading = ({
       {!hasUnderlineHidden && (
         <Line lineAlignLeft={lineAlignLeft} hasWhite={hasWhite} />
       )}
-    </div>
+    </>
   );
 };
 export default Heading;
