@@ -1,7 +1,33 @@
 import React from 'react';
+import { graphql, StaticQuery, Link } from 'gatsby';
+
 import styled from 'styled-components';
 import { ScrollAnimation, Subtitle } from '../elements';
 import SocialIcons from './SocialIcons';
+
+const query = graphql`
+  query LayoutQuery {
+    sanitySiteSettings {
+      footerDescription
+      facebook
+      instagram
+      twitter
+      pinterest
+      linkdin
+    }
+    allSanityPage {
+      edges {
+        node {
+          _id
+          title
+          slug {
+            current
+          }
+        }
+      }
+    }
+  }
+`;
 
 const Container = styled.footer`
   position: relative;
@@ -29,17 +55,6 @@ const LogoImg = styled.img`
   max-height: 5rem;
 `;
 
-const information = [
-  { id: 1, name: 'FAQ', url: '/page/faq' },
-  {
-    id: 2,
-    name: ' Term and Condition',
-    url: '/page/terms-and-condition',
-  },
-  { id: 3, name: 'Privacy Policy', url: '/page/privacy-policy' },
-  { id: 4, name: 'Return Policy', url: '/page/return-policy' },
-];
-
 const aboutInfo = [
   { id: 1, name: 'Service', url: '/service' },
   {
@@ -48,78 +63,96 @@ const aboutInfo = [
     url: '/contact',
   },
   { id: 3, name: 'About Us', url: '/about' },
+
   { id: 4, name: 'Blog', url: '/blog' },
 ];
-const Footer = ({ home }) => {
-  return (
-    <Container>
-      <ScrollAnimation
-        zIndex="auto"
-        animation="animate__fadeInTopLeft"
-        image="/images/Footer-dotted.png"
-        bottom={0}
-      />
-      <div>
-        <div className="section">
-          <div className="container">
+
+const Footer = () => (
+  <StaticQuery
+    query={query}
+    render={(data) => {
+      const footerData = data.sanitySiteSettings;
+      const { edges: pageView } = data.allSanityPage;
+      return (
+        <>
+          <Container>
             <ScrollAnimation
               zIndex="auto"
               animation="animate__fadeInTopLeft"
               image="/images/Footer-dotted.png"
-              top="-73%"
-              left=" 110%"
+              bottom={0}
             />
-            <LogoImg
-              src="/images/logo.png"
-              alt="footer-logo"
-              className="mb-5 ml-5"
-            />
-            <div className="columns  is-variable is-7">
-              <div className="column is-4">
-                <Subtitle small hasWhite>
-                  {home.footerDescription}
-                </Subtitle>
-                <Subtitle small hasWhite className="mt-5">
-                  ©Turner House Education 2021. All rights reserved
-                </Subtitle>
-              </div>
-              <div className="column has-text-centered">
-                <div>
-                  <h1 className="has-text-weight-bold has-text-white is-size-5 ">
-                    Information
-                  </h1>
-                  <ul>
-                    {information.map((item) => (
-                      <li key={item.id}>
-                        <a href={item.url}>{item.name}</a>
-                      </li>
-                    ))}
-                  </ul>
+            <div>
+              <div className="section">
+                <div className="container">
+                  <ScrollAnimation
+                    zIndex="auto"
+                    animation="animate__fadeInTopLeft"
+                    image="/images/Footer-dotted.png"
+                    top="-73%"
+                    left=" 110%"
+                  />
+                  <LogoImg
+                    src="/images/logo.png"
+                    alt="footer-logo"
+                    className="mb-5 ml-5"
+                  />
+                  <div className="columns  is-variable is-7">
+                    <div className="column is-4">
+                      <Subtitle small hasWhite>
+                        {footerData.footerDescription}
+                      </Subtitle>
+                      <Subtitle small hasWhite className="mt-5">
+                        ©Turner House Education 2021. All rights reserved
+                      </Subtitle>
+                    </div>
+                    <div className="column has-text-centered">
+                      <div>
+                        <h1 className="has-text-weight-bold has-text-white is-size-5 ">
+                          Information
+                        </h1>
+                        <ul>
+                          {pageView.map(({ node: data }) => (
+                            <li key={data.id}>
+                              <Link
+                                to={`/page/${
+                                  data.slug ? data.slug.current : ''
+                                }`}
+                              >
+                                {data.title}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+                    <div className="column has-text-centered">
+                      <h1 className="has-text-weight-bold has-text-white is-size-5 ">
+                        Turner House
+                      </h1>
+                      <ul>
+                        {aboutInfo.map((item) => (
+                          <li key={item.id}>
+                            <a href={item.url}>{item.name}</a>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="column has-text-centered">
+                      <h1 className="has-text-weight-bold has-text-white is-size-5">
+                        Social Icons
+                      </h1>
+                      <SocialIcons data={footerData} />
+                    </div>
+                  </div>
                 </div>
               </div>
-              <div className="column has-text-centered">
-                <h1 className="has-text-weight-bold has-text-white is-size-5 ">
-                  Turner House
-                </h1>
-                <ul>
-                  {aboutInfo.map((item) => (
-                    <li key={item.id}>
-                      <a href={item.url}>{item.name}</a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="column has-text-centered">
-                <h1 className="has-text-weight-bold has-text-white is-size-5">
-                  Social Icons
-                </h1>
-                <SocialIcons data={home} />
-              </div>
             </div>
-          </div>
-        </div>
-      </div>
-    </Container>
-  );
-};
+          </Container>
+        </>
+      );
+    }}
+  />
+);
+
 export default Footer;

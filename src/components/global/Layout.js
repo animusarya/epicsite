@@ -1,7 +1,7 @@
 import React from 'react';
 import Helmet from 'react-helmet';
 import styled, { ThemeProvider } from 'styled-components';
-import { graphql, StaticQuery } from 'gatsby';
+// import { graphql, StaticQuery } from 'gatsby';
 
 import GlobalStyle, { theme } from '../../utils/theme';
 import config from '../../utils/config';
@@ -11,18 +11,18 @@ import Footer from './Footer';
 const Container = styled.div`
   min-height: 70vh;
 `;
-const query = graphql`
-  query LayoutQuery {
-    sanitySiteSettings {
-      footerDescription
-      facebook
-      instagram
-      twitter
-      pinterest
-      linkdin
-    }
-  }
-`;
+// const query = graphql`
+//   query LayoutQuery {
+//     sanitySiteSettings {
+//       footerDescription
+//       facebook
+//       instagram
+//       twitter
+//       pinterest
+//       linkdin
+//     }
+//   }
+// `;
 
 const IndexLayout = ({ children }) => (
   <ThemeProvider theme={theme}>
@@ -34,19 +34,19 @@ const IndexLayout = ({ children }) => (
         <meta description={config.description} />
       </Helmet>
       <GlobalStyle />
-      <StaticQuery
+      {/* <StaticQuery
         query={query}
         render={(data) => {
           const home = data.sanitySiteSettings;
-          return (
-            <>
-              <Header />
-              <Container>{children}</Container>
-              <Footer home={home} />
-            </>
-          );
+          return ( */}
+      <>
+        <Header />
+        <Container>{children}</Container>
+        <Footer />
+      </>
+      {/* );
         }}
-      />
+      /> */}
     </>
   </ThemeProvider>
 );
