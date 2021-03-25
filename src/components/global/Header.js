@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import { lighten } from 'polished';
 import { Link } from 'gatsby';
+import { theme } from '../../utils/theme';
+
 import { Button } from '../elements';
 
 const Section = styled.div`
@@ -54,6 +57,12 @@ const Section = styled.div`
   @media screen and (max-width: 700px) {
     .navbar-menu {
       background: ${(props) => props.theme.mainBrandColor} !important;
+    }
+  }
+  .drop-down {
+    :hover {
+      background-color: ${lighten(0.1, theme.darkAccent)} !important;
+      transition: 0.5s;
     }
   }
 `;
@@ -123,20 +132,20 @@ const Header = () => {
             </div>
             <div className="navbar-end">
               <div className="navbar-item has-dropdown is-hoverable">
-                <Link className="navbar-item has-text-weight-normal has-text-white px-5">
+                <div className="navbar-item has-text-weight-normal has-text-white px-5 is-clickable">
                   Stay in the loop
-                </Link>
+                </div>
 
                 <div className="navbar-dropdown">
                   <Link
                     to="/blog"
-                    className="navbar-item has-text-weight-normal has-text-white px-5"
+                    className="navbar-item has-text-weight-normal has-text-white px-5 drop-down"
                   >
                     Blog
                   </Link>
                   <Link
                     to="/faq"
-                    className="navbar-item has-text-weight-normal has-text-white px-5"
+                    className="navbar-item has-text-weight-normal has-text-white px-5 drop-down"
                   >
                     FAQ
                   </Link>
