@@ -34,6 +34,7 @@ export const query = graphql`
       homeQuoteHeading
       servicesInformation
       homeServices {
+        _key
         title
         subtitle
         image {

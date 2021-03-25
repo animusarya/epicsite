@@ -50,7 +50,7 @@ const socialNetworks = ({
   }
   if (pinterest) {
     items.push({
-      id: 4,
+      id: 5,
       name: 'LinkedIn',
       icon: 'fab fa-linkedin',
       link: linkdin,

@@ -112,14 +112,14 @@ const Footer = () => (
                           Information
                         </h1>
                         <ul>
-                          {pageView.map(({ node: data }) => (
-                            <li key={data.id}>
+                          {pageView.map(({ node: page }) => (
+                            <li key={page._id}>
                               <Link
                                 to={`/page/${
-                                  data.slug ? data.slug.current : ''
+                                  page.slug ? page.slug.current : ''
                                 }`}
                               >
-                                {data.title}
+                                {page.title}
                               </Link>
                             </li>
                           ))}
