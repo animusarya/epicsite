@@ -12,7 +12,9 @@ const Quote = ({ home }) => {
   return (
     <Section
       bgImage={
-        home.quoteBackground.asset ? home.quoteBackground.asset.fluid.src : ''
+        home && home.quoteBackground && home.quoteBackground.asset
+          ? home.quoteBackground.asset.fluid.src
+          : ''
       }
     >
       <div className="section is-medium">

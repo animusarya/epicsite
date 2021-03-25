@@ -49,12 +49,17 @@ const Blog = ({ data }) => {
   return (
     <Layout>
       <Seo
-        title="Past Projects"
+        title="Blog"
         description={`Latest news at ${config.siteName}`}
         url={`${config.siteUrl}/account`}
       />
       <HeroHeader
-        bgImage={blogHero.blogBanner.image.asset.fluid.src}
+        bgImage={
+          blogHero &&
+          blogHero.blogBanner.image &&
+          blogHero.blogBanner.image.asset &&
+          blogHero.blogBanner.image.asset.fluid.src
+        }
         title={blogHero.blogBanner.title}
         subtitle={blogHero.blogBanner.description}
       />

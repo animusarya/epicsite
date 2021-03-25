@@ -65,7 +65,12 @@ const FAQ = ({ data }) => {
     <Layout>
       <Seo title="Faq" />
       <HeroHeader
-        bgImage={faq.banner.image.asset.fluid.src}
+        bgImage={
+          faq &&
+          faq.banner.image &&
+          faq.banner.image.asset &&
+          faq.banner.image.asset.fluid.src
+        }
         title={faq.banner.title}
         subtitle={faq.banner.description}
       />

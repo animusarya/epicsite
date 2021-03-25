@@ -48,7 +48,12 @@ const Service = ({ data }) => {
     <Layout>
       <Seo title="Services" />
       <HeroHeader
-        bgImage={heroService.servicesBanner.image.asset.fluid.src}
+        bgImage={
+          heroService &&
+          heroService.servicesBanner.image &&
+          heroService.servicesBanner.image.asset &&
+          heroService.servicesBanner.image.asset.fluid.src
+        }
         title={heroService.servicesBanner.title}
         subtitle={heroService.servicesBanner.description}
       />

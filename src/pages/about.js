@@ -66,7 +66,12 @@ const About = ({ data }) => {
       <Seo title="About" />
       <Container>
         <HeroHeader
-          bgImage={aboutUs.aboutUs.image.asset.fluid.src}
+          bgImage={
+            aboutUs &&
+            aboutUs.aboutUs.image &&
+            aboutUs.aboutUs.image.asset &&
+            aboutUs.aboutUs.image.asset.fluid.src
+          }
           title={aboutUs.aboutUs.title}
           subtitle={aboutUs.aboutUs.description}
         />
@@ -79,7 +84,12 @@ const About = ({ data }) => {
             }
             title={aboutUs.information.title}
             subtitle={aboutUs.information.subtitle}
-            img={aboutUs.information.image.asset.fluid}
+            img={
+              aboutUs &&
+              aboutUs.information.image &&
+              aboutUs.information.image.asset &&
+              aboutUs.information.image.asset.fluid
+            }
             alt={aboutUs.information.title}
           />
         </div>

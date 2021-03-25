@@ -65,7 +65,12 @@ const ArticleView = ({ data }) => {
           <HeroHeader
             title={news.articleViewBanner.title}
             subtitle={news.articleViewBanner.description}
-            bgImage={news.articleViewBanner.image.asset.fluid.src}
+            bgImage={
+              news &&
+              news.articleViewBanner.image &&
+              news.articleViewBanner.image.asset &&
+              news.articleViewBanner.image.asset.fluid.src
+            }
           />
           <section className="section">
             <div className="container">

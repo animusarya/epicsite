@@ -121,7 +121,12 @@ const IndexPage = ({ data }) => {
       <AboutSection
         title={home.homeAbout.title}
         subtitle={home.homeAbout.subtitle}
-        img={home.homeAbout.image.asset.fluid}
+        img={
+          home &&
+          home.homeAbout.image &&
+          home.homeAbout.image.asset &&
+          home.homeAbout.image.asset.fluid
+        }
         alt={home.homeAbout.title}
         to={
           home.homeAbout && home.homeAbout.linkTo

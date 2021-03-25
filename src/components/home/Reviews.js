@@ -100,7 +100,12 @@ export default class PreviousNextMethods extends Component {
                             <div className="media-left">
                               <figure className="image is-128x128">
                                 <Img
-                                  fluid={node.image.asset.fluid}
+                                  fluid={
+                                    node &&
+                                    node.image &&
+                                    node.image.asset &&
+                                    node.image.asset.fluid
+                                  }
                                   alt={node.Type}
                                 />
                               </figure>

@@ -16,7 +16,7 @@ const Section = styled.div`
 `;
 
 const TriangleSection = styled.div`
-  clip-path: polygon(0 0, 0 92%, 50% 100%, 100% 92%, 100% 0, 51% 0);
+  clip-path: polygon(0 0, 0 85%, 50% 100%, 100% 85%, 100% 0, 51% 0);
 `;
 
 const HomeBanner = ({ home }) => {
