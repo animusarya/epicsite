@@ -15,6 +15,11 @@ const query = graphql`
   query LayoutQuery {
     sanitySiteSettings {
       footerDescription
+      facebook
+      instagram
+      twitter
+      pinterest
+      linkdin
     }
   }
 `;
