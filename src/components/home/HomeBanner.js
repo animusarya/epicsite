@@ -42,7 +42,7 @@ const HomeBanner = ({ home }) => {
               <Button
                 isLarge
                 type="button"
-                hasHoverBackgroundColor="#000000"
+                hasHoverBackgroundColor={(props) => props.theme.darkAccent}
                 hasBackgroundWhite
                 to={home.homeHero.linkTo}
               >

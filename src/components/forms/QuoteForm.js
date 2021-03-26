@@ -83,9 +83,9 @@ const QuoteForm = ({
               }
             />
             <Button
-              hasHoverBackgroundColor="#F5F5F5"
-              hasDefaultBackgroundColor="#000000"
-              hasHoverBackground="#F5F5F5"
+              hasHoverBackgroundColor={(props) => props.theme.lightShades}
+              hasDefaultBackgroundColor={(props) => props.theme.darkAccent}
+              hasHoverBackground={(props) => props.theme.lightShades}
               className="button is-fullwidth is-medium "
               type="submit"
             >
