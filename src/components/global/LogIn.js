@@ -2,18 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
-import { Heading, InputGroup, Subtitle } from '../elements';
+import { Heading, InputGroup, Subtitle, Button } from '../elements';
 
-const LoginCard = styled.div`
-  .button {
-    background: ${(props) => props.theme.textColor};
-    border-radius: 8px;
-    margin: auto 0 !important;
-    :hover {
-      color: #000 !important;
-    }
-  }
-`;
+const LoginCard = styled.div``;
 
 const LogIn = ({
   handleChangeForm,
@@ -59,16 +50,16 @@ const LogIn = ({
                     }
                   />
                   <div className="has-text-centered">
-                    <button
+                    <Button
+                      hasHoverBackgroundColor="#F5F5F5"
+                      hasDefaultBackgroundColor="#000000"
+                      hasHoverBackground="#F5F5F5"
                       type="submit"
-                      className="button  is-medium has-text-white animated-link"
+                      isLarge
                     >
+                      {' '}
                       Sign In
-                      <span />
-                      <span />
-                      <span />
-                      <span />
-                    </button>
+                    </Button>
                   </div>
                 </form>
                 <p className="has-text-weight-normal has-text-centered mt-4">

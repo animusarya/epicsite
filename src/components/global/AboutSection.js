@@ -29,7 +29,14 @@ const AboutSection = ({ subtitle, img, alt, to, title }) => {
               <Subtitle>{subtitle}</Subtitle>
               <div className="mt-4 buttonWrapper">
                 {to && (
-                  <Button isLarge to={to}>
+                  <Button
+                    type="button"
+                    isLarge
+                    to={to}
+                    hasHoverBackgroundColor="#F5F5F5"
+                    hasDefaultBackgroundColor="#000000"
+                    hasHoverBackground="#F5F5F5"
+                  >
                     Learn more
                   </Button>
                 )}

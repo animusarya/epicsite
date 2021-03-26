@@ -39,7 +39,13 @@ const HomeBanner = ({ home }) => {
               <p className="subtitle has-text-weight-normal is-size-4 mb-5">
                 {home.homeHero.subtitle}
               </p>
-              <Button hasBackgroundWhite isLarge to={home.homeHero.linkTo}>
+              <Button
+                isLarge
+                type="button"
+                hasHoverBackgroundColor="#000000"
+                hasBackgroundWhite
+                to={home.homeHero.linkTo}
+              >
                 Consult Today
               </Button>
             </div>

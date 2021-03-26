@@ -50,9 +50,6 @@ const Section = styled.div`
     border-radius: 4px;
     color: ${(props) => props.theme.textColorLite} !important;
   }
-  .animated-link {
-    border: 1.5px solid #ffffff;
-  }
   @media screen and (max-width: 700px) {
     .navbar-menu {
       background: ${(props) => props.theme.mainBrandColor} !important;
@@ -151,7 +148,15 @@ const Header = () => {
                 </div>
               </div>
               <div className="navbar-item has-text-weight-normal has-text-white px-5">
-                <Button to="/contact">Contact Us</Button>
+                <Button
+                  to="/contact"
+                  type="button"
+                  hasBorder
+                  hasHoverBackground={(props) => props.theme.backgroundWhite}
+                  hasDefaultBackgroundColor="transparent"
+                >
+                  Contact Us
+                </Button>
               </div>
             </div>
           </div>

@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import swal from 'sweetalert2';
 
 import styled from 'styled-components';
-import { InputGroup, SelectGroup } from '../elements';
+import { InputGroup, SelectGroup, Button } from '../elements';
 
 const Section = styled.div`
   h1 {
@@ -13,14 +13,6 @@ const Section = styled.div`
   .columns {
     margin-left: -0.75rem !important;
     margin-right: -0.75rem !important;
-  }
-  .button {
-    background: ${(props) => props.theme.textColor};
-    border-radius: 8px;
-    margin: auto 0 !important;
-    :hover {
-      color: #000 !important;
-    }
   }
 `;
 
@@ -90,17 +82,15 @@ const QuoteForm = ({
                 errors.subject && touched.subject ? errors.subject : undefined
               }
             />
-
-            <button
+            <Button
+              hasHoverBackgroundColor="#F5F5F5"
+              hasDefaultBackgroundColor="#000000"
+              hasHoverBackground="#F5F5F5"
+              className="button is-fullwidth is-medium "
               type="submit"
-              className="button is-fullwidth is-medium has-text-white animated-link"
             >
               Subscribe
-              <span />
-              <span />
-              <span />
-              <span />
-            </button>
+            </Button>
           </form>
         </div>
       </div>

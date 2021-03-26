@@ -111,7 +111,15 @@ const ContactForm = ({
           )}
         </div>
         <div className="has-text-right">
-          <Button isLarge>Send</Button>
+          <Button
+            hasHoverBackgroundColor="#F5F5F5"
+            hasDefaultBackgroundColor="#000000"
+            hasHoverBackground="#F5F5F5"
+            type="button"
+            isLarge
+          >
+            Send
+          </Button>
         </div>
       </form>
     </Section>
