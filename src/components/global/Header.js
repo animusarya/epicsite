@@ -18,8 +18,7 @@ const Section = styled.div`
     }
   }
   .navbar-start,
-  .navbar-end,
-  .my-navbar-center {
+  .navbar-end {
     flex: 1;
   }
   a.navbar-item:hover {

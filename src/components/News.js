@@ -33,7 +33,7 @@ const News = ({ node: data }) => {
               <Title> {data.title}</Title>
               <Subtitle>
                 {truncate(data.description, {
-                  length: 160,
+                  length: 100,
                 })}
               </Subtitle>
             </div>
