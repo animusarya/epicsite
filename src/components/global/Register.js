@@ -52,10 +52,36 @@ const Register = ({
                     }
                   />
                   <InputGroup
+                    name="telephone"
+                    placeholder="Telephone"
+                    type="number"
+                    value={values.telephone}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    errors={
+                      errors.telephone && touched.telephone
+                        ? errors.telephone
+                        : undefined
+                    }
+                  />
+                  <InputGroup
                     name="password"
                     placeholder="Password"
                     type="password"
                     value={values.password}
+                    onChange={handleChange}
+                    onBlur={handleBlur}
+                    errors={
+                      errors.password && touched.password
+                        ? errors.password
+                        : undefined
+                    }
+                  />
+                  <InputGroup
+                    name="confirmPassword"
+                    placeholder="Confirm Password"
+                    type="password"
+                    value={values.confirmPassword}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     errors={
@@ -100,13 +126,24 @@ export default withFormik({
     email: '',
     password: '',
     name: '',
+    telephone: '',
+    confirmPassword: '',
   }),
   validationSchema: Yup.object().shape({
     name: Yup.string().required('Name is required!'),
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required!'),
+    telephone: Yup.string()
+      // .matches('Invalid phone number')
+      .required('Telephone is required'),
     password: Yup.string().required('Password is required!'),
+    confirmPassword: Yup.string()
+      .required('This field is required!')
+      .label('Confirm password')
+      .test('passwords-match', 'Passwords not matched!', function (values) {
+        return this.parent.password === values;
+      }),
   }),
 
   handleSubmit: (values, { setSubmitting, props }) => {
