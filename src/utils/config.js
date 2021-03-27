@@ -5,6 +5,8 @@ module.exports = {
   author: 'zeiq.co',
   description: 'Education Academy portfolio',
   siteUrl: 'https://www.turner-house.co.uk/',
+  graphQlUri: 'http://localhost:4000/api',
+  graphQlUriDev: 'http://localhost:4000/api',
   logo: '/images/logo.png',
   metaLogo: '/images/logo.png',
   projectKey: '123123abc',

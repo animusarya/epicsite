@@ -30,14 +30,16 @@ const Register = ({
               <div className="mt-5">
                 <form onSubmit={handleSubmit}>
                   <InputGroup
-                    name="name"
-                    placeholder="Name"
+                    name="fullName"
+                    placeholder="Full Name"
                     type="text"
-                    value={values.name}
+                    value={values.fullName}
                     onChange={handleChange}
                     onBlur={handleBlur}
                     errors={
-                      errors.name && touched.name ? errors.name : undefined
+                      errors.fullName && touched.fullName
+                        ? errors.fullName
+                        : undefined
                     }
                   />
                   <InputGroup
@@ -125,12 +127,12 @@ export default withFormik({
   mapPropsToValues: () => ({
     email: '',
     password: '',
-    name: '',
+    fullName: '',
     telephone: '',
     confirmPassword: '',
   }),
   validationSchema: Yup.object().shape({
-    name: Yup.string().required('Name is required!'),
+    fullName: Yup.string().required('Full Name is required!'),
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required!'),
@@ -147,9 +149,16 @@ export default withFormik({
   }),
 
   handleSubmit: (values, { setSubmitting, props }) => {
-    props.onSubmit(values).finally(() => {
-      setSubmitting(false);
-    });
+    // eslint-disable-next-line no-param-reassign
+    delete values.confirmPassword;
+    props
+      .onSubmit({
+        ...values,
+        telephone: values.telephone.toString(),
+      })
+      .finally(() => {
+        setSubmitting(false);
+      });
   },
   displayName: 'Register', // helps with React DevTools
 })(Register);

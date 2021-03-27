@@ -1,8 +1,12 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { graphql } from 'gatsby';
 import ReactMarkdown from 'react-markdown';
 import Img from 'gatsby-image';
 import { useStoreState, useStoreActions } from 'easy-peasy';
+import { useMutation } from '@apollo/react-hooks';
+import gql from 'graphql-tag';
+import Swal from 'sweetalert2';
+
 import { HeroHeader, ScrollAnimation } from '../components/elements';
 import Seo from '../components/Seo';
 import Layout from '../components/global/Layout';
@@ -41,16 +45,79 @@ export const pageQuery = graphql`
   }
 `;
 
+const registerMutation = gql`
+  mutation register($input: RegisterInput) {
+    register(input: $input) {
+      jwt
+      user {
+        email
+        fullName
+        telephone
+      }
+    }
+  }
+`;
+
+const logInMutation = gql`
+  mutation login($email: String!, $password: String!) {
+    login(input: { email: $email, password: $password }) {
+      jwt
+      user {
+        email
+        fullName
+        telephone
+      }
+    }
+  }
+`;
+
 const ArticleView = ({ data }) => {
   const news = data.sanityArticle;
   const isLoggedIn = useStoreState((state) => state.isLoggedIn.value);
-  const toggleLogin = useStoreActions((action) => action.isLoggedIn.toggle);
+  const toggleLoggedIn = useStoreActions((action) => action.isLoggedIn.toggle);
 
   const [showLogInForm, setShowLogInForm] = useState(false);
+  console.log(isLoggedIn);
+  const [
+    executeRegisterMutation,
+    { data: registerData, error: registerError },
+  ] = useMutation(registerMutation);
+  const [
+    executeLoginMutation,
+    { data: loginData, error: loginError },
+  ] = useMutation(logInMutation);
 
-  const handleSubmit = () => {
-    toggleLogin(true);
-  };
+  const updateUser = useStoreActions((actions) => actions.user.update);
+
+  // fetch project data from api
+
+  if (registerData && registerData.register) {
+    const { jwt, user } = registerData.register;
+    window.localStorage.setItem('token', jwt);
+    toggleLoggedIn(true);
+    updateUser(user);
+  }
+  if (loginData && loginData.login) {
+    const { jwt, user } = loginData.login;
+    window.localStorage.setItem('token', jwt);
+    toggleLoggedIn(true);
+    updateUser(user);
+  }
+
+  useEffect(() => {
+    if (loginError)
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: loginError.message,
+      });
+    if (registerError)
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: loginError.message,
+      });
+  }, [registerError, loginError]);
 
   return (
     <Layout>
@@ -103,12 +170,16 @@ const ArticleView = ({ data }) => {
         <>
           {showLogInForm ? (
             <LogIn
-              onSubmit={handleSubmit}
+              onSubmit={(formData) =>
+                executeLoginMutation({ variables: formData })
+              }
               handleChangeForm={() => setShowLogInForm(!showLogInForm)}
             />
           ) : (
             <Register
-              onSubmit={handleSubmit}
+              onSubmit={(formData) => {
+                executeRegisterMutation({ variables: { input: formData } });
+              }}
               handleChangeForm={() => setShowLogInForm(!showLogInForm)}
             />
           )}
