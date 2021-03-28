@@ -42,9 +42,7 @@ const PageView = ({ data }) => {
       />
       <HeroHeader
         title={page.title}
-        bgImage={
-          page.image ? page.image.asset.fluid.src : '/images/contact.jpg'
-        }
+        bgImage={page.image ? page.image.asset.fluid.src : '/images/herobg.png'}
       />
       <section className="section">
         <div className="container">

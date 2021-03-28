@@ -56,15 +56,14 @@ const LogoImg = styled.img`
 `;
 
 const aboutInfo = [
-  { id: 1, name: 'Service', url: '/service' },
+  { id: 1, name: 'Blog', url: '/blog' },
+  { id: 2, name: 'Service', url: '/service' },
+  { id: 3, name: 'About Us', url: '/about' },
   {
-    id: 2,
+    id: 4,
     name: ' Contact Us',
     url: '/contact',
   },
-  { id: 3, name: 'About Us', url: '/about' },
-
-  { id: 4, name: 'Blog', url: '/blog' },
 ];
 
 const Footer = () => (

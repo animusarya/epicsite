@@ -84,15 +84,17 @@ const QuoteForm = ({
                 errors.subject && touched.subject ? errors.subject : undefined
               }
             />
-            <Button
-              hasHoverBackgroundColor={(props) => props.theme.lightShades}
-              hasDefaultBackgroundColor={(props) => props.theme.darkAccent}
-              hasHoverBackground={(props) => props.theme.lightShades}
-              className="button is-fullwidth is-medium "
-              type="submit"
-            >
-              Subscribe
-            </Button>
+            <div className="mt-6">
+              <Button
+                hasHoverBackgroundColor={(props) => props.theme.lightShades}
+                hasDefaultBackgroundColor={(props) => props.theme.darkAccent}
+                hasHoverBackground={(props) => props.theme.lightShades}
+                className="button is-fullwidth is-medium "
+                type="submit"
+              >
+                Subscribe
+              </Button>
+            </div>
           </form>
         </div>
       </div>
