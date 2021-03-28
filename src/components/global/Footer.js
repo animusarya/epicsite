@@ -105,7 +105,7 @@ const Footer = () => (
                         ©Turner House Education 2021. All rights reserved
                       </Subtitle>
                     </div>
-                    <div className="column has-text-centered">
+                    <div className="column ">
                       <div>
                         <h1 className="has-text-weight-bold has-text-white is-size-5 ">
                           Information
@@ -125,7 +125,7 @@ const Footer = () => (
                         </ul>
                       </div>
                     </div>
-                    <div className="column has-text-centered">
+                    <div className="column ">
                       <h1 className="has-text-weight-bold has-text-white is-size-5 ">
                         Turner House
                       </h1>
@@ -137,7 +137,7 @@ const Footer = () => (
                         ))}
                       </ul>
                     </div>
-                    <div className="column has-text-centered">
+                    <div className="column ">
                       <h1 className="has-text-weight-bold has-text-white is-size-5">
                         Social Icons
                       </h1>
