@@ -12,9 +12,6 @@ const Container = styled.div`
     font-size: 15px;
     line-height: 20px;
   }
-  .buttonWrapper {
-    margin-left: -1rem;
-  }
 `;
 
 const AboutSection = ({ subtitle, img, alt, to, title }) => {
@@ -27,7 +24,7 @@ const AboutSection = ({ subtitle, img, alt, to, title }) => {
             <div className="column is-4">
               <Heading lineAlignLeft title={title} />
               <Subtitle>{subtitle}</Subtitle>
-              <div className="mt-4 buttonWrapper">
+              <div className="mt-4">
                 {to && (
                   <Button
                     type="button"

@@ -50,8 +50,11 @@ const Section = styled.div`
     border-radius: 4px;
     color: ${(props) => props.theme.textColorLite} !important;
   }
-  @media screen and (max-width: 700px) {
+  @media screen and (max-width: 768px) {
     .navbar-menu {
+      background: ${(props) => props.theme.mainBrandColor} !important;
+    }
+    .navbar-dropdown {
       background: ${(props) => props.theme.mainBrandColor} !important;
     }
   }

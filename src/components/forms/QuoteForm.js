@@ -9,6 +9,8 @@ import { InputGroup, SelectGroup, Button } from '../elements';
 const Section = styled.div`
   h1 {
     color: ${(props) => props.theme.textColorDark} !important;
+    line-height: 1.5;
+    margin-bottom: 2rem !important;
   }
   .columns {
     margin-left: -0.75rem !important;
@@ -29,7 +31,7 @@ const QuoteForm = ({
     <Section className="columns is-centered">
       <div className="column is-6">
         <div className="box p-6 has-radius-medium">
-          <h1 className="is-size-2 has-text-weight-bold is-size-4-mobile mb-6">
+          <h1 className="is-size-2 has-text-weight-bold is-size-4-mobile">
             {home.homeQuoteHeading}
           </h1>
           <form

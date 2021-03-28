@@ -22,7 +22,7 @@ const LinkWrapper = styled(Link)`
     overflow: hidden;
     z-index: 1;
     transition: 0.5s;
-    margin: 1rem;
+    /* margin: 1rem; */
     padding-left: ${(props) => (props.isLarge ? '4rem' : '')};
     padding-right: ${(props) => (props.isLarge ? '4rem' : '')};
     background: ${(props) =>
