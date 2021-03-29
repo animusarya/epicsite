@@ -37,7 +37,7 @@ const Section = styled.div`
   figure {
     position: absolute;
     top: 25%;
-    left: 46%;
+    left: 45%;
     bottom: 0;
   }
   .back-round {
@@ -58,7 +58,7 @@ const Section = styled.div`
 const CountSection = () => {
   return (
     <Section className="section ">
-      <div className="container">
+      <div className="container mt-6">
         <div className="card section">
           <div className="columns  is-centered">
             {ReviewItem.map((item) => (

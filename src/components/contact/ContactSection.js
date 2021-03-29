@@ -40,12 +40,13 @@ const ContactSection = ({ contact }) => {
                     </li>
                   )}
                   {contact.email && (
-                    <li>
+                    <li className="mt-2">
                       {contact.email && (
                         <a
                           href={`mailto:${contact.email}`}
-                          className="has-text-black has-text-weight-normal is-size-6 pr-6"
+                          className="has-text-black has-text-weight-normal is-size-6"
                         >
+                          <i className="far fa-envelope mr-2" />
                           {contact.email}
                         </a>
                       )}

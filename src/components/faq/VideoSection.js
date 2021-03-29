@@ -5,7 +5,7 @@ import VideoCard from './VideoCard';
 const VideoSection = ({ video }) => {
   const [state, setState] = useState(video[0].node.url);
   return (
-    <div className="section is-medium">
+    <div className="section">
       <div className="container">
         <div className="columns is-centered">
           <div className="column is-11">

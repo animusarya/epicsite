@@ -110,7 +110,7 @@ const ContactForm = ({
             <p className="help is-danger">{errors.message}</p>
           )}
         </div>
-        <div className="has-text-right">
+        <div className="has-text-right mt-6">
           <Button
             hasHoverBackgroundColor={(props) => props.theme.lightShades}
             hasDefaultBackgroundColor={(props) => props.theme.darkAccent}
