@@ -16,6 +16,7 @@ const VideoSection = ({ video }) => {
               height="600px"
               volume={0.1}
               controls
+              playing
             />
           </div>
         </div>

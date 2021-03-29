@@ -19,14 +19,12 @@ const VideoCard = ({ setVideoUrl, video }) => {
         <div className="columns is-variable is-5 is-multiline is-centered mt-6">
           {video.map(({ node: data }) => (
             <div key={data._id} className="column is-3 mb-6">
-              <button
-                type="button"
-                className="card "
-                onClick={() => setVideoUrl(data.url)}
-              >
-                <div className="card-image">
-                  <img src="/images/youtube-img.png" alt="youtube-img" />
-                </div>
+              <div className="card ">
+                <button type="button" onClick={() => setVideoUrl(data.url)}>
+                  <div className="card-image">
+                    <img src="/images/youtube-img.png" alt="youtube-img" />
+                  </div>
+                </button>
                 <div className="content has-text-centered">
                   <div className="media">
                     <div className="media-content mt-5">
@@ -37,7 +35,7 @@ const VideoCard = ({ setVideoUrl, video }) => {
                     </div>
                   </div>
                 </div>
-              </button>
+              </div>
             </div>
           ))}
         </div>
