@@ -7,6 +7,8 @@ import { Heading, InputGroup, Subtitle, Button } from '../elements';
 
 const LoginCard = styled.div``;
 
+const phoneRegex = RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
+
 const Register = ({
   handleChangeForm,
   values,
@@ -21,10 +23,10 @@ const Register = ({
       <div className="section is-medium">
         <div className="container">
           <Heading centered title="Create An Account" />
-          <Subtitle centered>
+          {/* <Subtitle centered>
             Create an account to enjoy all the services without any ads for
             free!
-          </Subtitle>
+          </Subtitle> */}
           <div className="columns is-centered">
             <div className="column is-6">
               <div className="mt-5">
@@ -87,12 +89,12 @@ const Register = ({
                     onChange={handleChange}
                     onBlur={handleBlur}
                     errors={
-                      errors.password && touched.password
-                        ? errors.password
+                      errors.confirmPassword && touched.confirmPassword
+                        ? errors.confirmPassword
                         : undefined
                     }
                   />
-                  <div className="has-text-centered">
+                  <div className="has-text-centered mt-6">
                     <Button
                       hasHoverBackgroundColor={(props) =>
                         props.theme.lightShades
@@ -109,7 +111,7 @@ const Register = ({
                     </Button>
                   </div>
                 </form>
-                <p className="has-text-weight-normal has-text-centered mt-4">
+                <p className="has-text-weight-normal has-text-centered mt-6">
                   Already Have An Account?
                   <a className="ml-1" onClick={handleChangeForm}>
                     Sign In
@@ -137,9 +139,11 @@ export default withFormik({
       .email('Invalid email address')
       .required('Email is required!'),
     telephone: Yup.string()
-      // .matches('Invalid phone number')
+      .matches(phoneRegex, 'Invalid phone number')
       .required('Telephone is required'),
-    password: Yup.string().required('Password is required!'),
+    password: Yup.string()
+      .required('Password is required!')
+      .min(6, 'Seems a bit short...'),
     confirmPassword: Yup.string()
       .required('This field is required!')
       .label('Confirm password')

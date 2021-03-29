@@ -20,7 +20,7 @@ const LogIn = ({
       <div className="section is-medium">
         <div className="container">
           <Heading centered title="Log In" />
-          <Subtitle centered>Login into your account</Subtitle>
+          {/* <Subtitle centered>Login into your account</Subtitle> */}
           <div className="columns is-centered">
             <div className="column is-6">
               <div className="mt-5">
@@ -49,7 +49,7 @@ const LogIn = ({
                         : undefined
                     }
                   />
-                  <div className="has-text-centered">
+                  <div className="has-text-centered mt-6">
                     <Button
                       hasHoverBackgroundColor={(props) =>
                         props.theme.lightShades
@@ -66,7 +66,7 @@ const LogIn = ({
                     </Button>
                   </div>
                 </form>
-                <p className="has-text-weight-normal has-text-centered mt-4">
+                <p className="has-text-weight-normal has-text-centered mt-6">
                   Dont have an Account?
                   <a className="ml-1" onClick={handleChangeForm}>
                     Sign Up

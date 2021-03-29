@@ -37,7 +37,7 @@ const Section = styled.div`
   figure {
     position: absolute;
     top: 25%;
-    left: 45%;
+    left: 46%;
     bottom: 0;
   }
   .back-round {
