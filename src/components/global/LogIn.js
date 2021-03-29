@@ -17,7 +17,7 @@ const LogIn = ({
 }) => {
   return (
     <LoginCard>
-      <div className="section is-medium">
+      <div className="section">
         <div className="container">
           <Heading centered title="Log In" />
           {/* <Subtitle centered>Login into your account</Subtitle> */}

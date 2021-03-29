@@ -20,7 +20,7 @@ const Register = ({
 }) => {
   return (
     <LoginCard>
-      <div className="section is-medium">
+      <div className="section ">
         <div className="container">
           <Heading centered title="Create An Account" />
           {/* <Subtitle centered>

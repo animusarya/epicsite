@@ -7,7 +7,7 @@ import { useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import Swal from 'sweetalert2';
 
-import { HeroHeader, ScrollAnimation } from '../components/elements';
+import { HeroHeader, ScrollAnimation, Loading } from '../components/elements';
 import Seo from '../components/Seo';
 import Layout from '../components/global/Layout';
 import config from '../utils/config';
@@ -80,11 +80,11 @@ const ArticleView = ({ data }) => {
   console.log(isLoggedIn);
   const [
     executeRegisterMutation,
-    { data: registerData, error: registerError },
+    { data: registerData, loading, error: registerError },
   ] = useMutation(registerMutation);
   const [
     executeLoginMutation,
-    { data: loginData, error: loginError },
+    { data: loginData, showLoading, error: loginError },
   ] = useMutation(logInMutation);
 
   const updateUser = useStoreActions((actions) => actions.user.update);
@@ -169,19 +169,25 @@ const ArticleView = ({ data }) => {
       ) : (
         <>
           {showLogInForm ? (
-            <LogIn
-              onSubmit={(formData) =>
-                executeLoginMutation({ variables: formData })
-              }
-              handleChangeForm={() => setShowLogInForm(!showLogInForm)}
-            />
+            <>
+              <LogIn
+                onSubmit={(formData) =>
+                  executeLoginMutation({ variables: formData })
+                }
+                handleChangeForm={() => setShowLogInForm(!showLogInForm)}
+              />
+              {showLoading && <Loading />}
+            </>
           ) : (
-            <Register
-              onSubmit={(formData) => {
-                executeRegisterMutation({ variables: { input: formData } });
-              }}
-              handleChangeForm={() => setShowLogInForm(!showLogInForm)}
-            />
+            <>
+              <Register
+                onSubmit={(formData) => {
+                  executeRegisterMutation({ variables: { input: formData } });
+                }}
+                handleChangeForm={() => setShowLogInForm(!showLogInForm)}
+              />
+              {loading && <Loading />}
+            </>
           )}
         </>
       )}

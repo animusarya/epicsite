@@ -6,6 +6,7 @@ import InputGroup from './InputGroup';
 import SelectGroup from './SelectGroup';
 import ScrollAnimation from './ScrollAnimation';
 import HeroHeader from './HeroHeader';
+import Loading from './Loading';
 
 export {
   Button,
@@ -16,4 +17,5 @@ export {
   SelectGroup,
   ScrollAnimation,
   HeroHeader,
+  Loading,
 };
