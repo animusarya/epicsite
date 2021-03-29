@@ -9,6 +9,7 @@ const Section = styled.div`
   background-position: bottom;
   .title {
     font-size: 74px;
+    line-height: 1.3 !important;
   }
   .mb-5 {
     margin-bottom: 40px !important;
@@ -29,7 +30,7 @@ const HomeBanner = ({ home }) => {
         <div className="hero-body has-text-centered">
           <div className="columns is-centered">
             <div className="column is-7">
-              <h1 className="title  has-text-weight-bold line-height-large is-size-2-mobile">
+              <h1 className="title has-text-weight-bold is-size-2-mobile">
                 {home.homeHero.title}
               </h1>
             </div>

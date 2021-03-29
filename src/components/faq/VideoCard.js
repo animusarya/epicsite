@@ -7,6 +7,9 @@ const Section = styled.div`
     background-color: transparent;
     box-shadow: none;
   }
+  img {
+    cursor: pointer;
+  }
 `;
 
 const VideoCard = ({ setVideoUrl, video }) => {

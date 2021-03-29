@@ -74,7 +74,7 @@ const SocialIcons = ({ data }) => (
       <div className="mb-5 is-flex" key={item.id}>
         <a href={item.link} target="_blank" rel="noreferrer" className="">
           <Icon className={item.icon} color={item.color} />
-          <span className="has-text-white ml-5"> {item.name}</span>
+          <span className="has-text-white ml-2"> {item.name}</span>
         </a>
       </div>
     ))}

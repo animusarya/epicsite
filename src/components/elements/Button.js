@@ -79,6 +79,9 @@ const LinkWrapper = styled(Link)`
     box-shadow: none;
     color: ${(props) => props.theme.backgroundWhite} !important;
   }
+  button {
+    cursor: pointer;
+  }
 `;
 
 const Button = ({
