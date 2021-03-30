@@ -5,6 +5,7 @@ import { Heading } from '../elements';
 import BackgroundBlob from '../BackgroundBlob';
 import GoogleMap from '../map/GoogleMap';
 import ContactForm from '../forms/ContactForm';
+import Contact from './Contact';
 
 const Section = styled.div`
   li {
@@ -83,7 +84,7 @@ const ContactSection = ({ contact }) => {
                 </ul>
               </div>
             </div>
-            <ContactForm />
+            <Contact />
           </div>
         </div>
       </div>

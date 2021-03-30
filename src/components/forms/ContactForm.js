@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
-import swal from 'sweetalert2';
 
 import { InputGroup, Button } from '../elements';
 
@@ -70,19 +69,21 @@ const ContactForm = ({
           <div className="field-body">
             <div className="field">
               <InputGroup
-                label="Lorem ipsum"
-                placeholder="Lorem ipsum"
-                name="subject"
-                type="text"
-                value={values.subject}
+                label="Telephone"
+                placeholder="Telephone"
+                name="telephone"
+                type="number"
+                value={values.telephone}
                 onChange={handleChange}
                 onBlur={handleBlur}
                 errors={
-                  errors.subject && touched.subject ? errors.subject : undefined
+                  errors.telephone && touched.telephone
+                    ? errors.telephone
+                    : undefined
                 }
               />
             </div>
-            <div className="field">
+            {/* <div className="field">
               <InputGroup
                 label="Lorem ipsum"
                 placeholder="Lorem ipsum"
@@ -95,7 +96,7 @@ const ContactForm = ({
                   errors.subject && touched.subject ? errors.subject : undefined
                 }
               />
-            </div>
+            </div> */}
           </div>
         </div>
         <div className="field">
@@ -120,7 +121,7 @@ const ContactForm = ({
             hasHoverBackgroundColor={(props) => props.theme.lightShades}
             hasDefaultBackgroundColor={(props) => props.theme.darkAccent}
             hasHoverBackground={(props) => props.theme.lightShades}
-            type="button"
+            type="submit"
             isLarge
           >
             Send
@@ -135,7 +136,7 @@ export default withFormik({
   mapPropsToValues: () => ({
     name: '',
     email: '',
-    subject: '',
+    telephone: '',
     message: '',
   }),
   validationSchema: Yup.object().shape({
@@ -143,20 +144,13 @@ export default withFormik({
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required!'),
-    subject: Yup.string().required('Your subject is required!'),
+    telephone: Yup.string().required('Your telephone is required!'),
     message: Yup.string().required('Message is required!'),
   }),
-  handleSubmit: () => {
-    swal('Subscribed successfully, thank you!');
-    // addToMailchimp(values.email)
-    //   .then(() => {
-    //     swal('Subscribed successfully, thank you!');
-    //     setSubmitting(false);
-    //   })
-    //   .catch(() => {
-    //     swal('Subscription failed, please try again.', 'error');
-    //     setSubmitting(false);
-    //   });
+  handleSubmit: (values, { setSubmitting, props }) => {
+    props.onSubmit(values).finally(() => {
+      setSubmitting(false);
+    });
   },
   displayName: 'ContactForm', // helps with React DevTools
 })(ContactForm);

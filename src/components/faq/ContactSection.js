@@ -1,6 +1,6 @@
 import React from 'react';
+import Contact from '../contact/Contact';
 import { Heading, Subtitle } from '../elements';
-import ContactForm from '../forms/ContactForm';
 
 const ContactSection = ({ faq }) => {
   return (
@@ -14,7 +14,7 @@ const ContactSection = ({ faq }) => {
         </div>
         <div className="columns is-centered">
           <div className="column is-10">
-            <ContactForm />
+            <Contact />
           </div>
         </div>
       </div>
