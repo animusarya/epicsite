@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import swal from 'sweetalert2';
+import Swal from 'sweetalert2';
 import { useMutation } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import ContactForm from '../forms/ContactForm';
@@ -17,7 +17,12 @@ const Contact = () => {
   const [executeMutation, res] = useMutation(mutationContactUs);
 
   useEffect(() => {
-    if (res.error) swal('Oops', res.error, 'error');
+    if (res.error)
+      Swal.fire({
+        icon: 'error',
+        title: 'Oops...',
+        text: res.error.message,
+      });
   }, [res.error]);
   return (
     <ContactForm
@@ -28,7 +33,7 @@ const Contact = () => {
           },
         });
         if (resp) {
-          swal('Submit Successfully!', '', 'success');
+          Swal.fire('Submit Successfully!', '', 'success');
         }
       }}
     />

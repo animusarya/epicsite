@@ -147,10 +147,16 @@ export default withFormik({
     telephone: Yup.string().required('Your telephone is required!'),
     message: Yup.string().required('Message is required!'),
   }),
-  handleSubmit: (values, { setSubmitting, props }) => {
-    props.onSubmit(values).finally(() => {
-      setSubmitting(false);
-    });
+  handleSubmit: (values, { setSubmitting, resetForm, props }) => {
+    props
+      .onSubmit({ ...values, telephone: values.telephone.toString() })
+      .then(() => {
+        setSubmitting(false);
+        resetForm();
+      })
+      .catch(() => {
+        setSubmitting(false);
+      });
   },
   displayName: 'ContactForm', // helps with React DevTools
 })(ContactForm);
