@@ -18,6 +18,6 @@ const store = createStore(schema, {
 });
 
 const persistor = persistStore(store);
-persistor.purge(); // to clear store
+// persistor.purge(); // to clear store
 
 export { store, persistor };

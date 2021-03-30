@@ -84,13 +84,13 @@ const Footer = () => (
             <div>
               <div className="section">
                 <div className="container">
-                  <ScrollAnimation
+                  {/* <ScrollAnimation
                     zIndex="auto"
                     animation="animate__fadeInTopLeft"
                     image="/images/Footer-dotted.png"
                     top="-73%"
                     left=" 110%"
-                  />
+                  /> */}
                   <LogoImg
                     src="/images/logo.png"
                     alt="footer-logo"
