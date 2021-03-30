@@ -65,9 +65,9 @@ const Blog = ({ data }) => {
       />
       <div className="section">
         <div className="container">
-          <div className="columns is-multiline">
+          <div className="columns is-multiline is-variable is-5">
             {aboutUs.map(({ node }) => (
-              <div className="column is-4" key={node._id}>
+              <div className="column is-4 mb-4" key={node._id}>
                 <News node={node} />
               </div>
             ))}

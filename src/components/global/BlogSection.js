@@ -30,7 +30,7 @@ const BlogSection = ({ article, heading }) => {
 
           <div className="columns is-variable is-5 is-multiline is-centered mt-6">
             {article.map(({ node }) => (
-              <div className="column is-4" key={node._id}>
+              <div className="column is-4 mb-4" key={node._id}>
                 <News node={node} />
               </div>
             ))}

@@ -18,6 +18,11 @@ const Section = styled.div`
     box-shadow: none;
     border-radius: 5px;
   }
+  @media screen and (min-width: 769px) {
+    .field-body > .field:not(:last-child) {
+      margin-right: 2.75rem;
+    }
+  }
 `;
 
 const ContactForm = ({
