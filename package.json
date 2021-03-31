@@ -11,7 +11,7 @@
   "bugs": {
     "url": "https://github.com/zeiq-co/TurnerEducation-House/issues"
   },
-  "homepage": "https://github.com/zeiq-co/Paint/blob/master/README.md",
+  "homepage": "https://github.com/zeiq-co/turner-house-education/blob/master/README.md",
   "scripts": {
     "start": "npm run develop",
     "develop": "gatsby develop",
