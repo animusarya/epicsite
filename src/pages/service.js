@@ -2,7 +2,6 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Layout from '../components/global/Layout';
 import Seo from '../components/Seo';
-// import HeroHeader from '../components/elements/HeroHeader';
 import { HeroHeader } from '../components/elements';
 import ServiceFeatures from '../components/ServiceFeatures';
 

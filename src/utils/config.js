@@ -1,7 +1,7 @@
 module.exports = {
   DEBUG: process.env.NODE_ENV === 'development',
 
-  siteName: 'Turner Education House',
+  siteName: 'Turner House Education',
   author: 'zeiq.co',
   description: 'Education Academy portfolio',
   siteUrl: 'https://www.turner-house.co.uk/',
@@ -22,7 +22,7 @@ module.exports = {
   type: 'website',
   googleAnalytics: 'UA-169811954-1',
   backgroundColor: '#e0e0e0',
-  themeColor: '#e9bd16',
+  themeColor: '#7A2540',
   mailchimp: '',
   sanityId: 'l0iaejwg',
 };

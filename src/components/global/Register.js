@@ -7,8 +7,6 @@ import { Heading, InputGroup, Button } from '../elements';
 
 const LoginCard = styled.div``;
 
-// const phoneRegex = RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
-
 const Register = ({
   handleChangeForm,
   values,
@@ -23,24 +21,10 @@ const Register = ({
       <div className="section ">
         <div className="container">
           <Heading centered title="Create An Account" />
-
           <div className="columns is-centered">
             <div className="column is-6">
               <div className="mt-5">
                 <form onSubmit={handleSubmit}>
-                  {/* <InputGroup
-                    name="fullName"
-                    placeholder="Full Name"
-                    type="text"
-                    value={values.fullName}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    errors={
-                      errors.fullName && touched.fullName
-                        ? errors.fullName
-                        : undefined
-                    }
-                  /> */}
                   <InputGroup
                     name="email"
                     placeholder="Email Address"
@@ -52,19 +36,6 @@ const Register = ({
                       errors.email && touched.email ? errors.email : undefined
                     }
                   />
-                  {/* <InputGroup
-                    name="telephone"
-                    placeholder="Telephone"
-                    type="number"
-                    value={values.telephone}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    errors={
-                      errors.telephone && touched.telephone
-                        ? errors.telephone
-                        : undefined
-                    }
-                  /> */}
                   <InputGroup
                     name="password"
                     placeholder="Password"
@@ -78,19 +49,6 @@ const Register = ({
                         : undefined
                     }
                   />
-                  {/* <InputGroup
-                    name="confirmPassword"
-                    placeholder="Confirm Password"
-                    type="password"
-                    value={values.confirmPassword}
-                    onChange={handleChange}
-                    onBlur={handleBlur}
-                    errors={
-                      errors.confirmPassword && touched.confirmPassword
-                        ? errors.confirmPassword
-                        : undefined
-                    }
-                  /> */}
                   <div className="has-text-centered mt-6">
                     <Button
                       hasHoverBackgroundColor={(props) =>

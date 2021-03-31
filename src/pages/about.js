@@ -8,6 +8,7 @@ import { HeroHeader } from '../components/elements';
 import AboutSection from '../components/global/AboutSection';
 import Testimonial from '../components/about/Testimonial';
 import CountSection from '../components/about/CountSection';
+import config from '../utils/config';
 
 const Container = styled.div`
   .about-wrapper {
@@ -63,7 +64,7 @@ const About = ({ data }) => {
   const aboutUs = data.sanityAbout;
   return (
     <Layout>
-      <Seo title="About" />
+      <Seo title="About" description={`About Us ${config.siteName}`} />
       <Container>
         <HeroHeader
           bgImage={

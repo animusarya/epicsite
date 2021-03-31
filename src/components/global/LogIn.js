@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
-import { Heading, InputGroup, Subtitle, Button } from '../elements';
+import { Heading, InputGroup, Button } from '../elements';
 
 const LoginCard = styled.div``;
 
@@ -20,7 +20,6 @@ const LogIn = ({
       <div className="section">
         <div className="container">
           <Heading centered title="Log In" />
-          {/* <Subtitle centered>Login into your account</Subtitle> */}
           <div className="columns is-centered">
             <div className="column is-6">
               <div className="mt-5">
