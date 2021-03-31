@@ -51,8 +51,6 @@ const registerMutation = gql`
       jwt
       user {
         email
-        fullName
-        telephone
       }
     }
   }
@@ -64,8 +62,6 @@ const logInMutation = gql`
       jwt
       user {
         email
-        fullName
-        telephone
       }
     }
   }
