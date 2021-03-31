@@ -1,8 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 import Img from 'gatsby-image';
-import { Heading, Button, ScrollAnimation, Subtitle } from '../elements';
-import BackgroundBlob from '../BackgroundBlob';
+import {
+  Heading,
+  Button,
+  ScrollAnimation,
+  Subtitle,
+  BackgroundBlob,
+} from '../elements';
 
 const Container = styled.div`
   position: relative;

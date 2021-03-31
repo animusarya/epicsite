@@ -7,6 +7,7 @@ import SelectGroup from './SelectGroup';
 import ScrollAnimation from './ScrollAnimation';
 import HeroHeader from './HeroHeader';
 import Loading from './Loading';
+import BackgroundBlob from './BackgroundBlob';
 
 export {
   Button,
@@ -18,4 +19,5 @@ export {
   ScrollAnimation,
   HeroHeader,
   Loading,
+  BackgroundBlob,
 };

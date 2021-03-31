@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Heading, ScrollAnimation, Button } from '../elements';
-import News from '../News';
+import News from './News';
 
 const BlogWrapper = styled.div`
   position: relative;

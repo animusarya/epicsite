@@ -1,10 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Heading } from '../elements';
-import BackgroundBlob from '../BackgroundBlob';
+import { Heading, BackgroundBlob } from '../elements';
+// import BackgroundBlob from '../BackgroundBlob';
 import GoogleMap from '../map/GoogleMap';
-// import ContactForm from '../forms/ContactForm';
 import Contact from './Contact';
 
 const Section = styled.div`

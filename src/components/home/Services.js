@@ -1,8 +1,7 @@
 import React from 'react';
 import Img from 'gatsby-image';
 
-import { Subtitle, Heading, Title } from '../elements';
-import BackgroundBlob from '../BackgroundBlob';
+import { Subtitle, Heading, Title, BackgroundBlob } from '../elements';
 
 const Services = ({ home }) => {
   return (

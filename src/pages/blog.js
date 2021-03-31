@@ -4,7 +4,7 @@ import Layout from '../components/global/Layout';
 import { HeroHeader } from '../components/elements';
 import Seo from '../components/Seo';
 import config from '../utils/config';
-import News from '../components/News';
+import News from '../components/global/News';
 
 export const blogQuery = graphql`
   query blog {

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import { truncate } from 'lodash';
-import { Title, Subtitle } from './elements';
+import { Title, Subtitle } from '../elements';
 
 const TitleLink = styled(Link)``;
 
