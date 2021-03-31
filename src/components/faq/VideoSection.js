@@ -8,7 +8,7 @@ const VideoSection = ({ video }) => {
     <div className="section mt-6">
       <div className="container">
         <div className="columns is-centered">
-          <div className="column is-11">
+          <div id="videos" className="column is-11 ">
             <ReactPlayer
               className="player"
               url={state}

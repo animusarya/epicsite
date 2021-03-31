@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import AnchorLink from 'react-anchor-link-smooth-scroll';
 import { Subtitle, Title } from '../elements';
 
 const Section = styled.div`
@@ -21,9 +22,11 @@ const VideoCard = ({ setVideoUrl, video }) => {
             <div key={data._id} className="column is-3 mb-6">
               <div className="card ">
                 <button type="button" onClick={() => setVideoUrl(data.url)}>
-                  <div className="card-image">
-                    <img src="/images/youtube-img.png" alt="youtube-img" />
-                  </div>
+                  <AnchorLink href="#videos">
+                    <div className="card-image">
+                      <img src="/images/youtube-img.png" alt="youtube-img" />
+                    </div>
+                  </AnchorLink>
                 </button>
                 <div className="content has-text-centered">
                   <div className="media">

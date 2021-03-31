@@ -60,6 +60,7 @@
     "polished": "^3.6.5",
     "prop-types": "^15.7.2",
     "react": "^17.0.1",
+    "react-anchor-link-smooth-scroll": "^1.0.12",
     "react-animate-on-scroll": "^2.1.5",
     "react-blob": "^2.1.0",
     "react-countup": "^4.3.3",
