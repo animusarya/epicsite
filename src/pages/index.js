@@ -3,9 +3,8 @@ import { graphql } from 'gatsby';
 
 import Seo from '../components/Seo';
 import Layout from '../components/global/Layout';
-
 import HomeBanner from '../components/home/HomeBanner';
-import Services from '../components/home/Services';
+import HomeServices from '../components/home/HomeServices';
 import AboutSection from '../components/global/AboutSection';
 import Reviews from '../components/home/Reviews';
 import Quote from '../components/home/Quote';
@@ -118,7 +117,7 @@ const IndexPage = ({ data }) => {
         keywords={home.keywords}
       />
       <HomeBanner home={home} />
-      <Services home={home} />
+      <HomeServices home={home} />
       <AboutSection
         title={home.homeAbout.title}
         subtitle={home.homeAbout.subtitle}

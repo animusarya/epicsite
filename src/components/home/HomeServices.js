@@ -3,7 +3,7 @@ import Img from 'gatsby-image';
 
 import { Subtitle, Heading, Title, BackgroundBlob } from '../elements';
 
-const Services = ({ home }) => {
+const HomeServices = ({ home }) => {
   return (
     <>
       <div className="section is-medium">
@@ -48,4 +48,4 @@ const Services = ({ home }) => {
     </>
   );
 };
-export default Services;
+export default HomeServices;
