@@ -3,11 +3,11 @@ import styled from 'styled-components';
 
 import { withFormik } from 'formik';
 import * as Yup from 'yup';
-import { Heading, InputGroup, Subtitle, Button } from '../elements';
+import { Heading, InputGroup, Button } from '../elements';
 
 const LoginCard = styled.div``;
 
-const phoneRegex = RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
+// const phoneRegex = RegExp(/^\(?([0-9]{3})\)?[-. ]?([0-9]{3})[-. ]?([0-9]{4})$/);
 
 const Register = ({
   handleChangeForm,
@@ -23,15 +23,12 @@ const Register = ({
       <div className="section ">
         <div className="container">
           <Heading centered title="Create An Account" />
-          {/* <Subtitle centered>
-            Create an account to enjoy all the services without any ads for
-            free!
-          </Subtitle> */}
+
           <div className="columns is-centered">
             <div className="column is-6">
               <div className="mt-5">
                 <form onSubmit={handleSubmit}>
-                  <InputGroup
+                  {/* <InputGroup
                     name="fullName"
                     placeholder="Full Name"
                     type="text"
@@ -43,7 +40,7 @@ const Register = ({
                         ? errors.fullName
                         : undefined
                     }
-                  />
+                  /> */}
                   <InputGroup
                     name="email"
                     placeholder="Email Address"
@@ -55,7 +52,7 @@ const Register = ({
                       errors.email && touched.email ? errors.email : undefined
                     }
                   />
-                  <InputGroup
+                  {/* <InputGroup
                     name="telephone"
                     placeholder="Telephone"
                     type="number"
@@ -67,7 +64,7 @@ const Register = ({
                         ? errors.telephone
                         : undefined
                     }
-                  />
+                  /> */}
                   <InputGroup
                     name="password"
                     placeholder="Password"
@@ -81,7 +78,7 @@ const Register = ({
                         : undefined
                     }
                   />
-                  <InputGroup
+                  {/* <InputGroup
                     name="confirmPassword"
                     placeholder="Confirm Password"
                     type="password"
@@ -93,7 +90,7 @@ const Register = ({
                         ? errors.confirmPassword
                         : undefined
                     }
-                  />
+                  /> */}
                   <div className="has-text-centered mt-6">
                     <Button
                       hasHoverBackgroundColor={(props) =>
@@ -129,40 +126,21 @@ export default withFormik({
   mapPropsToValues: () => ({
     email: '',
     password: '',
-    fullName: '',
-    telephone: '',
-    confirmPassword: '',
   }),
   validationSchema: Yup.object().shape({
-    fullName: Yup.string().required('Full Name is required!'),
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required!'),
-    telephone: Yup.string()
-      .matches(phoneRegex, 'Invalid phone number')
-      .required('Telephone is required'),
     password: Yup.string()
       .required('Password is required!')
       .min(6, 'Seems a bit short...'),
-    confirmPassword: Yup.string()
-      .required('This field is required!')
-      .label('Confirm password')
-      .test('passwords-match', 'Passwords not matched!', function (values) {
-        return this.parent.password === values;
-      }),
   }),
 
   handleSubmit: (values, { setSubmitting, props }) => {
     // eslint-disable-next-line no-param-reassign
-    delete values.confirmPassword;
-    props
-      .onSubmit({
-        ...values,
-        telephone: values.telephone.toString(),
-      })
-      .finally(() => {
-        setSubmitting(false);
-      });
+    props.onSubmit(values).finally(() => {
+      setSubmitting(false);
+    });
   },
   displayName: 'Register', // helps with React DevTools
 })(Register);

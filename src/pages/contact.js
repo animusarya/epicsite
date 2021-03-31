@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
 import { graphql } from 'gatsby';
 import Seo from '../components/Seo';
 import Layout from '../components/global/Layout';
@@ -7,9 +7,9 @@ import { HeroHeader } from '../components/elements';
 import ContactSection from '../components/contact/ContactSection';
 import Reviews from '../components/home/Reviews';
 
-const Container = styled.div`
-  padding-top: 9rem;
-`;
+// const Container = styled.div`
+//   padding-top: 9rem;
+// `;
 
 export const query = graphql`
   query ContactPageQuery {
@@ -68,9 +68,7 @@ const Contact = ({ data }) => {
         }
       />
       <ContactSection contact={contact} />
-      <Container>
-        <Reviews review={review} reviewHeading={contact.homeReviewHeading} />
-      </Container>
+      <Reviews review={review} reviewHeading={contact.homeReviewHeading} />
     </Layout>
   );
 };
