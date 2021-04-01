@@ -29,6 +29,7 @@ export const theme = {
   backgroundColor: ' #4F4F4F;',
   backgroundInputColor: '#F9F9F9',
   backgroundInputColorDark: '#EDC4D1',
+  hoverTextColor: '#e6e6e6',
   fontSize: '16px',
   fontSizeSmall: '14px',
   fontSizeMedium: '18px',

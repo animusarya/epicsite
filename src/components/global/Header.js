@@ -24,9 +24,9 @@ const Section = styled.div`
   a.navbar-item:hover {
     background-color: transparent;
   }
-  a.has-text-white:hover {
+  /* a.has-text-white:hover {
     color: ${(props) => props.theme.textColorLite} !important;
-  }
+  } */
   .navbar-item img {
     max-height: 5.75rem !important;
   }

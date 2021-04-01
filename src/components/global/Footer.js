@@ -42,7 +42,7 @@ const Container = styled.footer`
     font-size: ${(props) => props.theme.fontSizeMedium};
   }
   a:hover {
-    color: ${(props) => props.theme.textColorLite} !important;
+    color: ${(props) => props.theme.hoverTextColor} !important;
   }
   .column {
     @media screen and (max-width: 768px) {
@@ -84,13 +84,6 @@ const Footer = () => (
             <div>
               <div className="section">
                 <div className="container">
-                  {/* <ScrollAnimation
-                    zIndex="auto"
-                    animation="animate__fadeInTopLeft"
-                    image="/images/Footer-dotted.png"
-                    top="-73%"
-                    left=" 110%"
-                  /> */}
                   <LogoImg
                     src="/images/logo.png"
                     alt="footer-logo"
