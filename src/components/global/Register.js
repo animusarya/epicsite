@@ -95,7 +95,6 @@ export default withFormik({
   }),
 
   handleSubmit: (values, { setSubmitting, props }) => {
-    // eslint-disable-next-line no-param-reassign
     props.onSubmit(values).finally(() => {
       setSubmitting(false);
     });

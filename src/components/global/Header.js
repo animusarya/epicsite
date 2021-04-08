@@ -115,13 +115,13 @@ const Header = () => {
                 to="/about"
                 className="navbar-item has-text-weight-normal  has-text-white px-5"
               >
-                Why Turner House?
+                About
               </Link>
               <Link
                 to="/service"
                 className="navbar-item has-text-weight-normal has-text-white px-5"
               >
-                How we can help
+                How can we help?
               </Link>
             </div>
             <div className="my-navbar-center is-hidden-mobile">
@@ -143,10 +143,10 @@ const Header = () => {
                     Blog
                   </Link>
                   <Link
-                    to="/faq"
+                    to="/video"
                     className="navbar-item has-text-weight-normal has-text-white px-5 drop-down"
                   >
-                    FAQ
+                    Video
                   </Link>
                 </div>
               </div>

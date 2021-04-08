@@ -92,7 +92,7 @@ const QuoteForm = ({
                 className="button is-fullwidth is-medium "
                 type="submit"
               >
-                Subscribe
+                Submit
               </Button>
             </div>
           </form>

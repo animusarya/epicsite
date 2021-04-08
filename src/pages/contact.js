@@ -7,10 +7,6 @@ import { HeroHeader } from '../components/elements';
 import ContactSection from '../components/contact/ContactSection';
 import Reviews from '../components/home/Reviews';
 
-// const Container = styled.div`
-//   padding-top: 9rem;
-// `;
-
 export const query = graphql`
   query ContactPageQuery {
     sanitySiteSettings {

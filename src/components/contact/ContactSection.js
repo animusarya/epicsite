@@ -3,7 +3,6 @@ import styled from 'styled-components';
 
 import { Heading, BackgroundBlob } from '../elements';
 // import BackgroundBlob from '../BackgroundBlob';
-import GoogleMap from '../map/GoogleMap';
 import Contact from './Contact';
 
 const Section = styled.div`
@@ -22,43 +21,17 @@ const ContactSection = ({ contact }) => {
             <Heading centered title="Get in Touch" />
           </div>
         </div>
-        <div className="columns is-centered is-vcentered is-variable is-6">
-          <div className="column is-6">
-            <GoogleMap />
-          </div>
-          <div className="column is-6">
+        <div className="columns is-centered">
+          <div className="column is-7">
             <div className="columns mb-5">
               <div className="column pl-0">
-                <img src="/images/address.png" alt="address-icon" />
-                <h1 className="is-size-5 has-text-black has-text-weight-semibold mt-3 mb-2">
-                  Address
-                </h1>
-                <ul>
-                  {contact.address && (
-                    <li className="has-text-black has-text-weight-normal is-size-6 pr-6">
-                      {contact.address}
-                    </li>
-                  )}
-                  {contact.email && (
-                    <li className="mt-2">
-                      {contact.email && (
-                        <a
-                          href={`mailto:${contact.email}`}
-                          className="has-text-black has-text-weight-normal is-size-6"
-                        >
-                          <i className="far fa-envelope mr-2" />
-                          {contact.email}
-                        </a>
-                      )}
-                    </li>
-                  )}
-                </ul>
+                {contact.email && (
+                  <div className="">
+                    <a href="/">{contact.email}</a>
+                  </div>
+                )}
               </div>
               <div className="column pl-0">
-                <img src="/images/phone01.png" alt="phone-icon" />
-                <h1 className="is-size-5 has-text-black has-text-weight-semibold mt-3 mb-2">
-                  Phone Number
-                </h1>
                 <ul>
                   <li>
                     {contact.telephoneOne && (
@@ -69,16 +42,6 @@ const ContactSection = ({ contact }) => {
                         {contact.telephoneOne}
                       </a>
                     )}
-                  </li>
-                  <li>
-                    {contact.telephoneTwo && (
-                      <a
-                        className="has-text-black has-text-weight-normal is-size-6"
-                        href={`tel:${contact.telephoneTwo}`}
-                      >
-                        {contact.telephoneTwo}
-                      </a>
-                    )}{' '}
                   </li>
                 </ul>
               </div>
