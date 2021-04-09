@@ -73,10 +73,7 @@ const Header = () => {
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="container">
           <div className="navbar-brand">
-            <Link
-              className="navbar-item is-justify-content-center is-hidden-desktop"
-              to="/"
-            >
+            <Link className="navbar-item" to="/">
               <img src="/images/logo.png" alt="site logo" />
             </Link>
             <button
@@ -124,32 +121,7 @@ const Header = () => {
                 How can we help?
               </Link>
             </div>
-            <div className="my-navbar-center is-hidden-mobile">
-              <Link className="navbar-item is-justify-content-center" to="/">
-                <img src="/images/logo.png" alt="site logo" />
-              </Link>
-            </div>
             <div className="navbar-end">
-              <div className="navbar-item has-dropdown is-hoverable">
-                <div className="navbar-item has-text-weight-normal has-text-white px-5 is-clickable">
-                  Education insights{' '}
-                </div>
-
-                <div className="navbar-dropdown">
-                  <Link
-                    to="/blog"
-                    className="navbar-item has-text-weight-normal has-text-white px-5 drop-down"
-                  >
-                    Blog
-                  </Link>
-                  <Link
-                    to="/video"
-                    className="navbar-item has-text-weight-normal has-text-white px-5 drop-down"
-                  >
-                    Video
-                  </Link>
-                </div>
-              </div>
               <div className="navbar-item has-text-weight-normal has-text-white px-5">
                 <Button
                   to="/contact"
@@ -159,6 +131,17 @@ const Header = () => {
                   hasDefaultBackgroundColor="transparent"
                 >
                   Contact Us
+                </Button>
+              </div>
+              <div className="navbar-item has-text-weight-normal has-text-white px-5">
+                <Button
+                  to="/contact"
+                  type="button"
+                  hasBorder
+                  hasHoverBackground={(props) => props.theme.backgroundWhite}
+                  hasDefaultBackgroundColor="transparent"
+                >
+                  Contact
                 </Button>
               </div>
             </div>
