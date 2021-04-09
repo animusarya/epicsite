@@ -4,7 +4,7 @@ import * as Yup from 'yup';
 import swal from 'sweetalert2';
 
 import styled from 'styled-components';
-import { InputGroup, SelectGroup, Button } from '../elements';
+import { InputGroup, Button } from '../elements';
 
 const Section = styled.div`
   h1 {
@@ -15,6 +15,9 @@ const Section = styled.div`
   .columns {
     margin-left: -0.75rem !important;
     margin-right: -0.75rem !important;
+  }
+  .textarea {
+    background: #f9f9f9 !important;
   }
 `;
 
@@ -39,7 +42,7 @@ const QuoteForm = ({
             onSubmit={handleSubmit}
           >
             <InputGroup
-              label="Name*"
+              label="Name"
               name="name"
               placeholder="Full Name"
               type="text"
@@ -49,7 +52,7 @@ const QuoteForm = ({
               errors={errors.name && touched.name ? errors.name : undefined}
             />
             <InputGroup
-              label="Email*"
+              label="Email"
               name="email"
               placeholder="example@gmail.com"
               type="text"
@@ -58,32 +61,75 @@ const QuoteForm = ({
               onBlur={handleBlur}
               errors={errors.email && touched.email ? errors.email : undefined}
             />
-            <SelectGroup label="Department*" text="Please Select" />
-            <SelectGroup label="Time *" text="4:00 Available" />
             <InputGroup
-              label="Lorem ipsum"
-              placeholder="Lorem ipsum"
-              name="subject"
-              type="text"
-              value={values.subject}
+              label="Telephone*"
+              name="telephone"
+              placeholder="Telephone"
+              type="number"
+              value={values.telephone}
               onChange={handleChange}
               onBlur={handleBlur}
               errors={
-                errors.subject && touched.subject ? errors.subject : undefined
+                errors.telephone && touched.telephone
+                  ? errors.telephone
+                  : undefined
               }
             />
-            <InputGroup
-              label="Lorem ipsum"
-              placeholder="Lorem ipsum"
-              name="subject"
+            {/* <InputGroup
+              label="Country"
+              name="country"
+              placeholder="Country"
               type="text"
-              value={values.subject}
+              value={values.country}
               onChange={handleChange}
               onBlur={handleBlur}
               errors={
-                errors.subject && touched.subject ? errors.subject : undefined
+                errors.country && touched.country ? errors.country : undefined
               }
-            />
+            /> */}
+
+            {/* <div className="dropdown">
+              <div className="dropdown-trigger">
+                <button
+                  type="button"
+                  className="button"
+                  aria-haspopup="true"
+                  aria-controls="dropdown-menu3"
+                >
+                  <span>Click me</span>
+                  <span className="icon is-small">
+                    <i className="fas fa-angle-down" aria-hidden="true" />
+                  </span>
+                </button>
+              </div>
+              <div className="dropdown-menu" id="dropdown-menu3" role="menu">
+                <div className="dropdown-content">
+                  <a href="/" className="dropdown-item">
+                    Overview
+                  </a>
+                  <a href="/src" className="dropdown-item">
+                    Modifiers
+                  </a>
+                </div>
+              </div>
+            </div> */}
+            <div className="field">
+              <label className="label has-text-weight-semibold">Message*</label>
+              <textarea
+                className="textarea"
+                name="message"
+                id="message"
+                placeholder="Say it your way"
+                rows={6}
+                defaultValue=""
+                value={values.message}
+                onChange={handleChange}
+                onBlur={handleBlur}
+              />
+              {errors.message && touched.message && (
+                <p className="help is-danger">{errors.message}</p>
+              )}
+            </div>
             <div className="mt-6">
               <Button
                 hasHoverBackgroundColor={(props) => props.theme.lightShades}
@@ -106,14 +152,17 @@ export default withFormik({
   mapPropsToValues: () => ({
     name: '',
     email: '',
-    subject: '',
+    telephone: '',
+    message: '',
+    country: '',
   }),
   validationSchema: Yup.object().shape({
     name: Yup.string().required('Name is required!'),
     email: Yup.string()
       .email('Invalid email address')
       .required('Email is required!'),
-    subject: Yup.string().required('Your subject is required!'),
+    telephone: Yup.string().required('Your telephone is required!'),
+    message: Yup.string().required('Message is required!'),
   }),
 
   handleSubmit: (values, { setSubmitting, resetForm, props }) => {
