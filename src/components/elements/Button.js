@@ -93,7 +93,6 @@ const Button = ({
   hasHoverBackground,
   hasDefaultBackgroundColor,
   className,
-  type,
 }) => {
   return (
     <LinkWrapper
@@ -104,7 +103,7 @@ const Button = ({
       hasHoverBackground={hasHoverBackground}
       hasDefaultBackgroundColor={hasDefaultBackgroundColor}
     >
-      <button to={to} type={type} className={`animated-link ${className}`}>
+      <button to={to} type="submit" className={`animated-link ${className}`}>
         {children}
         <span />
         <span />

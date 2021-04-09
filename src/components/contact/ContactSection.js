@@ -23,7 +23,20 @@ const ContactSection = ({ contact }) => {
         </div>
         <div className="columns is-centered">
           <div className="column is-7">
-            <div className="columns mb-5">
+            <div className="has-text-centered mb-6 is-size-5">
+              {contact.email && (
+                <div>
+                  <i className="far fa-envelope has-text-black" />
+                  <a
+                    href={`mailto:${contact.email}`}
+                    className="has-text-black ml-4"
+                  >
+                    {contact.email}
+                  </a>
+                </div>
+              )}
+            </div>
+            {/* <div className="columns mb-5">
               <div className="column pl-0">
                 {contact.email && (
                   <div className="">
@@ -45,7 +58,7 @@ const ContactSection = ({ contact }) => {
                   </li>
                 </ul>
               </div>
-            </div>
+            </div> */}
             <Contact />
           </div>
         </div>

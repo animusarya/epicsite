@@ -76,26 +76,26 @@ const About = ({ data }) => {
           title={aboutUs.aboutUs.title}
           subtitle={aboutUs.aboutUs.description}
         />
-        <div className="pt-6 about-wrapper">
-          <AboutSection
-            to={
-              aboutUs.information && aboutUs.information.linkTo
-                ? aboutUs.information.linkTo.current
-                : ''
-            }
-            title={aboutUs.information.title}
-            subtitle={aboutUs.information.subtitle}
-            img={
-              aboutUs &&
-              aboutUs.information.image &&
-              aboutUs.information.image.asset &&
-              aboutUs.information.image.asset.fluid
-            }
-            alt={aboutUs.information.title}
-          />
-        </div>
         <Testimonial aboutUs={aboutUs} />
-        <CountSection />
+        <AboutSection
+          to={
+            aboutUs.information && aboutUs.information.linkTo
+              ? aboutUs.information.linkTo.current
+              : ''
+          }
+          title={aboutUs.information.title}
+          subtitle={aboutUs.information.subtitle}
+          img={
+            aboutUs &&
+            aboutUs.information.image &&
+            aboutUs.information.image.asset &&
+            aboutUs.information.image.asset.fluid
+          }
+          alt={aboutUs.information.title}
+        />
+        <div className="mt-6">
+          <CountSection />
+        </div>
       </Container>
     </Layout>
   );
