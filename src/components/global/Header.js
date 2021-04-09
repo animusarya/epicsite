@@ -106,33 +106,40 @@ const Header = () => {
                 to="/"
                 className="navbar-item has-text-weight-normal has-text-white px-5"
               >
-                Home
+                Who we are
               </Link>
               <Link
                 to="/about"
                 className="navbar-item has-text-weight-normal  has-text-white px-5"
               >
-                About
+                What we do
               </Link>
               <Link
                 to="/service"
                 className="navbar-item has-text-weight-normal has-text-white px-5"
               >
-                How can we help?
+                How we help
+              </Link>
+              <Link
+                to="/service"
+                className="navbar-item has-text-weight-normal has-text-white px-5"
+              >
+                Who we Work with
+              </Link>
+              <Link
+                to="/service"
+                className="navbar-item has-text-weight-normal has-text-white px-5"
+              >
+                support
+              </Link>
+              <Link
+                to="/service"
+                className="navbar-item has-text-weight-normal has-text-white px-5"
+              >
+                News
               </Link>
             </div>
             <div className="navbar-end">
-              <div className="navbar-item has-text-weight-normal has-text-white px-5">
-                <Button
-                  to="/contact"
-                  type="button"
-                  hasBorder
-                  hasHoverBackground={(props) => props.theme.backgroundWhite}
-                  hasDefaultBackgroundColor="transparent"
-                >
-                  Contact Us
-                </Button>
-              </div>
               <div className="navbar-item has-text-weight-normal has-text-white px-5">
                 <Button
                   to="/contact"
