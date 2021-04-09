@@ -25,7 +25,7 @@ const AboutSection = ({ subtitle, img, alt, to, title }) => {
       <Container className="section is-medium">
         <BackgroundBlob size="70vh" right="-1%" />
         <div className="container">
-          <div className="columns">
+          <div className="columns is-vcentered">
             <div className="column is-4">
               <Heading lineAlignLeft title={title} />
               <Subtitle>{subtitle}</Subtitle>
