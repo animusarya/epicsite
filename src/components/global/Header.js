@@ -132,7 +132,7 @@ const Header = () => {
             <div className="navbar-end">
               <div className="navbar-item has-dropdown is-hoverable">
                 <div className="navbar-item has-text-weight-normal has-text-white px-5 is-clickable">
-                  Stay in the loop
+                  Education insights{' '}
                 </div>
 
                 <div className="navbar-dropdown">
