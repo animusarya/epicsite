@@ -27,7 +27,7 @@ const ContactSection = ({ contact }) => {
               <div className="column pl-0">
                 {contact.email && (
                   <div className="">
-                    <a href="/">{contact.email}</a>
+                    <a href={`mailto:${contact.email}`}>{contact.email}</a>
                   </div>
                 )}
               </div>
