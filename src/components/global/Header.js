@@ -73,7 +73,10 @@ const Header = () => {
       <nav className="navbar" role="navigation" aria-label="main navigation">
         <div className="container">
           <div className="navbar-brand">
-            <Link className="navbar-item" to="/">
+            <Link
+              className="navbar-item is-justify-content-center is-hidden-desktop"
+              to="/"
+            >
               <img src="/images/logo.png" alt="site logo" />
             </Link>
             <button
@@ -139,18 +142,19 @@ const Header = () => {
                 News
               </Link>
             </div>
-            <div className="navbar-end">
-              <div className="navbar-item has-text-weight-normal has-text-white px-5">
-                <Button
-                  to="/contact"
-                  type="button"
-                  hasBorder
-                  hasHoverBackground={(props) => props.theme.backgroundWhite}
-                  hasDefaultBackgroundColor="transparent"
-                >
-                  Contact
-                </Button>
-              </div>
+          </div>
+          <div className="navbar-end">
+            <div className="navbar-item has-text-weight-normal has-text-white">
+              <Button
+                to="/contact"
+                type="button"
+                hasBorder
+                hasHoverBackground={(props) => props.theme.backgroundWhite}
+                hasDefaultBackgroundColor="transparent"
+                className="navbar-item has-text-weight-normal"
+              >
+                Contact
+              </Button>
             </div>
           </div>
         </div>

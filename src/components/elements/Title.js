@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 
 const Text = styled.h1`
-  color: ${(props) => props.theme.darkAccent} !important;
+  color: ${(props) => props.theme.textColor} !important;
 `;
 
 const Title = ({ children, centered }) => (

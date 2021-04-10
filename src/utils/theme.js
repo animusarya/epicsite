@@ -2,9 +2,9 @@ import { createGlobalStyle } from 'styled-components';
 import reset from 'styled-reset-advanced';
 import { lighten } from 'polished';
 
-const mainBrandColor = '#7A2540';
-const lightShades = '#F5F5F5';
-const darkAccent = '#000000';
+const mainBrandColor = '#00B5B1';
+const lightShades = '#F9A620';
+const darkAccent = '#FFFFFF';
 const darkShades = '#7D7987';
 
 export const theme = {
@@ -35,14 +35,14 @@ export const theme = {
   fontSizeMedium: '18px',
   fontSizeLarge: '20px',
   fontSizeExtraLarge: '40px',
-  textColor: '#1d1d1d',
+  textColor: '#F3FAFE',
   textColorInverse: lightShades,
   backgroundWhite: '#FFFFFF',
-  textColorLite: '#FFFFFF',
+  textColorLite: '#445368',
   textColorDark: '#252B42',
   placeholderColor: '#737373',
   menuTintColor: darkAccent,
-  primaryFontFamily: "'Playfair Display', serif",
+  primaryFontFamily: 'Roboto',
   secondaryFontFamily: "'Raleway', sans-serif",
   boxShadow: 'rgba(0,0,0,0.08) 0px 7px 18px',
 };
@@ -62,12 +62,14 @@ const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2, button {
-    font-family: ${theme.primaryFontFamily};
+    font-family: ${theme.secondaryFontFamily};
   }
 
   p {
     line-height: 1.5rem;
-    font-family: ${theme.secondaryFontFamily};
+    font-family: ${theme.primaryFontFamily};
+    font-style: normal;
+    font-weight: normal;
   }
 
   .title, .box {

@@ -1,59 +1,44 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Button } from '../elements';
 
-const Section = styled.div`
-  background-image: url(${(props) => props.bgImage});
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: bottom;
-  .title {
-    font-size: 74px;
-    line-height: 1.3 !important;
-  }
-  .mb-5 {
-    margin-bottom: 40px !important;
-  }
+import { Title, Button, Subtitle } from '../elements';
+
+const Container = styled.div`
+  background-color: ${(props) => props.theme.mainBrandColor};
+  position: relative;
+  overflow: hidden;
 `;
 
-const TriangleSection = styled.div`
-  clip-path: polygon(0 0, 0 85%, 50% 100%, 100% 85%, 100% 0, 51% 0);
-`;
-
-const HomeBanner = ({ home }) => {
-  return (
-    <TriangleSection>
-      <Section
-        className="hero is-large"
-        bgImage={home.homeHero.image ? home.homeHero.image.asset.fluid.src : ''}
-      >
-        <div className="hero-body has-text-centered">
-          <div className="columns is-centered">
-            <div className="column is-7">
-              <h1 className="title has-text-weight-bold is-size-2-mobile">
-                {home.homeHero.title}
-              </h1>
-            </div>
-          </div>
-          <div className="columns is-centered">
-            <div className="column is-5">
-              <p className="subtitle has-text-weight-normal is-size-4 mb-5">
-                {home.homeHero.subtitle}
-              </p>
-              <Button
-                isLarge
-                type="button"
-                hasHoverBackgroundColor={(props) => props.theme.darkAccent}
-                hasBackgroundWhite
-                to={home.homeHero.linkTo}
-              >
-                Consult Today
-              </Button>
-            </div>
+const HomeBanner = () => (
+  <Container className="section is-normal">
+    <div className="container">
+      <div className="columns is-vcentered">
+        <div className="column is-4">
+          <Title>Professional training and practical advice</Title>
+          <Subtitle small>
+            We help those recovering from gambling addiction to positively
+            restart their lives. We believe that treatment alone is not enough.
+            More help is needed. Our programmes start after treatment, and equip
+            recovering gambling addicts with useful and constructive tools to
+            support their ongoing recovery and rehabilitation.
+          </Subtitle>
+          <div className="mt-4">
+            <Button
+              type="button"
+              isLarge
+              hasHoverBackgroundColor={(props) => props.theme.lightShades}
+              hasDefaultBackgroundColor={(props) => props.theme.darkAccent}
+              hasHoverBackground={(props) => props.theme.lightShades}
+            >
+              Who we are
+            </Button>
           </div>
         </div>
-      </Section>
-    </TriangleSection>
-  );
-};
+        <div className="column is-6 is-offset-2">
+          <img src="/images/bag.jpg" alt="map " />
+        </div>
+      </div>
+    </div>
+  </Container>
+);
 export default HomeBanner;

@@ -1,4 +1,4 @@
-# Turner Education House
+# Epic Restart Foundation
 
 Fetch data from Sanity CMS
 

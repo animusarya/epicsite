@@ -3,6 +3,7 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 
 const LinkWrapper = styled(Link)`
+  background-color: #f9a620;
   .animated-link {
     --c: goldenrod;
     color: ${(props) =>
@@ -11,7 +12,6 @@ const LinkWrapper = styled(Link)`
         : props.theme.backgroundWhite};
     font-size: 20px;
     font-weight: 500;
-    border: ${(props) => (props.hasBorder ? '1.5px solid #ffffff' : '')};
     font-family: ${(props) => props.theme.primaryFontFamily};
     border-radius: 5px;
     padding: 0 1rem;
@@ -25,10 +25,7 @@ const LinkWrapper = styled(Link)`
     /* margin: 1rem; */
     padding-left: ${(props) => (props.isLarge ? '4rem' : '')};
     padding-right: ${(props) => (props.isLarge ? '4rem' : '')};
-    background: ${(props) =>
-      props.hasDefaultBackgroundColor
-        ? props.hasDefaultBackgroundColor
-        : props.theme.lightShades};
+    background: #f9a620;
     /* padding: 0rem 4rem 0rem 4rem; */
   }
   .animated-link span {
@@ -40,7 +37,6 @@ const LinkWrapper = styled(Link)`
         ? props.hasHoverBackground
         : props.theme.darkAccent};
     transform: translateY(150%);
-    border-radius: 50%;
     left: calc((var(--n) - 1) * 25%);
     transition: 0.5s;
     transition-delay: calc((var(--n) - 1) * 0.1s);
@@ -52,7 +48,7 @@ const LinkWrapper = styled(Link)`
       props.hasBackgroundWhite
         ? props.theme.backgroundWhite
         : props.theme.darkAccent};
-    background: transparent;
+    background: #f9a620;
     border: none;
   }
 

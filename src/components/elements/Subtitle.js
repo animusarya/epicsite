@@ -4,8 +4,7 @@ import styled from 'styled-components';
 const Text = styled.p`
   font-size: ${(props) =>
     props.small ? props.theme.fontSize : props.theme.fontSizeMedium};
-  color: ${(props) =>
-    props.color ? props.theme.primaryColor : props.theme.darkShades};
+  color: ${(props) => props.theme.textColor};
 `;
 
 const Subtitle = ({ children, centered, className, hasWhite, ...props }) => (
