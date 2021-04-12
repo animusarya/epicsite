@@ -4,11 +4,6 @@ import { graphql } from 'gatsby';
 import Seo from '../components/Seo';
 import Layout from '../components/global/Layout';
 import HomeBanner from '../components/home/HomeBanner';
-import HomeServices from '../components/home/HomeServices';
-import AboutSection from '../components/global/AboutSection';
-import Reviews from '../components/home/Reviews';
-import Quote from '../components/home/Quote';
-import BlogSection from '../components/global/BlogSection';
 
 export const query = graphql`
   query HomePageQuery {
@@ -117,26 +112,6 @@ const IndexPage = ({ data }) => {
         keywords={home.keywords}
       />
       <HomeBanner home={home} />
-      <HomeServices home={home} />
-      <AboutSection
-        title={home.homeAbout.title}
-        subtitle={home.homeAbout.subtitle}
-        img={
-          home &&
-          home.homeAbout.image &&
-          home.homeAbout.image.asset &&
-          home.homeAbout.image.asset.fluid
-        }
-        alt={home.homeAbout.title}
-        to={
-          home.homeAbout && home.homeAbout.linkTo
-            ? home.homeAbout.linkTo.current
-            : ''
-        }
-      />
-      <Reviews review={review} reviewHeading={home.homeReviewHeading} />
-      <BlogSection article={article} heading={home.homeBlogHeading} />
-      <Quote home={home} />
     </Layout>
   );
 };

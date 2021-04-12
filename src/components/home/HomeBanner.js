@@ -5,15 +5,25 @@ import { Title, Button, Subtitle } from '../elements';
 
 const Container = styled.div`
   background-color: ${(props) => props.theme.mainBrandColor};
-  position: relative;
-  overflow: hidden;
+
+  }
+  .image-box {
+    position: relative;
+  }
+  .tracker-bg {
+    width: 87%;
+  }
+  .tracker {
+    position: absolute;
+    left: 0px;
+  }
 `;
 
 const HomeBanner = () => (
   <Container className="section is-normal">
     <div className="container">
       <div className="columns is-vcentered">
-        <div className="column is-4">
+        <div className="column">
           <Title>Professional training and practical advice</Title>
           <Subtitle small>
             We help those recovering from gambling addiction to positively
@@ -34,8 +44,15 @@ const HomeBanner = () => (
             </Button>
           </div>
         </div>
-        <div className="column is-6 is-offset-2">
-          <img src="/images/bag.jpg" alt="map " />
+        <div className="column">
+          <div className="image-box">
+            <img
+              src="/images/tracker-bg.png"
+              className="tracker-bg"
+              alt="map"
+            />
+            <img src="/images/tracker.png" className="tracker" alt="map" />
+          </div>
         </div>
       </div>
     </div>

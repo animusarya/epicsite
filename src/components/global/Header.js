@@ -6,7 +6,8 @@ import { theme } from '../../utils/theme';
 
 import { Button } from '../elements';
 
-const Section = styled.div`
+const Section = styled.section`
+  padding: 1rem 1.5rem;
   nav {
     background: ${(props) => props.theme.darkAccent};
   }
@@ -24,23 +25,14 @@ const Section = styled.div`
   a.navbar-item:hover {
     background-color: transparent;
   }
-  /* a.has-text-white:hover {
-    color: ${(props) => props.theme.textColorLite} !important;
-  } */
   .navbar-item img {
-    max-height: 5.75rem !important;
+    max-height: 4rem !important;
   }
   .navbar-menu {
-    margin-right: -1.5rem !important;
     @media screen and (max-width: 600px) {
-      position: absolute;
       width: 100%;
       transition: 0.6s;
     }
-  }
-  .navbar-dropdown {
-    background-color: ${(props) => props.theme.darkAccent};
-    border-top: 0;
   }
   .navbar-item.has-dropdown:hover .navbar-link {
     background-color: transparent;
@@ -69,89 +61,83 @@ const Section = styled.div`
 const Header = () => {
   const [isActive, setIsActive] = useState(false);
   return (
-    <Section>
+    <Section className="section">
       <nav className="navbar" role="navigation" aria-label="main navigation">
-        <div className="container">
-          <div className="navbar-brand">
-            <Link
-              className="navbar-item is-justify-content-center is-hidden-desktop"
-              to="/"
-            >
-              <img src="/images/logo.png" alt="site logo" />
-            </Link>
-            <button
-              type="button"
-              className={
-                isActive
-                  ? 'is-active navbar-burger  mt-5 mr-3 has-text-white'
-                  : 'navbar-burger mt-5 mr-3 has-text-white'
-              }
-              aria-label="menu"
-              aria-expanded="false"
-              data-target="navbarBasicExample"
-              onClick={() => setIsActive(!isActive)}
-            >
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
-              <span aria-hidden="true" />
-            </button>
-          </div>
-          <div
+        <div className="navbar-brand">
+          <Link className="navbar-item" to="/">
+            <img src="/images/logo.png" alt="site logo" />
+          </Link>
+          <button
+            type="button"
             className={
               isActive
-                ? 'navbar-menu my-navbar-menu is-active'
-                : 'navbar-menu my-navbar-menu'
+                ? 'is-active navbar-burger  mt-5 mr-3 has-text-white'
+                : 'navbar-burger mt-5 mr-3 has-text-white'
             }
+            aria-label="menu"
+            aria-expanded="false"
+            data-target="navbarBasicExample"
+            onClick={() => setIsActive(!isActive)}
           >
-            <div className="navbar-start">
-              {' '}
-              <Link
-                to="/"
-                className="navbar-item has-text-weight-normal has-text-white px-5"
-              >
-                Who we are
-              </Link>
-              <Link
-                to="/about"
-                className="navbar-item has-text-weight-normal  has-text-white px-5"
-              >
-                What we do
-              </Link>
-              <Link
-                to="/service"
-                className="navbar-item has-text-weight-normal has-text-white px-5"
-              >
-                How we help
-              </Link>
-              <Link
-                to="/service"
-                className="navbar-item has-text-weight-normal has-text-white px-5"
-              >
-                Who we Work with
-              </Link>
-              <Link
-                to="/service"
-                className="navbar-item has-text-weight-normal has-text-white px-5"
-              >
-                support
-              </Link>
-              <Link
-                to="/service"
-                className="navbar-item has-text-weight-normal has-text-white px-5"
-              >
-                News
-              </Link>
-            </div>
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+            <span aria-hidden="true" />
+          </button>
+        </div>
+        <div
+          className={
+            isActive
+              ? 'navbar-menu my-navbar-menu is-active'
+              : 'navbar-menu my-navbar-menu'
+          }
+        >
+          <div className="navbar-start">
+            {' '}
+            <Link
+              to="/"
+              className="navbar-item has-text-weight-medium has-text-white px-5"
+            >
+              Who we are
+            </Link>
+            <Link
+              to="/about"
+              className="navbar-item has-text-weight-medium  has-text-white px-5"
+            >
+              What we do
+            </Link>
+            <Link
+              to="/service"
+              className="navbar-item has-text-weight-medium has-text-white px-5"
+            >
+              How we help
+            </Link>
+            <Link
+              to="/service"
+              className="navbar-item has-text-weight-medium has-text-white px-5"
+            >
+              Who we Work with
+            </Link>
+            <Link
+              to="/service"
+              className="navbar-item has-text-weight-medium has-text-white px-5"
+            >
+              support
+            </Link>
+            <Link
+              to="/service"
+              className="navbar-item has-text-weight-medium has-text-white px-5"
+            >
+              News
+            </Link>
           </div>
           <div className="navbar-end">
-            <div className="navbar-item has-text-weight-normal has-text-white">
+            <div className="navbar-item has-text-weight-medium has-text-white">
               <Button
                 to="/contact"
                 type="button"
-                hasBorder
-                hasHoverBackground={(props) => props.theme.backgroundWhite}
-                hasDefaultBackgroundColor="transparent"
-                className="navbar-item has-text-weight-normal"
+                hasHoverBackgroundColor={(props) => props.theme.lightShades}
+                hasDefaultBackgroundColor={(props) => props.theme.darkAccent}
+                hasHoverBackground={(props) => props.theme.lightShades}
               >
                 Contact
               </Button>
