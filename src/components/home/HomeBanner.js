@@ -15,7 +15,7 @@ const Container = styled.div`
   }
   .tracker {
     position: absolute;
-    left: 0px;
+    left: 20px;
   }
 `;
 
